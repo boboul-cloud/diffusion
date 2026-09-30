@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diffusion</title>
+  <meta name="description" content="Prépare la promotion de mes apps sur les réseaux sociaux, les médias et partout ailleurs.">
+  <meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111114" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Diffusion">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icones/icone-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="vendor/qrcode.js" defer></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="evitement" href="#principal">Aller au contenu</a>
+  <header class="barre">
+    <a class="marque" href="#/"><img src="icones/icone-192.png" alt="" width="28" height="28"> Diffusion</a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#/" data-page="accueil">Apps</a>
+      <a href="#/automatique" data-page="automatique">Auto</a>
+      <a href="#/journal" data-page="journal">Journal</a>
+      <a href="#/reglages" data-page="reglages">Réglages</a>
+    </nav>
+  </header>
+  <main id="principal" tabindex="-1"></main>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="impression"></div>
+</body>
+</html>

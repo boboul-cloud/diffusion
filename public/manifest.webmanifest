@@ -1,0 +1,16 @@
+{
+  "name": "Diffusion",
+  "short_name": "Diffusion",
+  "description": "Prépare la promotion de mes apps sur les réseaux sociaux, les médias et partout ailleurs.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f6f8",
+  "theme_color": "#f6f6f8",
+  "icons": [
+    { "src": "icones/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icones/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icones/icone-masquable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

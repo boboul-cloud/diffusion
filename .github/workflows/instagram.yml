@@ -1,0 +1,64 @@
+# Le robot de Diffusion. Toutes les heures, il regarde le planning
+# (publication/plan.json) : il confie a Buffer les publications Instagram
+# des 24 h a venir, et note dans le journal ce qui est parti.
+# Il lit la cle BUFFER_API_KEY ; il n'ecrit jamais dans les secrets.
+#
+# Onglet Actions ▸ « Publication automatique » ▸ Run workflow : un essai,
+# publie 5 minutes plus tard.
+
+name: Publication automatique
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+    inputs:
+      maintenant:
+        description: 'Publier dans 5 minutes, sans attendre le créneau'
+        type: boolean
+        default: true
+      app:
+        description: 'App à publier (son identifiant, ex. riskelo) ; vide = la suivante'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publication
+  cancel-in-progress: false
+
+jobs:
+  programmer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Y a-t-il quelque chose à faire ?
+        id: verifier
+        run: node outils/automatique.ts --verifier
+
+      - name: Police des visuels
+        if: steps.verifier.outputs.du == 'oui' || inputs.maintenant
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-inter > /dev/null || true
+
+      - name: Confier à Buffer et relever le journal
+        if: steps.verifier.outputs.du == 'oui' || inputs.maintenant
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          MAINTENANT: ${{ inputs.maintenant }}
+          APP: ${{ inputs.app }}
+        run: |
+          git config user.name "Diffusion"
+          git config user.email "diffusion@users.noreply.github.com"
+          if [ "$MAINTENANT" = "true" ]; then
+            node outils/automatique.ts --programmer --maintenant $APP
+          else
+            node outils/automatique.ts --programmer
+          fi

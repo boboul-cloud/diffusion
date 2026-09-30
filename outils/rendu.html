@@ -1,0 +1,14 @@
+<!doctype html>
+<!-- Page de travail du robot : dessine un visuel avec le code de l'app. Ouverte par outils/rendre.ts. -->
+<meta charset="utf-8">
+<script>window.POLICE_VISUELS = '"Inter", "Inter Variable", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif';</script>
+<script src="../public/vendor/qrcode.js"></script>
+<script type="module">
+  const { dessiner } = await import('../public/js/visuels.js');
+  window.rendre = async (o) => {
+    await document.fonts.load('800 40px "Inter"').catch(() => {});
+    const c = await dessiner(document.createElement('canvas'), o);
+    return c.toDataURL('image/jpeg', 0.92);
+  };
+  window.pret = true;
+</script>
