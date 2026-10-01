@@ -1,0 +1,1583 @@
+{
+ "genere": "2026-10-01T12:39:29.186Z",
+ "apps": [
+  {
+   "slug": "blocgenda",
+   "bundleId": "com.oulhen.blocgenda",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/blocgenda/id6799521493",
+   "lienInternational": "https://apps.apple.com/app/id6799521493",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "18.0",
+   "note": null,
+   "sortie": "2026-08-20T07:00:00Z",
+   "version": "1.2",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/blocgenda/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/blocgenda/icone.png?v=f27c6393",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Blocgenda",
+     "sousTitre": "",
+     "promo": "Ne ratez plus un anniversaire : Blocgenda écrit le message et l'envoie pour vous. Et chaque matin, le soleil, la marée et l'éphéméride du jour.",
+     "description": "Blocgenda est un bloc-notes qui pense comme une additionneuse de comptoir : une\nbande de papier sans fin où s'impriment, dans l'ordre où ils arrivent, vos\ncalculs, vos notes, vos actions et vos rendez-vous.\n\nUNE SEULE BARRE DE SAISIE\n\nLes autres applications vous demandent de choisir : est-ce une note, une tâche,\nun calcul, un rendez-vous ? Blocgenda ne demande rien. Vous écrivez, il comprend\n— et il vous montre ce qu'il a compris avant que vous validiez.\n\n• 12,50 × 3 → un calcul, résultat aligné à droite\n• 200 + 10% → 220, comme sur une calculatrice de bureau\n• - rappeler le garage → une action à cocher\n• demain 14h30 dentiste → un rendez-vous, avec notification\n• réunion lundi 9h pendant 2h → un rendez-vous de deux heures\n• essence 62,30 #bateau → une note chiffrée, étiquetée\n\nLA BANDE\n\nEn haut, le total en cours. En bas, le clavier de la calculatrice quand vous en\navez besoin, avec la touche TOTAL qui imprime un sous-total et repart de zéro.\nEt les ciseaux, qui déchirent la bande : les lignes terminées partent aux\narchives, l'application en fait une image à envoyer, et les actions non faites\nrestent sur le rouleau.\n\nCHAQUE JOUR, CE QUE LA JOURNÉE A D'OBJECTIF\n\n• La course du soleil en arc, avec l'écart de durée par rapport à la veille\n• La marée du lieu : courbe des 24 heures, pleines et basses mers à la minute,\n  marnage, vive-eau ou morte-eau — et le port de référence le plus proche\n  quand vous n'êtes pas sur la côte\n• La lune : phase dessinée, éclairement, âge, lever et coucher\n• L'éphéméride : saint du jour, dicton, jours fériés, « ce jour-là »\n• Les anniversaires de votre annuaire\n• L'heure dorée et l'heure bleue, pour les photographes\n• Les périodes de pêche, calculées d'après la lune\n• La météo : température, vent, force Beaufort\n\nL'AGENDA ET L'ANNUAIRE\n\nUne bande des sept jours, des récurrences, plusieurs rappels par rendez-vous.\nUn annuaire de vos numéros utiles, groupés, avec appel, SMS, courriel et plan à\nportée de pouce — et les anniversaires qui remontent dans l'éphéméride.\n\nWIDGETS ET NOTIFICATIONS\n\nDeux widgets, écran d'accueil et écran verrouillé. Sur le format moyen, la\npremière action non faite se coche sans même ouvrir l'application. Rappels de\nrendez-vous, point du matin, bilan du soir, alerte heure dorée, alerte marée une\nheure avant chaque étale.\n\nRIEN NE PART DE VOTRE TÉLÉPHONE\n\nPas de compte, pas de nuage, pas d'analytique, pas de publicité, pas de traceur.\nVos notes, votre agenda et votre annuaire restent sur l'appareil. Le soleil et la\nlune sont calculés sur place : l'application marche en mer, sans réseau. Seules\nla marée et la météo sont demandées à Open-Meteo, à partir de coordonnées\narrondies, sans aucun identifiant.\n\nIMPORTANT — SÉCURITÉ EN MER\n\nLes marées affichées sont des prévisions, données par rapport au niveau moyen de\nla mer. Elles conviennent pour organiser sa journée, pas pour naviguer : pour\ncela, référez-vous à l'annuaire officiel des marées (SHOM) et aux bulletins de la\nmétéo marine.",
+     "motsCles": [
+      "notes",
+      "calculatrice",
+      "marée",
+      "agenda",
+      "éphéméride",
+      "soleil",
+      "lune",
+      "rouleau",
+      "tâches",
+      "annuaire",
+      "pêche",
+      "marin"
+     ],
+     "nouveautes": "Nouveautés version 1.2\n\n• Les souhaits d'anniversaire et de fête. Blocgenda rapproche chaque jour les\n  fiches de votre annuaire du calendrier des postes — la date de naissance pour\n  l'anniversaire, le prénom pour la fête — et prépare un message pour chacun.\n  Un bouton l'ouvre dans Messages, destinataire et texte déjà écrits.\n• Vous choisissez qui est concerné : les groupes de l'annuaire que vous cochez,\n  la famille et les amis plutôt que le garagiste. Aucun groupe coché, rien n'est\n  préparé, et le carnet d'adresses du téléphone n'est jamais touché.\n• Vous choisissez aussi les mots. Chaque occasion a sa réserve de formules, que\n  l'on réécrit à sa main ; Blocgenda en tire une au hasard, en évitant celle\n  servie l'an dernier à la même personne.\n• Pour que cela parte sans y penser, l'écran Souhaits installe d'un seul bouton\n  le raccourci tout monté. Ne restent que les trois gestes de l'automatisation\n  quotidienne, dessinés écran par écran — aucune application n'ayant le droit\n  de la créer à votre place.\n• L'écran « Le jour » annonce désormais les fêtes du prénom de vos fiches, et\n  l'éphéméride nomme les prénoms fêtés que les jours fériés éclipsent — le\n  14 juillet, c'est Camille.\n• La fiche Marée porte le coefficient, sur l'échelle française de 20 à 120, avec\n  ce qu'il vaut en toutes lettres : morte-eau, vive-eau, grande marée. Il est\n  calculé sur l'appareil, sans réseau.",
+     "captures": {
+      "iphone": [
+       "data/apps/blocgenda/fr-iphone-1.jpg?v=1c381518",
+       "data/apps/blocgenda/fr-iphone-2.jpg?v=4375dcbd",
+       "data/apps/blocgenda/fr-iphone-3.jpg?v=c848c861",
+       "data/apps/blocgenda/fr-iphone-4.jpg?v=deb81849",
+       "data/apps/blocgenda/fr-iphone-5.jpg?v=29292360"
+      ],
+      "ipad": [
+       "data/apps/blocgenda/fr-ipad-1.jpg?v=12703d76",
+       "data/apps/blocgenda/fr-ipad-2.jpg?v=5f52dfc0",
+       "data/apps/blocgenda/fr-ipad-3.jpg?v=d975377f"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "bobcrapette",
+   "bundleId": "com.oulhen.bobcrapette",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bobcrapette/id6811610709",
+   "lienInternational": "https://apps.apple.com/app/id6811610709",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-09-22T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/Bobcrapette/",
+   "assistance": "https://boboul-cloud.github.io/Bobcrapette/assistance.html",
+   "confidentialite": "",
+   "icone": "data/apps/bobcrapette/icone.png?v=2b96d757",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bobcrapette",
+     "sousTitre": "La crapette au jeu de tarot",
+     "promo": "Un adversaire qui vous surveille, des atouts qui font une cinquième famille, et le plaisir de crier « Crapette ! » quand il oublie un coup obligatoire.",
+     "description": "La crapette telle qu'on la joue en famille, avec un jeu de tarot.**\n>\n> Deux joueurs, deux jeux, un tapis. Le premier qui se débarrasse de sa crapette,\n> de son talon et de sa défausse a gagné. Mais on ne gagne pas seulement en\n> rangeant ses cartes : on gagne surtout en encombrant celles de l'adversaire.\n>\n> **AU JEU DE TAROT, ATOUTS COMPRIS**\n>\n> Chaque joueur apporte ses 77 cartes : les quatre couleurs de l'As au Roi, avec\n> le Cavalier intercalé entre le Valet et la Dame, et les 21 atouts qui forment\n> une cinquième famille à part entière. Les atouts ont leurs propres fondations,\n> montées de 1 à 21, et ne s'empilent qu'entre eux dans les colonnes.\n>\n> **UN ADVERSAIRE QUI JOUE VRAIMENT**\n>\n> Trois niveaux. Le débutant se précipite et bâcle ses tours : à vous de le\n> prendre en faute. Le niveau fort anticipe d'un coup, joue offensif et ne laisse\n> jamais passer une de vos erreurs.\n>\n> **« CRAPETTE ! »**\n>\n> Deux coups ne se refusent pas : poser un As ou l'atout 1 disponible, et monter\n> la carte retournée de sa crapette sur une fondation. Celui qui les oublie\n> s'entend crier « Crapette ! » et passe la main sans retourner de carte. L'appel\n> marche dans les deux sens : surveillez l'adversaire, un bouton apparaît quelques\n> secondes quand il faute.\n>\n> **UNE AIDE QUI SE COUPE**\n>\n> Touchez une carte, ses destinations possibles s'allument. Les coups obligatoires\n> portent un liseré orange et l'application vous prévient avant une faute. Vous\n> pouvez tout désactiver pour jouer sans filet, comme à la maison.\n>\n> **TROIS VARIANTES**\n>\n> Tarot avec atouts (77 cartes), tarot sans atouts (56 cartes) ou jeu de 52\n> classique. Crapette de 13 ou 19 cartes, vitesse des animations réglable.\n>\n> **SOIGNÉ POUR CHAQUE ÉCRAN**\n>\n> Une seule application pour iPhone, iPad et Mac. Les cartes sont dessinées au\n> trait, nettes à toutes les tailles, et le tapis se replie selon la place : les\n> huit colonnes en ligne sur grand écran, sur deux rangs en portrait.\n>\n> **RIEN NE SORT DE VOTRE APPAREIL**\n>\n> Aucun compte. Aucune connexion. Aucune publicité, aucun traqueur, aucun achat\n> intégré. Le jeu fonctionne en avion et ne collecte strictement rien.\n>\n> — Indice, annulation du dernier coup, reprise automatique de la partie en cours\n> et statistiques complètent le tout.\n\n## Nouveautés dans cette version (4000)\n\n> Première version de Bobcrapette.\n>\n> La crapette à deux au jeu de tarot, avec les 21 atouts en cinquième famille, un\n> adversaire à trois niveaux, les coups obligatoires et l'appel « Crapette ! »\n> dans les deux sens. Trois variantes de jeu, aide visuelle réglable, indice,\n> annulation et reprise de partie. Pour iPhone, iPad et Mac.",
+     "motsCles": [
+      "cartes",
+      "réussite",
+      "solitaire",
+      "patience",
+      "atout",
+      "deux",
+      "joueurs",
+      "societe",
+      "famille",
+      "solo",
+      "duel",
+      "hors",
+      "ligne"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/bobcrapette/fr-iphone-1.jpg?v=c89dc5e6",
+       "data/apps/bobcrapette/fr-iphone-2.jpg?v=311e536b",
+       "data/apps/bobcrapette/fr-iphone-3.jpg?v=23d9b3fb",
+       "data/apps/bobcrapette/fr-iphone-4.jpg?v=8c5e5144",
+       "data/apps/bobcrapette/fr-iphone-5.jpg?v=d3f54a78",
+       "data/apps/bobcrapette/fr-iphone-6.jpg?v=7ba48783"
+      ],
+      "ipad": [
+       "data/apps/bobcrapette/fr-ipad-1.jpg?v=61a98e21",
+       "data/apps/bobcrapette/fr-ipad-2.jpg?v=ce8278b4",
+       "data/apps/bobcrapette/fr-ipad-3.jpg?v=cf81fe26"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "bobmockup",
+   "bundleId": "com.boboulcloud.bobmockup",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bobmockup/id6758100933",
+   "lienInternational": "https://apps.apple.com/app/id6758100933",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GRAPHICS_AND_DESIGN",
+   "genre": {
+    "fr": "Graphisme et design",
+    "en": "Graphics & Design"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-01-24T08:00:00Z",
+   "version": "4.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://robertoulhen.github.io/bobmockup/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/bobmockup/icone.png?v=3b06166c",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bobmockup",
+     "sousTitre": "",
+     "promo": "Un labo photo pour vos captures d'écran. Cadre exact, cotes affichées, couche alpha réglable. Ce que montre l'aperçu est ce qui sort du tirage.",
+     "description": "Transformez vos captures d'écran en mockups professionnels pour l'App Store en quelques clics !\n\nBobmockup est l'outil idéal pour les développeurs et designers qui veulent présenter leurs apps de façon élégante et professionnelle.\n\nFONCTIONNALITÉS PRINCIPALES\n\n◆ Appareils multiples\nChoisissez parmi iPhone 15 Pro, iPhone 15, iPad Pro et MacBook Pro pour présenter votre app sur tous les supports.\n\n◆ Arrière-plans personnalisables\n• Couleurs unies\n• Dégradés linéaires et radiaux\n• Mesh gradients modernes\n• Vos propres images\n\n◆ Effets avancés\n• Ombres portées réalistes\n• Rotation 3D pour un effet dynamique\n• Mise à l'échelle précise\n\n◆ Textes et légendes\nAjoutez des titres accrocheurs avec des polices personnalisables pour mettre en valeur les fonctionnalités de votre app.\n\n◆ Export haute qualité\nExportez vos mockups en 1080x1920 pixels, le format parfait pour l'App Store.\n\nRESPECT DE LA VIE PRIVÉE\nToutes vos images restent sur votre appareil. Aucune donnée n'est envoyée sur des serveurs externes.\n\nACCESSIBILITÉ\nSupport complet de VoiceOver pour une utilisation accessible à tous.\n\n---\n\nVERSION GRATUITE\n• 10 exports gratuits\n• Toutes les fonctionnalités disponibles\n\nVERSION PREMIUM (1,99 €)\n• Exports illimités\n• Achat unique, pas d'abonnement\n\n---\n\nParfait pour les développeurs indépendants, les studios d'apps et tous ceux qui veulent des visuels App Store de qualité professionnelle.\n\nTéléchargez Bobmockup et créez vos mockups dès maintenant !",
+     "motsCles": [
+      "mockup",
+      "screenshot",
+      "app store",
+      "iphone",
+      "design",
+      "capture",
+      "présentation",
+      "marketing",
+      "développeur",
+      "frame"
+     ],
+     "nouveautes": "Bobmockup 4.0 élargit le cadre : vos captures passent en paysage, s'étendent sur deux écrans et s'inclinent en duo.\n\n• PANORAMA\nDeux écrans qui se suivent sur votre fiche App Store. Le fond court de l'un à l'autre, l'appareil est posé à cheval sur la jointure, et chaque écran porte son accroche. Le tirage les découpe au pixel près en deux fichiers numérotés 01 et 02 : déposez-les dans cet ordre, le second prolonge exactement le premier. L'aperçu trace la jointure pour que vous sachiez où tombera la coupe. En PDF, une page par écran. Inclus dans Premium.\n\n• PORTRAIT OU PAYSAGE\nLe cadre pivote d'un geste, depuis la barre de l'éditeur : 1290 × 2796 devient 2796 × 1290, les cotes paysage qu'accepte App Store Connect. L'iPhone et l'iPad se couchent avec le cadre, et une capture paysage remplit l'écran couché. Le MacBook, déjà en paysage, reste d'aplomb.\n\n• PIVOT EN DUO\nUn nouveau réglage incline les deux téléphones du Duo, chacun sur son propre centre et du même angle : la paire s'incline sans quitter sa place. Il se combine avec la rotation 3D.\n\n• POSITION HORIZONTALE\nL'appareil se décale aussi de gauche à droite. En panorama, c'est ce réglage qui choisit la part de l'écran montrée de chaque côté de la jointure.\n\n• LES PROPORTIONS SUIVENT LE FORMAT\nL'appareil, le texte, les marges et l'ombre s'ajustent à la cote choisie. Le même visuel tiré en 6,1 pouces, sur iPad ou en bande 16:9 garde son équilibre, au lieu de déborder ou de rapetisser.\n\nCORRIGÉ\nUne série ou un duo rouvert ne gardait que sa première capture : tous les écrans sont désormais conservés. En Duo, les deux appareils affichaient la même capture. « Toutes les tailles » produisait la 6,7 pouces au lieu de la 6,5 annoncée. En PDF, les reflets de l'écran sortaient opaques et masquaient la capture. Le MacBook était dessiné debout, comme un écran tourné sur la tranche. Certains libellés restaient en français dans l'interface anglaise. Enfin, l'app n'accumule plus de copies de vos captures à chaque réglage : la place perdue est récupérée à l'ouverture.",
+     "captures": {
+      "iphone": [
+       "data/apps/bobmockup/fr-iphone-1.jpg?v=18893937",
+       "data/apps/bobmockup/fr-iphone-2.jpg?v=fb3dbb8f",
+       "data/apps/bobmockup/fr-iphone-3.jpg?v=8db375c7",
+       "data/apps/bobmockup/fr-iphone-4.jpg?v=dca788b0",
+       "data/apps/bobmockup/fr-iphone-5.jpg?v=4c10c810",
+       "data/apps/bobmockup/fr-iphone-6.jpg?v=cd89b57d"
+      ],
+      "ipad": [
+       "data/apps/bobmockup/fr-ipad-1.jpg?v=93c2f16f",
+       "data/apps/bobmockup/fr-ipad-2.jpg?v=3e50da68",
+       "data/apps/bobmockup/fr-ipad-3.jpg?v=ab1ae326"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "bons-comptes",
+   "bundleId": "bob.oulhen-gmail.com.Bons-Comptes",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bons-comptes/id6761653191",
+   "lienInternational": "https://apps.apple.com/app/id6761653191",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "FINANCE",
+   "genre": {
+    "fr": "Finance",
+    "en": "Finance"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "26.1",
+   "note": null,
+   "sortie": "2026-04-09T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bons-comptes/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/bons-comptes/icone.png?v=e1f72bb2",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bons Comptes +",
+     "sousTitre": "",
+     "promo": "Partagez vos dépenses en groupe simplement : voyages, colocs, sorties. Partage égal, personnalisé ou en %. Aucun compte à créer, tout reste sur votre iPhone.",
+     "description": "Bons Comptes simplifie le partage de dépenses entre amis, famille ou collègues.\n\nBons Comptes simplifie le partage de depenses entre amis, famille ou collegues.\n\nGEREZ VOS DEPENSES DE GROUPE\n- Creez des campagnes pour vos voyages, colocs, sorties ou evenements\n- Ajoutez des depenses et choisissez qui paie et qui participe\n- Repartition egale, par montant personnalise ou en pourcentage\n- Categorisez vos depenses (repas, transport, logement, courses...)\n\nVOYEZ QUI DOIT QUOI\n- Soldes en temps reel pour chaque participant\n- Reglements optimises : le minimum de transactions pour tout equilibrer\n- Enregistrez les remboursements au fur et a mesure\n\nPARTAGEZ FACILEMENT\n- Envoyez un lien par SMS ou iMessage\n- Les autres voient tout dans leur navigateur, sans installer l'app\n- Importez une campagne recue en un clic\n- Partage de proximite par Bluetooth/Wi-Fi, sans internet\n\nPREMIUM (achat unique, pas d'abonnement)\n- Scan de tickets de caisse avec reconnaissance automatique\n- Export PDF professionnel des comptes\n- QR Code SEPA pour les virements bancaires\n- Partage de proximite sans internet\n- Suivi en direct sur l'ecran de verrouillage (Live Activity)\n- Sauvegardes internes illimitees\n- Campagnes actives illimitees\n\n100% PRIVE\n- Aucun serveur, aucun compte a creer\n- Toutes vos donnees restent sur votre iPhone\n- Les liens partages sont ephemeres et autoportants\n\nDisponible en francais et en anglais.",
+     "motsCles": [
+      "partage",
+      "dépenses",
+      "frais",
+      "groupe",
+      "voyage",
+      "coloc",
+      "amis",
+      "remboursement",
+      "comptes",
+      "split",
+      "tricount",
+      "règlement"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/bons-comptes/fr-iphone-1.jpg?v=d6ed76f8",
+       "data/apps/bons-comptes/fr-iphone-2.jpg?v=52b31d49",
+       "data/apps/bons-comptes/fr-iphone-3.jpg?v=dc855fc4",
+       "data/apps/bons-comptes/fr-iphone-4.jpg?v=acef230e",
+       "data/apps/bons-comptes/fr-iphone-5.jpg?v=dafe285a",
+       "data/apps/bons-comptes/fr-iphone-6.jpg?v=a92c5365"
+      ],
+      "ipad": [
+       "data/apps/bons-comptes/fr-ipad-1.jpg?v=a8793b29",
+       "data/apps/bons-comptes/fr-ipad-2.jpg?v=404db2ab",
+       "data/apps/bons-comptes/fr-ipad-3.jpg?v=f4639ef8"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "calcul-de-l-impot",
+   "bundleId": "bob.oulhen-gmail.com.calcul-de-l-impot",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/calcul-de-limpot/id6763001988",
+   "lienInternational": "https://apps.apple.com/app/id6763001988",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "FINANCE",
+   "genre": {
+    "fr": "Finance",
+    "en": "Finance"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "26.1",
+   "note": null,
+   "sortie": "2026-04-24T07:00:00Z",
+   "version": "1.3",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/calcul-impot/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/calcul-de-l-impot/icone.png?v=16f241e2",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "calcul de l'impot",
+     "sousTitre": "Simulation d'impôt simplifiée",
+     "promo": "Calculez votre impôt en quelques secondes: quotient familial, plafonnement, décote, crédits d’impôt, simulation claire et partage",
+     "description": "Une simulation d’impôt claire, rapide et compréhensible, directement sur iPhone et iPad.\n\nCette app vous aide à estimer facilement votre impôt selon votre situation familiale, vos revenus et vos charges. Le calcul est détaillé étape par étape pour vous permettre de comprendre le résultat, pas seulement de l’obtenir.\n\nFonctionnalités principales:\n\nCalcul de l’impôt avec quotient familial\nPrise en compte du plafonnement, de la décote et des crédits/réductions\nAjustement selon la situation (célibataire, couple, parent isolé, enfants)\nVue de synthèse lisible avec taux moyen et taux marginal\nAide à la saisie avec catégories fiscales fréquentes\nImport de documents (photo, PDF) et extraction des informations utiles\nGénération d’un récapitulatif partageable\nL’app est pensée pour être simple, pédagogique et pratique au quotidien, tout en vous laissant le contrôle sur vos données.",
+     "motsCles": [
+      "impot",
+      "simulateur",
+      "fiscal",
+      "declaration",
+      "quotient",
+      "decote",
+      "credit",
+      "revenus",
+      "famille",
+      "taux"
+     ],
+     "nouveautes": "Nouveautes version 1.3 (build 4)\n\nAvance de credit d'impot (cases 8EA et 8EB)\n\nNouvelle section dans la page Revenus pour saisir l'avance de reductions et credits d'impot percue en janvier.\nMontants traites en net et ajoutes directement a l'impot a payer (regularisation de l'avance).\nAffiches dans le detail du resultat (en rouge, prefixes \"+\") et dans l'export PDF.\nRoutage automatique des cases OpenFisca\n\nDans la fiche d'une case (depuis le navigateur ou les badges \"Case ...\" a cote des champs), nouveau bouton vert \"Ajouter a ma declaration\".\nL'app detecte automatiquement la bonne categorie d'apres le prefixe du code Cerfa :\n1 a 5 : Revenu imposable (page Revenus)\n6 : Charge deductible\n7 : Credit ou reduction\n8 : Prelevement deja paye\nL'entree est creee avec le bon libelle et la bonne case, puis l'app bascule sur la page concernee pour la saisie du montant.\nCas speciaux 8EA et 8EB : focus direct sur le champ dedie de l'avance de credit.\nEvite les doublons (meme code deja present).\n\n9 : Ajout de sauvegarde des états de simulations",
+     "captures": {
+      "iphone": [
+       "data/apps/calcul-de-l-impot/fr-iphone-1.jpg?v=2230e19a",
+       "data/apps/calcul-de-l-impot/fr-iphone-2.jpg?v=7ba2b1bb",
+       "data/apps/calcul-de-l-impot/fr-iphone-3.jpg?v=a9f7d2d6",
+       "data/apps/calcul-de-l-impot/fr-iphone-4.jpg?v=0a2a3ee4",
+       "data/apps/calcul-de-l-impot/fr-iphone-5.jpg?v=015d724d",
+       "data/apps/calcul-de-l-impot/fr-iphone-6.jpg?v=30b07116"
+      ],
+      "ipad": [
+       "data/apps/calcul-de-l-impot/fr-ipad-1.jpg?v=b81e2780",
+       "data/apps/calcul-de-l-impot/fr-ipad-2.jpg?v=ab91f5a6",
+       "data/apps/calcul-de-l-impot/fr-ipad-3.jpg?v=cb608e85"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "canonball",
+   "bundleId": "com.canonball.game",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bobcanonball/id6808388554",
+   "lienInternational": "https://apps.apple.com/app/id6808388554",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-09-10T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/canonball-app/",
+   "assistance": "",
+   "confidentialite": "https://boboul-cloud.github.io/canonball-app/confidentialite/",
+   "icone": "data/apps/canonball/icone.png?v=cb0290e6",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "BobCanonBall",
+     "sousTitre": "Duel d'artillerie et d'astuce",
+     "promo": "Un défi nouveau chaque jour, le même pour tout le monde. Plus dix terrains, un atelier de création et le duel à deux appareils, sans compte ni connexion.",
+     "description": "Deux canons, deux rangées de tonneaux, et tout ce qui se met en travers. On joue chacun son\ntour : régler l'angle, doser la puissance, faire feu. Le premier camp qui perd toutes ses\ncibles a perdu.\n\nSauf que le tir direct ne passe pas. C'est le point de départ, pas un accident. Un mur de\npierre, un silo, une grille : à vous de piocher dans la réserve et de fabriquer la route.\nUn panneau pour dévier, un trampoline pour rebondir, un tuyau pour traverser, un ventilateur\npour courber la trajectoire, un aimant, une bulle sans pesanteur, une turbine. Douze objets,\net tout ce que vous posez sert aussi à l'adversaire.\n\nLE DÉFI DU JOUR\nUn terrain neuf chaque jour, le même pour tout le monde, fabriqué et vérifié par le jeu\nlui-même : jamais injouable, jamais évident. Un seul essai, un score à partager, une série\nà tenir.\n\nDIX TERRAINS, ET UN DIXIÈME QUI NE SE RACONTE PAS\nDu pré tranquille au col verrouillé. Le dernier a l'air impossible. Il ne l'est pas.\n\nL'ATELIER\nUne table de création complète : le relief se sculpte à la main, chaque élément se pose à la\nsouris ou au doigt, et vous pouvez même mettre une de vos photos en fond du terrain. Un\nterrain est un fichier : il s'envoie par AirDrop, par message ou par mail.\n\nÀ DEUX\nDuel sur un seul appareil, chacun son tour. Ou à deux appareils, en réseau local, sans compte\nni serveur : l'hôte choisit le terrain et l'envoie à l'adversaire.\n\nLES COFFRES D'ATELIER\nUne devinette décrit un outil par son usage, jamais par son nom. Trouvez-le : le coffre verse\ndes objets dans votre réserve et vous rend la main. Quarante-neuf outils à collectionner.\n\nTOUT EST PEINT PAR LE CODE\nPas une seule image, pas un seul fichier son dans l'application : le décor, les canons, les\nparticules et la musique sont produits au lancement. Le jeu est léger, net sur tous les\nécrans, et fonctionne entièrement hors connexion.\n\nAUCUNE DONNÉE\nPas de compte, pas de serveur, pas de publicité, pas de mesure d'audience, pas d'achat\nintégré. Rien ne quitte votre appareil.",
+     "motsCles": [
+      "artillerie",
+      "canon",
+      "tir",
+      "duel",
+      "stratégie",
+      "physique",
+      "balistique",
+      "éditeur",
+      "défi",
+      "tour par tour",
+      "hors ligne"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/canonball/fr-iphone-1.jpg?v=366d24d0",
+       "data/apps/canonball/fr-iphone-2.jpg?v=d4938456",
+       "data/apps/canonball/fr-iphone-3.jpg?v=601255ad",
+       "data/apps/canonball/fr-iphone-4.jpg?v=648f078b",
+       "data/apps/canonball/fr-iphone-5.jpg?v=76915bf7",
+       "data/apps/canonball/fr-iphone-6.jpg?v=524b0eb7"
+      ],
+      "ipad": [
+       "data/apps/canonball/fr-ipad-1.jpg?v=2aa3e988",
+       "data/apps/canonball/fr-ipad-2.jpg?v=cd955407",
+       "data/apps/canonball/fr-ipad-3.jpg?v=f1782f6f"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "courriercode",
+   "bundleId": "com.courriercode.app",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/courriercode/id6757985873",
+   "lienInternational": "https://apps.apple.com/app/id6757985873",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-01-21T08:00:00Z",
+   "version": "1.4",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/CourrierCode",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/courriercode/icone.png?v=75c2d2c7",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "CourrierCode",
+     "sousTitre": "",
+     "promo": "Encodez vos messages secrets ! Courrier Codé transforme vos textes en codes indéchiffrables. Partagez en toute confidentialité avec vos proches.",
+     "description": "Transformez vos messages en codes numériques impossibles à déchiffrer sans connaître les règles secrètes !\n\n ENCODEZ VOS MESSAGES\nTapez n'importe quel texte et obtenez instantanément sa version codée en séquence de chiffres. Partagez vos messages secrets avec vos amis, famille ou collègues en toute discrétion.\n\n DÉCODEZ FACILEMENT  \nCollez un message codé et laissez l'application le décrypter automatiquement. L'algorithme intelligent détecte le jour d'encodage et reconstitue le message original.\n\nSÉCURITÉ QUOTIDIENNE\nChaque jour de la semaine utilise un décalage différent, rendant vos codes uniques et imprévisibles. Le jour d'encodage est automatiquement intégré au message.\n\nCODE SECRET PARTAGÉ\nAjoutez une couche de sécurité supplémentaire avec un code secret que seuls vous et votre correspondant connaissez. Sans ce code, le déchiffrement devient impossible.\n\nTABLE ALÉATOIRE\nPour une sécurité maximale, générez une table de correspondance personnalisée. Partagez le code à 6 chiffres avec vos correspondants pour des échanges ultra-sécurisés.\n\nFONCTIONNALITÉS\n• Encodage instantané de texte en chiffres\n• Décodage intelligent avec détection automatique\n• Décalage variable selon le jour de la semaine\n• Code secret optionnel pour plus de sécurité\n• Table de correspondance aléatoire personnalisable\n• Option message inversé pour plus de discrétion\n• Interface moderne et intuitive\n• Mode sombre supporté\n• Documentation intégrée\n\n PARFAIT POUR\n• Jeux de piste et chasses au trésor\n• Messages secrets entre amis\n• Activités ludiques en famille\n• Défis d'escape game\n• Communication discrète\n• Apprentissage ludique de la cryptographie\n\n NOUVEAU DANS LA VERSION 1.3 :\n• Découpe de mots par IA* - Transformez \"bonjourcommentcava\" en \"bonjour comment ça va\"\n• Correcteur orthographique intelligent avec explications*\n• Réorganisation automatique de phrases mélangées*\n\n*Nécessite une connexion internet et une clé API Gemini gratuite\nVERSION PREMIUM\nProfitez de 10 encodages/décodages gratuits par jour. Passez Premium pour un accès illimité avec un achat unique !\n\nTéléchargez CourrierCode et commencez à échanger des messages que personne d'autre ne pourra lire !",
+     "motsCles": [
+      "code",
+      "secret",
+      "message",
+      "cryptage",
+      "encodage",
+      "décodage",
+      "chiffrement",
+      "jeu",
+      "piste",
+      "escape",
+      "chasse",
+      "trésor",
+      "espion"
+     ],
+     "nouveautes": "Quoi de neuf (Version 1.4)\n\n  Gestion améliorée de la clé API\n\nVisualisez, modifiez ou supprimez votre clé API Gemini à tout moment\nNouveau bouton de paramètres accessible directement depuis l'écran Découpe\n  Aperçu sécurisé de votre clé avec option afficher/masquer  Améliorations générales\n\nInterface plus intuitive pour la configuration IA\nCorrections de bugs et optimisations",
+     "captures": {
+      "iphone": [
+       "data/apps/courriercode/fr-iphone-1.jpg?v=de7e464d",
+       "data/apps/courriercode/fr-iphone-2.jpg?v=8a6c389b",
+       "data/apps/courriercode/fr-iphone-3.jpg?v=f667c675",
+       "data/apps/courriercode/fr-iphone-4.jpg?v=f3631951",
+       "data/apps/courriercode/fr-iphone-5.jpg?v=5592feeb",
+       "data/apps/courriercode/fr-iphone-6.jpg?v=e8f2e8da"
+      ],
+      "ipad": [
+       "data/apps/courriercode/fr-ipad-1.jpg?v=defd7eee",
+       "data/apps/courriercode/fr-ipad-2.jpg?v=3dc82d10",
+       "data/apps/courriercode/fr-ipad-3.jpg?v=2e606ac9"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "foot2026",
+   "bundleId": "bob.oulhen-gmail.com.FOOT2026",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/foot2026/id6785886701",
+   "lienInternational": "https://apps.apple.com/app/id6785886701",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SPORTS",
+   "genre": {
+    "fr": "Sports",
+    "en": "Sports"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "18.0",
+   "note": null,
+   "sortie": "2026-07-06T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/FOOT2026/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/foot2026/icone.png?v=a3741465",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "FOOT2026",
+     "sousTitre": "",
+     "promo": "Ne manquez aucun match de l'été foot 2026 : calendrier des 104 rencontres, scores en direct, classements, tableau final et pronostics. Sans pub, sans compte.",
+     "description": "Vivez le football au plus près de l'action.\n\nFOOT2026 réunit tout ce qu'il faut pour suivre le plus grand tournoi de football de l'histoire — 104 matchs, 48 équipes — dans une application simple, rapide et 100 % privée.\n\n Calendrier complet\nTous les matchs avec horaires à l'heure de Paris, stades et villes hôtes.\n\n Scores & buteurs\nSaisissez les scores, prolongations, tirs au but et buteurs match après match.\n\nClassements automatiques\nLes 12 groupes calculés en temps réel : qualifiés et meilleurs troisièmes.\n\n Tableau à élimination directe\nDes 16es de finale à la finale, avec suivi par confédération.\n\n Pronostics\nFaites vos pronostics et comparez-les aux résultats réels.\n\n Joueurs & compositions\nFiches joueurs et compositions d'équipe.\n\n Respect de votre vie privée\nPas de compte, pas de publicité, pas de pistage. Toutes vos données restent sur votre appareil.\n\nApplication non officielle, sans aucun lien avec la FIFA ni les organisateurs du tournoi.",
+     "motsCles": [
+      "foot",
+      "football",
+      "soccer",
+      "scores",
+      "calendrier",
+      "pronostic",
+      "classement",
+      "buteur",
+      "match"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/foot2026/fr-iphone-1.jpg?v=95478a2f",
+       "data/apps/foot2026/fr-iphone-2.jpg?v=2dc8e8db",
+       "data/apps/foot2026/fr-iphone-3.jpg?v=69fb994f",
+       "data/apps/foot2026/fr-iphone-4.jpg?v=9c38f31c",
+       "data/apps/foot2026/fr-iphone-5.jpg?v=d62e87d6",
+       "data/apps/foot2026/fr-iphone-6.jpg?v=2505aab7"
+      ],
+      "ipad": [
+       "data/apps/foot2026/fr-ipad-1.jpg?v=d738cd37",
+       "data/apps/foot2026/fr-ipad-2.jpg?v=41361faa",
+       "data/apps/foot2026/fr-ipad-3.jpg?v=778c6788"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "groop",
+   "bundleId": "bob.oulhen-gmail.com.groop",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/multigroop/id6760623513",
+   "lienInternational": "https://apps.apple.com/app/id6760623513",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-03-20T07:00:00Z",
+   "version": "1.3.1",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/groop/promo.html",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/groop/icone.png?v=d24ec172",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "MultiGroop",
+     "sousTitre": "Commandes groupees faciles",
+     "promo": "Gérez vos achats groupés de A à Z : commandes, paiements, exports PDF et page web. Sur iPhone et iPad. 100 % privé.",
+     "description": "Groop simplifie la gestion de vos campagnes de commandes groupees. Que vous organisiez un achat groupe de coquilles Saint-Jacques, d'huitres ou de tout autre produit, cette application vous accompagne de la prise de commande jusqu'a la livraison.\n\nGESTION DES COMMANDES\n- Ajoutez vos clients et leurs commandes en quelques secondes\n- Gerez plusieurs produits (variantes) avec prix, tailles et couleurs\n- Suivez chaque commande : commandee, payee, livree\n- Filtrez et recherchez parmi vos commandes\n- Organisez vos clients par categorie (famille, voisins, collegues...)\n\nSUIVI DES PAIEMENTS\n- Enregistrez les reglements par cheque ou especes\n- Visualisez en un coup d'oeil qui a paye et combien il reste a encaisser\n- Alertes automatiques pour les impayes\n\nTABLEAU DE BORD\n- Vue d'ensemble avec quantites totales, montants et participants\n- Detail par variante de produit\n- Indicateurs de livraison et d'encaissement\n\nEXPORTS PDF PROFESSIONNELS\n- Recapitulatif complet de la campagne\n- Bon de commande fournisseur (3 formats)\n- Fiche de distribution avec cases a cocher\n\nPAGE WEB DE COMMANDE\n- Generez un lien web unique pour votre campagne\n- Vos clients commandent depuis leur navigateur\n- La commande vous arrive par SMS, aucun serveur necessaire\n\nMESSAGES GROUPES\n- Envoyez des SMS a tous vos clients ou a une selection\n- Generez automatiquement un message d'invitation\n- Notifiez l'arrivee de la commande\n\nSAUVEGARDE ET RESTAURATION\n- Sauvegardez vos campagnes au format JSON\n- Restaurez ou transferez une campagne entre appareils\n- Importez une liste de clients depuis un fichier\n\n100 % PRIVE\nToutes vos donnees restent sur votre appareil. Aucune donnee n'est envoyee sur internet. Aucun compte requis.",
+     "motsCles": [
+      "commandes",
+      "groupees",
+      "achat",
+      "groupe",
+      "groop",
+      "produits divers",
+      "paiement",
+      "suivi",
+      "PDF",
+      "gestion"
+     ],
+     "nouveautes": "version 1.3.1\n\nLivraison partielle \n  Ajout de l'affichage des tailles à côté des variantes pour se repérer facilement\n\nTableau de bord \n  Suppression de l'onglet \"clients à livrer\" (doublon avec la page commandes)\n\nTableau de bord \n  Les variantes en haut affichent uniquement le nom en bleu foncé, sans le prix\n\nTableau de bord \n  Le bouton \"Relancer\" des impayés envoie maintenant le SMS à tous les clients de la liste (message groupé)\n\nTableau de bord \n La liste des impayés ne montre que les clients totalement livrés et pas entièrement réglés\nPage Commande (Plus) \n Le bouton \"Générer un message d'arrivée\" est maintenant en vert foncé pour être plus visible\n\nPage client \n Ajout du bouton \"Annuler les règlements\" (comme pour la livraison)\n\nPages client \n Alertes de confirmation ajoutées pour 'annulation de livraison et l'annulation des règlements\n\nPage Paiements \n La section \"Livrés, non réglés\" affiche les colonnes Livré / Réglé par client, en rouge si plus livré que payé, en orange sinon.\n\n Page réglages\n  Ajout d’une section sauvegarde totale (sur l’application) restauration facile par dates.\n\n  Ajout de l’IA pour intégration  de fichiers PDF. Intégration de campagnes avec l’appareil photo ou dans bibliothèque.\n\nCorrection des quelques bugs mineurs. Amélioration de l’intégration de commande PDF par IA.",
+     "captures": {
+      "iphone": [
+       "data/apps/groop/fr-iphone-1.jpg?v=4834f31f",
+       "data/apps/groop/fr-iphone-2.jpg?v=04eb3b7c",
+       "data/apps/groop/fr-iphone-3.jpg?v=f97b3538",
+       "data/apps/groop/fr-iphone-4.jpg?v=d29a1e8d",
+       "data/apps/groop/fr-iphone-5.jpg?v=cf6609f5",
+       "data/apps/groop/fr-iphone-6.jpg?v=67be2bfe"
+      ],
+      "ipad": [
+       "data/apps/groop/fr-ipad-1.jpg?v=2bb76f62",
+       "data/apps/groop/fr-ipad-2.jpg?v=d0e4257f",
+       "data/apps/groop/fr-ipad-3.jpg?v=f4605bda"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "mamaison",
+   "bundleId": "com.oulhen.MaMaison",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/cmamaison/id6796610063",
+   "lienInternational": "https://apps.apple.com/app/id6796610063",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-08-05T07:00:00Z",
+   "version": "1.3",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/ma-maison-app/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/mamaison/icone.png?v=ce126f9d",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "C'MaMaison",
+     "sousTitre": "",
+     "promo": "Suivez vos travaux pièce par pièce : tâches, artisans, paiements, achats et locations de matériel. Toutes vos données restent sur votre iPhone.",
+     "description": "Ma Maison est le carnet de bord de vos travaux : rénovation, construction ou aménagement, suivez tout au même endroit, pièce par pièce.\n\nSUIVI PIÈCE PAR PIÈCE\nOrganisez votre chantier pièce par pièce (cuisine, salle de bain, salon…) et suivez l'avancement de chaque tâche en un coup d'œil.\n\nTÂCHES\nCréez vos tâches, assignez-les à un artisan, fixez une échéance et une priorité, et suivez leur statut : à faire, en cours, terminé.\n\nCARNET DE PRESTATAIRES\nGardez sous la main les coordonnées de vos artisans et entreprises (plombier, électricien, maçon…) : téléphone, e-mail, adresse. Appelez, envoyez un SMS ou ouvrez le plan en un tap.\n\nFINANCES\nSuivez vos paiements (prévus, payés, en retard) et vos achats ou locations de matériel. Prenez en photo vos factures directement dans l'app.\n\nTABLEAU DE BORD\nVisualisez d'un coup d'œil votre budget consommé, l'avancement global du chantier et la répartition des dépenses par prestataire.\n\nJOURNAL DE CHANTIER\nConsignez les événements marquants — livraisons, visites, imprévus — avec photos et date, pour garder une trace de tout ce qui s'est passé.\n\nEXPORT PDF\nGénérez en un tap un rapport de chantier complet (budget, tâches par pièce, prestataires, paiements, achats) à partager avec vos proches ou vos artisans.\n\nCONFIDENTIALITÉ TOTALE\nAucune donnée collectée, aucun compte à créer, aucun serveur. Toutes vos informations restent stockées uniquement sur votre appareil.\n\nQue vous rénoviez un appartement, construisiez une maison ou gériez un simple chantier ponctuel, Ma Maison vous aide à garder le contrôle du début à la fin.",
+     "motsCles": [
+      "chantier",
+      "travaux",
+      "renovation",
+      "batiment",
+      "artisan",
+      "devis",
+      "facture",
+      "budget",
+      "maison",
+      "bricolage",
+      "suivi",
+      "taches"
+     ],
+     "nouveautes": "nouvelle section « 1.3\n\nVos tâches se rangent maintenant dans l'ordre que vous voulez, et portent un numéro.\n\nCLASSEMENT DES TÂCHES\n• Dans une pièce comme dans l'onglet Tâches, choisissez le classement : ordre automatique (échéance, priorité) ou ordre manuel numéroté 1, 2, 3…\n• « Réorganiser » ouvre la liste en glisser-déposer : rangez les tâches dans l'ordre où vous comptez les faire.\n• Le numéro suit la liste affichée : dans la cuisine, la première tâche porte le n° 1, et la salle de bain garde sa propre numérotation.\n• Réorganiser les tâches d'une pièce ne dérange pas l'ordre des autres pièces.\n• Le rapport PDF reprend le classement manuel, numéros compris.\n\nComme toujours, tout reste sur votre appareil : aucun compte, aucun serveur.",
+     "captures": {
+      "iphone": [
+       "data/apps/mamaison/fr-iphone-1.jpg?v=713d1367",
+       "data/apps/mamaison/fr-iphone-2.jpg?v=9bd2ff9a",
+       "data/apps/mamaison/fr-iphone-3.jpg?v=9e478708",
+       "data/apps/mamaison/fr-iphone-4.jpg?v=14a5c38b",
+       "data/apps/mamaison/fr-iphone-5.jpg?v=6364e6f2",
+       "data/apps/mamaison/fr-iphone-6.jpg?v=bc87960f"
+      ],
+      "ipad": [
+       "data/apps/mamaison/fr-ipad-1.jpg?v=09b3e9a9",
+       "data/apps/mamaison/fr-ipad-2.jpg?v=6ae8f3dc",
+       "data/apps/mamaison/fr-ipad-3.jpg?v=0c450706"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "materiel",
+   "bundleId": "bob.oulhen-gmail.com.Materiel",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000",
+   "lienInternational": "https://apps.apple.com/app/id6757075000",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": {
+    "moyenne": 5,
+    "avis": 3
+   },
+   "sortie": "2026-01-12T08:00:00Z",
+   "version": "2.2",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/Pret-Materiel/presentation.html",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/materiel/icone.png?v=be36aac3",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Prêt Matériel",
+     "sousTitre": "Prêts, emprunts et locations",
+     "promo": "Gérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !",
+     "description": "Gérez facilement vos prêts, emprunts et locations de matériel avec cette application complète et intuitive !\n\nGESTION DU MATÉRIEL\n• Créez un inventaire complet de vos équipements\n• Ajoutez des photos pour identifier rapidement chaque objet\n• Classez par catégories et lieux de stockage\n• Suivez la valeur de votre matériel\n\nGESTION DES PERSONNES\n• Importez directement depuis vos contacts\n• Gardez un historique des prêts par personne\n• Envoyez des rappels par email en un clic\n• Détectez et fusionnez les doublons automatiquement\n\nPRÊTS\n• Créez des prêts en quelques secondes\n• Définissez les dates de début et de fin\n• Recevez des alertes pour les retards\n• Prenez des photos de l'état du matériel\n\nEMPRUNTS\n• Suivez ce que les autres vous prêtent\n• Ne perdez plus jamais la trace d'un objet emprunté\n• Rappels automatiques pour les retours\n\nLOCATIONS (Premium)\n• Gérez les locations payantes de votre matériel\n• Définissez les tarifs (jour/semaine/mois/forfait)\n• Suivez les paiements et les cautions\n• Sous-location possible\n\nCOFFRE-FORT (Premium)\n• Stockez vos documents importants en toute sécurité\n• Protection par mot de passe ou Face ID\n\nSTATISTIQUES\n• Visualisez vos prêts et emprunts actifs\n• Historique complet de toutes les transactions\n\nMULTILINGUE\nDisponible en français, anglais, allemand, espagnol, italien, portugais et néerlandais.\n\nTéléchargez Matériel maintenant et ne perdez plus jamais la trace de vos objets !",
+     "motsCles": [
+      "prêt",
+      "emprunt",
+      "matériel",
+      "inventaire",
+      "location",
+      "gestion",
+      "équipement",
+      "suivi",
+      "rappel",
+      "organisation"
+     ],
+     "nouveautes": "Nouveautés de la version 2.2\n\nRappels SMS automatiques : Envoyez un SMS de rappel pré-rempli à l'emprunteur directement depuis la fiche du prêt\nNotifications intelligentes : Recevez une alerte avant l'échéance, le jour J et en cas de retard pour vos prêts et emprunts\nBadges de retard : Les onglets Prêts et Emprunts affichent un badge rouge avec le nombre de retards en cours\nParamètres personnalisables : Choisissez le délai de rappel (1, 2, 3 ou 7 jours avant), activez/désactivez les alertes par catégorie\nMessages localisés : Les SMS de rappel sont rédigés dans la langue de l'application (7 langues supportées)",
+     "captures": {
+      "iphone": [
+       "data/apps/materiel/fr-iphone-1.jpg?v=cd4bb77f",
+       "data/apps/materiel/fr-iphone-2.jpg?v=6b64d53c",
+       "data/apps/materiel/fr-iphone-3.jpg?v=aaae8150",
+       "data/apps/materiel/fr-iphone-4.jpg?v=2d9b4a04",
+       "data/apps/materiel/fr-iphone-5.jpg?v=7a9c3c43",
+       "data/apps/materiel/fr-iphone-6.jpg?v=ebee73cd"
+      ],
+      "ipad": [
+       "data/apps/materiel/fr-ipad-1.jpg?v=a17403d4",
+       "data/apps/materiel/fr-ipad-2.jpg?v=d32bdbc4",
+       "data/apps/materiel/fr-ipad-3.jpg?v=f15c9047"
+      ]
+     }
+    },
+    "en": {
+     "nom": "Prêt Matériel",
+     "sousTitre": "Prêts, emprunts et locations",
+     "promo": "",
+     "description": "Gérez facilement vos prêts, emprunts et locations de matériel avec cette application complète et intuitive !\n\nGESTION DU MATÉRIEL\n• Créez un inventaire complet de vos équipements\n• Ajoutez des photos pour identifier rapidement chaque objet\n• Classez par catégories et lieux de stockage\n• Suivez la valeur de votre matériel\n\nGESTION DES PERSONNES\n• Importez directement depuis vos contacts\n• Gardez un historique des prêts par personne\n• Envoyez des rappels par email en un clic\n• Détectez et fusionnez les doublons automatiquement\n\nPRÊTS\n• Créez des prêts en quelques secondes\n• Définissez les dates de début et de fin\n• Recevez des alertes pour les retards\n• Prenez des photos de l'état du matériel\n\nEMPRUNTS\n• Suivez ce que les autres vous prêtent\n• Ne perdez plus jamais la trace d'un objet emprunté\n• Rappels automatiques pour les retours\n\nLOCATIONS (Premium)\n• Gérez les locations payantes de votre matériel\n• Définissez les tarifs (jour/semaine/mois/forfait)\n• Suivez les paiements et les cautions\n• Sous-location possible\n\nCOFFRE-FORT (Premium)\n• Stockez vos documents importants en toute sécurité\n• Protection par mot de passe ou Face ID\n\nSTATISTIQUES\n• Visualisez vos prêts et emprunts actifs\n• Historique complet de toutes les transactions\n\nMULTILINGUE\nDisponible en français, anglais, allemand, espagnol, italien, portugais et néerlandais.\n\nTéléchargez Matériel maintenant et ne perdez plus jamais la trace de vos objets !",
+     "motsCles": [
+      "prêt",
+      "emprunt",
+      "matériel",
+      "inventaire",
+      "location",
+      "gestion",
+      "équipement",
+      "suivi",
+      "rappel",
+      "organisation"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [],
+      "ipad": []
+     }
+    }
+   }
+  },
+  {
+   "slug": "monpetitreseau",
+   "bundleId": "bob.oulhen-gmail.com.MonPetitReseau",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/monpetitreseau/id6764667201",
+   "lienInternational": "https://apps.apple.com/app/id6764667201",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SOCIAL_NETWORKING",
+   "genre": {
+    "fr": "Réseaux sociaux",
+    "en": "Social Networking"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "26.1",
+   "note": null,
+   "sortie": "2026-04-30T07:00:00Z",
+   "version": "1.1",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/MonPetitReseau/promo.html",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/monpetitreseau/icone.png?v=aa0fcfba",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "MonPetitReseau",
+     "sousTitre": "",
+     "promo": "Le réseau privé de votre famille. Invitations intelligentes, photos de portrait, permissions affinées. Sans compte, sans serveur, sans pistage.",
+     "description": "MonPetitRéseau, c'est le petit réseau privé de votre famille.\n\nUn annuaire, un mur pour discuter, des photos, un calendrier d'événements et des\nlistes de tâches partagées — tout ce qu'il faut pour rester proche de vos\nproches, en restant complètement privé.\n\nPAS DE COMPTE, PAS DE SERVEUR, PAS DE PISTAGE\n• Aucun compte à créer.\n• Aucun mot de passe à retenir.\n• Aucune donnée envoyée à un serveur tiers.\n• Aucune publicité, aucun abonnement.\n\nUN LIEN MAGIQUE POUR PARTAGER\n• Vous créez votre famille en quelques secondes.\n• Vous générez un lien et l'envoyez par SMS ou iMessage à vos proches.\n• Ils l'ouvrent et rejoignent instantanément votre réseau.\n\nCINQ ESPACES POUR VOTRE FAMILLE\n• Annuaire : tous les membres, leurs anniversaires, leurs liens familiaux.\n• Mur : une timeline commune où chacun peut écrire.\n• Photos : galerie partagée des souvenirs.\n• Événements : déjeuners, vacances, anniversaires automatiques.\n• Tâches : courses et démarches à se partager.\n\nVIE PRIVÉE PAR CONCEPTION\n• Vos données vivent sur votre iPhone.\n• La synchronisation entre les iPhones de la famille passe par votre propre iCloud.\n• Le créateur du groupe maîtrise qui peut gérer la liste des membres.\n• Pas d'analyse, pas de tracker, pas de télémétrie.\n\nPOUR QUI ?\nPour toutes les familles qui veulent rester en contact sans passer par les\nréseaux sociaux publics, sans laisser de traces ailleurs que sur leurs propres\nappareils. Parfait pour les grands-parents, les parents éloignés, les fratries.\n\nFait avec amour en France.",
+     "motsCles": [
+      "famille",
+      "réseau",
+      "privé",
+      "annuaire",
+      "partage",
+      "iCloud",
+      "proches",
+      "sans compte",
+      "messagerie",
+      "événement"
+     ],
+     "nouveautes": "• Invitations intelligentes : quand vous ouvrez un lien de famille, l'app reconnaît automatiquement qui vous êtes — plus besoin de vous identifier manuellement.\n• Photos de portrait : ajoutez une photo à chaque membre de l'annuaire.\n• Permissions affinées : le créateur du groupe peut désigner des éditeurs de confiance ; les autres membres peuvent toujours publier sur le mur, ajouter des photos, des événements et des tâches.\n• Récupération admin : si vous changez d'iPhone, retrouvez vos droits d'administration depuis les Réglages.\n• Plusieurs groupes indépendants sur le même iPhone.\n• Page À propos dans l'app.\n• Corrections et améliorations diverses.",
+     "captures": {
+      "iphone": [
+       "data/apps/monpetitreseau/fr-iphone-1.jpg?v=f5b74aa5",
+       "data/apps/monpetitreseau/fr-iphone-2.jpg?v=4a8ee462",
+       "data/apps/monpetitreseau/fr-iphone-3.jpg?v=92bfff40",
+       "data/apps/monpetitreseau/fr-iphone-4.jpg?v=718f4d15",
+       "data/apps/monpetitreseau/fr-iphone-5.jpg?v=d39e1ecd",
+       "data/apps/monpetitreseau/fr-iphone-6.jpg?v=9f6700af"
+      ],
+      "ipad": [
+       "data/apps/monpetitreseau/fr-ipad-1.jpg?v=0d0507c2",
+       "data/apps/monpetitreseau/fr-ipad-2.jpg?v=2b4f96c4",
+       "data/apps/monpetitreseau/fr-ipad-3.jpg?v=c06b3bb2"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "operations",
+   "bundleId": "bob.oulhen-gmail.com.ope-rations",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/operations-plus/id6770241928",
+   "lienInternational": "https://apps.apple.com/app/id6770241928",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "26.1",
+   "note": null,
+   "sortie": "2026-05-19T07:00:00Z",
+   "version": "1.4",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/operations-app/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/operations/icone.png?v=199ef8f9",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "operations plus",
+     "sousTitre": "",
+     "promo": "Maths, méthodes historiques & jeux éducatifs",
+     "description": "Opérations est l'app de maths pour l'école primaire qui va bien au-delà des opérations classiques.\n\nPosez vos calculs comme à l'école\nAddition, soustraction, multiplication, division — affichées en colonnes avec les retenues, mode pas à pas colonne par colonne, exercices à trous et export PDF pour imprimer.\n\nVoyagez dans l'histoire des maths\nBoulier chinois (guidé ou libre), bâtonnets de Napier (1617), multiplication par lignes, jalousie médiévale arabe, multiplication russe par doublage — chaque méthode animée et expliquée.\n\nJouez pour apprendre\nTables de multiplication en quiz chronométré, nuages en chute libre ou ballons à éclater. Quiz de géographie (drapeaux, capitales, départements) et de littérature (œuvres et auteurs classiques). Énigmes et puzzles logiques.\n\n100 % privé, 100 % hors ligne\nAucune donnée collectée. Aucune connexion requise. Tout tourne sur l'appareil.",
+     "motsCles": [
+      "maths",
+      "calcul",
+      "tables",
+      "multiplication",
+      "boulier",
+      "napier",
+      "jalousie",
+      "quiz",
+      "géographie",
+      "capitales",
+      "énigmes"
+     ],
+     "nouveautes": "Nouveautés de la version 1.4\n\nAjout d’un lien vers un site de math et d’énigmes. (Et plein d’autres choses!)\n\n\nNouveautés de la version 1.3\n\nQuiz Capitales & Pays — Testez vos connaissances géographiques dans le mode Jeux : trouvez la capitale d'un pays ou le pays correspondant à une capitale.\n\nQuiz Œuvres & Auteurs — Associez les grandes œuvres littéraires à leurs auteurs (et inversement) dans un nouveau défi culturel.\n\nCorrection mode sombre — Les écrans Pourcentages et aide s'affichent désormais correctement en mode sombre : plus de texte clair sur fond clair.\n\nSaisie de réponse interactive Dans chaque énigme (classique, junior et variante personnalisée), un champ de saisie violet permet de tenter une réponse avant de voir la solution. Réponse juste : \"Bien joué !\" et révélation automatique. Réponse fausse : animation de shake et \"Essaie encore !\" avec remise à zéro après 1,5 s.\n\nÉnigmes personnalisées Crée tes propres énigmes avec un emoji, une question et une réponse. Accessible depuis l'onglet Énigmes, rubrique \"Mes énigmes perso\". Modification et suppression possibles depuis la liste ou la vue détail.\n\nFiche PDF — Un de chaque type Nouvelle option dans le générateur de fiches : \"Un de chaque type\" génère automatiquement une fiche complète avec les 12 types de problèmes juniors, un de chaque.",
+     "captures": {
+      "iphone": [
+       "data/apps/operations/fr-iphone-1.jpg?v=4a632bc5",
+       "data/apps/operations/fr-iphone-2.jpg?v=6d736fc4",
+       "data/apps/operations/fr-iphone-3.jpg?v=e5a57945",
+       "data/apps/operations/fr-iphone-4.jpg?v=efb00e3c",
+       "data/apps/operations/fr-iphone-5.jpg?v=3f7c8809",
+       "data/apps/operations/fr-iphone-6.jpg?v=201844a5"
+      ],
+      "ipad": [
+       "data/apps/operations/fr-ipad-1.jpg?v=92e769c8",
+       "data/apps/operations/fr-ipad-2.jpg?v=77c4d91b",
+       "data/apps/operations/fr-ipad-3.jpg?v=54c6e6f0"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "orthoprof",
+   "bundleId": "fr.orthoprof.app",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/pleins-et-d%C3%A9li%C3%A9s/id6809700017",
+   "lienInternational": "https://apps.apple.com/app/id6809700017",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-09-28T19:20:44Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/orthoproff-site/",
+   "assistance": "https://boboul-cloud.github.io/orthoproff-site/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/orthoproff-site/confidentialite.html",
+   "icone": "data/apps/orthoprof/icone.png?v=e4277d08",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Pleins et déliés",
+     "sousTitre": "Dictée aménagée et orthophonie",
+     "promo": "Le maître attend que la main s'arrête avant de poursuivre. Tiers-temps, dictée raccourcie, sans note, lecture facilitée — et rien qui sorte de votre appareil.",
+     "description": "Une dictée qui attend l'élève au lieu de le presser.\n\nLe maître dicte à voix haute et il écoute la plume : tant que la main travaille, il se tait ; dès qu'elle s'arrête, il répète de lui-même. Il ne reprend jamais la parole au milieu d'un mot. Aucune dictée enregistrée ne sait faire cela — un fichier audio n'attend personne.\n\nLES AMÉNAGEMENTS\n• Tiers-temps : il attend une fois et demie plus longtemps, relit une fois de plus, et accepte deux répétitions de plus.\n• La dictée raccourcie : les deux, trois ou cinq premières phrases.\n• Sans note : il reste la copie corrigée, les explications et le relevé — un chiffre n'apprend rien à qui le redoute.\n• Ce qu'on ne compte pas : les accents, les majuscules, la ponctuation. Ces fautes restent soulignées et expliquées ; elles ne retirent plus de points.\n\nLA LECTURE FACILITÉE\nUne ronde anglaise est une belle écriture et une mauvaise lecture. D'un réglage, toutes les plumes de l'application cèdent la place à un caractère sans empattement, plus grand, aux lettres détachées et aux lignes aérées.\n\nON ÉCRIT SUR DU PAPIER\nUne vraie feuille, un vrai stylo, l'écran posé de côté. La dictée finie, on photographie la feuille : elle est déchiffrée sur l'appareil, sans correction automatique — un lecteur qui « arrange » les mots effacerait en silence les fautes de l'élève, et il n'y aurait plus rien à observer. On relit toujours cette lecture avant la correction.\n\nLA FAUTE EST NOMMÉE, PAS SEULEMENT COMPTÉE\nAccord, participe, homophone, terminaison, élision, trait d'union : chaque écart est diagnostiqué et rattaché à sa leçon. Le carnet ne retient pas des notes, il retient des règles — ce qui revient, ce qui est acquis — et se tient séparément pour chaque élève.\n\nLE RELEVÉ SUR PAPIER\nLe carnet s'imprime : une page A4 avec la période couverte, les conditions d'écriture, les fautes rangées leçon par leçon — ce qui revient, ce qui est acquis — et le détail des dictées écrites. De quoi ranger dans un dossier.\n\nPOUR QUI\nLes familles, les enseignants et les orthophonistes qui font écrire. Chaque élève a son carnet ; les copies s'impriment et s'exportent en PDF. L'application ne pose aucun diagnostic et ne remplace aucun professionnel : elle fait écrire, elle relève, elle range.\n\nRIEN NE SORT DE VOTRE APPAREIL\nAucun compte, aucun serveur, aucune publicité, aucune mesure d'audience. L'application ne se connecte à rien. Les copies d'un enfant et la trace de ses difficultés restent chez vous — c'est le minimum quand on écrit sur une peine d'apprentissage.\n\nET AUSSI\nVingt-cinq textes originaux formant le journal d'un instituteur de village, de la rentrée d'octobre au certificat de juin ; la préparation de la veille ; et la copie d'un camarade à corriger soi-même, crayon rouge en main.",
+     "motsCles": [
+      "dys",
+      "dyslexie",
+      "dysorthographie",
+      "orthophonie",
+      "aménagement",
+      "tiers-temps",
+      "dictée",
+      "adapté",
+      "plume",
+      "feuille"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/orthoprof/fr-iphone-1.jpg?v=acd0aefe",
+       "data/apps/orthoprof/fr-iphone-2.jpg?v=95d8239b",
+       "data/apps/orthoprof/fr-iphone-3.jpg?v=e1720a73",
+       "data/apps/orthoprof/fr-iphone-4.jpg?v=eb5e4b59",
+       "data/apps/orthoprof/fr-iphone-5.jpg?v=689febb5",
+       "data/apps/orthoprof/fr-iphone-6.jpg?v=e4cba871"
+      ],
+      "ipad": [
+       "data/apps/orthoprof/fr-ipad-1.jpg?v=fb1b4a87",
+       "data/apps/orthoprof/fr-ipad-2.jpg?v=d43ae9ca",
+       "data/apps/orthoprof/fr-ipad-3.jpg?v=46f95150"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "pngtojpg",
+   "bundleId": "bob.oulhen-gmail.com.pngtojpg",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/pngtojpg/id6758070086",
+   "lienInternational": "https://apps.apple.com/app/id6758070086",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "26.1",
+   "note": null,
+   "sortie": "2026-01-21T08:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/pngtojpg/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/pngtojpg/icone.png?v=1fca0aad",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "pngtojpg",
+     "sousTitre": "",
+     "promo": "Nouveau ! Convertissez vos PNG en JPG en quelques secondes. 20 conversions gratuites pour commencer. Interface moderne et intuitive.",
+     "description": "Convertissez vos images PNG en JPG en quelques secondes avec PNG to JPG, l'application de conversion d'images la plus simple et la plus rapide !\n\n◆ CONVERSION FACILE\nSélectionnez vos images PNG depuis votre pellicule et convertissez-les instantanément en JPG ou PNG 24 bits. Parfait pour réduire la taille de vos fichiers ou supprimer la transparence.\n\n◆ QUALITÉ AJUSTABLE\nContrôlez précisément le niveau de compression de vos images JPG, de 10% à 100%. Trouvez l'équilibre parfait entre qualité et taille de fichier.\n\n◆ REDIMENSIONNEMENT INTELLIGENT\nRedimensionnez vos images avec des tailles prédéfinies optimisées pour l'App Store, ou entrez vos propres dimensions. L'option \"Conserver les proportions\" évite toute déformation.\n\n◆ TRAITEMENT PAR LOT\nGagnez du temps en convertissant jusqu'à 50 images simultanément. Idéal pour les photographes et créateurs de contenu.\n\n◆ MULTIPLE DESTINATIONS\nSauvegardez vos images converties directement dans votre pellicule Photos ou choisissez un dossier dans l'app Fichiers.\n\n◆ DESIGN MODERNE\nInterface élégante avec thème sombre, animations fluides et navigation intuitive. Une expérience utilisateur agréable à chaque utilisation.\n\n◆ RESPECT DE LA VIE PRIVÉE\nToutes les conversions sont effectuées localement sur votre appareil. Aucune image n'est envoyée sur un serveur. Aucune donnée personnelle collectée.\n\n◆ VERSION GRATUITE\nProfitez de 20 conversions gratuites pour tester toutes les fonctionnalités de l'application.\n\n◆ PREMIUM (achat unique)\nDébloquez les conversions illimitées avec un seul achat. Pas d'abonnement, pas de frais cachés. Un achat, c'est pour la vie !\n\nTéléchargez PNG to JPG maintenant et simplifiez la conversion de vos images !",
+     "motsCles": [
+      "png",
+      "jpg",
+      "jpeg",
+      "convertir",
+      "image",
+      "photo",
+      "compression",
+      "redimensionner",
+      "convertisseur",
+      "qualité"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/pngtojpg/fr-iphone-1.jpg?v=7421ce88",
+       "data/apps/pngtojpg/fr-iphone-2.jpg?v=9b0f8010",
+       "data/apps/pngtojpg/fr-iphone-3.jpg?v=b8756065",
+       "data/apps/pngtojpg/fr-iphone-4.jpg?v=64ebf036",
+       "data/apps/pngtojpg/fr-iphone-5.jpg?v=a4ab0213",
+       "data/apps/pngtojpg/fr-iphone-6.jpg?v=8605e0a1"
+      ],
+      "ipad": [
+       "data/apps/pngtojpg/fr-ipad-1.jpg?v=00ee2b38",
+       "data/apps/pngtojpg/fr-ipad-2.jpg?v=161af426",
+       "data/apps/pngtojpg/fr-ipad-3.jpg?v=02385b25"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "pretmat",
+   "bundleId": "bob.oulhen-gmail.com.Pre-tMat",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/read-my-book/id6758413324",
+   "lienInternational": "https://apps.apple.com/app/id6758413324",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "15.0",
+   "note": null,
+   "sortie": "2026-02-03T08:00:00Z",
+   "version": "1.1.1",
+   "developpeur": "Robert Oulhen",
+   "site": "https://github.com/boboul-cloud/read-my-book",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/pretmat/icone.png?v=88eba2f7",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Read my Book",
+     "sousTitre": "Gérez vos livres et vos prêts",
+     "promo": "Gérez votre bibliothèque, suivez vos prêts et ne perdez plus jamais un livre. Essayez Read My Book gratuitement !",
+     "description": "Read My Book - Votre bibliothèque personnelle dans votre poche\n\nVous prêtez des livres et oubliez à qui ? Vous empruntez et ne savez plus où vous les avez rangés ? Read My Book est LA solution pour gérer votre bibliothèque et ne plus jamais perdre trace de vos livres !\n\n\nCATALOGUEZ VOTRE BIBLIOTHÈQUE\n\n\nAjoutez vos livres avec titre, auteur, résumé, ISBN\nPhotographiez les couvertures pour un catalogue visuel\nClassez par catégories : Roman, SF, Fantasy, Manga, BD, Cuisine, Voyage... Suivez l'état de chaque livre : Neuf, Très bon, Bon, Acceptable\n Organisez par emplacement : salon, bureau, chambre...\n\n\nSUIVEZ VOS PRÊTS & EMPRUNTS\n\n\n Enregistrez à qui vous avez prêté chaque livre\n Gardez trace des livres que vous avez empruntés\n Définissez des dates de retour prévisionnelles\n Consultez l'historique complet des transactions\n Recevez un récapitulatif visuel clair\n\n\n RECONNAISSANCE INTELLIGENTE\n\n\n Scannez une couverture de livre\n L'IA identifie automatiquement le titre et l'auteur\n Gagnez du temps lors de l'ajout de vos livres\n Fonctionnalité optionnelle (nécessite une clé API gratuite)\n\n\nEXPORTEZ & PARTAGEZ\n\n\n Générez un PDF de votre bibliothèque avec couvertures\n Exportez vos données en JSON pour sauvegarde\n Importez facilement vos données sur un nouvel appareil\n\n\n RESPECT DE VOTRE VIE PRIVÉE\n\n\n Toutes vos données restent sur votre appareil\n Aucun compte à créer\n Aucune collecte de données personnelles\n Application 100% offline (sauf reconnaissance IA optionnelle)\n\n\n\nIdéal pour :\n Les grands lecteurs\n Les familles qui partagent des livres\n Les clubs de lecture\n Tous ceux qui prêtent leurs livres\n\nTéléchargez Read My Book et reprenez le contrôle de votre bibliothèque !",
+     "motsCles": [
+      "bibliothèque",
+      "livres",
+      "prêt",
+      "emprunt",
+      "lecture",
+      "collection",
+      "catalogue",
+      "gestion",
+      "livre",
+      "roman"
+     ],
+     "nouveautes": "Merci à celles et ceux qui ont signalé ce problème : cette mise à jour le corrige.\n\nENREGISTREMENT DES GRANDES BIBLIOTHÈQUES\nAu-delà de deux cents livres environ, les nouvelles fiches pouvaient rester affichées à l'écran sans être réellement enregistrées, puis disparaître au redémarrage de l'application. C'est corrigé. Vos fiches s'enregistrent de nouveau de façon fiable, quelle que soit la taille de votre bibliothèque.\n\nOPTIMISATION AUTOMATIQUE DES COUVERTURES\nLes couvertures sont désormais optimisées au moment de l'enregistrement : votre bibliothèque occupe jusqu'à 25 fois moins d'espace sur votre appareil, sans perte visible de qualité.\n\nSi vous avez déjà constitué une grande bibliothèque, l'optimisation se fait automatiquement au premier lancement de cette version. Vos livres, vos couvertures, vos contacts, vos prêts et votre historique sont conservés à l'identique : seul le poids des images change.\n\nÉGALEMENT DANS CETTE VERSION\n• L'application vous prévient désormais si un enregistrement échoue, au lieu de le faire silencieusement.\n• Une fiche ajoutée juste avant de quitter l'application n'est plus perdue.\n• Navigation plus fluide dans les bibliothèques de plusieurs centaines de livres.",
+     "captures": {
+      "iphone": [
+       "data/apps/pretmat/fr-iphone-1.jpg?v=aebfdb04",
+       "data/apps/pretmat/fr-iphone-2.jpg?v=8ae2e106",
+       "data/apps/pretmat/fr-iphone-3.jpg?v=ba7969d8",
+       "data/apps/pretmat/fr-iphone-4.jpg?v=3de0efa9",
+       "data/apps/pretmat/fr-iphone-5.jpg?v=fe42d259",
+       "data/apps/pretmat/fr-iphone-6.jpg?v=c461ea61"
+      ],
+      "ipad": [
+       "data/apps/pretmat/fr-ipad-1.jpg?v=ce6c0bfb",
+       "data/apps/pretmat/fr-ipad-2.jpg?v=e5fdb2a3",
+       "data/apps/pretmat/fr-ipad-3.jpg?v=a67e3d58"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "prompteur",
+   "bundleId": "com.bobprompt.app",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bobprompt/id6758165213",
+   "lienInternational": "https://apps.apple.com/app/id6758165213",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "15.0",
+   "note": null,
+   "sortie": "2026-01-24T08:00:00Z",
+   "version": "1.3",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bobprompt/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/prompteur/icone.png?v=c13cf12b",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "bobprompt",
+     "sousTitre": "Téléprompteur simple et fun",
+     "promo": "Nouveau ! Surlignage de la ligne lue, voix synchronisée au défilement et mode un mot par ligne. bobprompt n'a jamais été aussi fluide et précis.",
+     "description": "bobprompt transforme votre iPhone ou iPad en un téléprompteur professionnel, simple et intuitif.\n\nQue vous soyez créateur de contenu, enseignant, conférencier ou parent souhaitant aider votre enfant à lire, bobprompt est l'outil parfait pour vous accompagner.\n\n FONCTIONNALITÉS PRINCIPALES\n\n Défilement automatique\nRéglez la vitesse de défilement selon votre rythme de lecture. Pause et reprise en un tap.\n\n Syllabes colorées\nUne fonctionnalité unique qui alterne les couleurs des syllabes pour faciliter la lecture — particulièrement efficace pour les enfants et les personnes ayant des difficultés de lecture.\n\n Mode miroir\nInversez le texte horizontalement pour une utilisation avec un vrai téléprompteur ou un miroir.\n\n Synthèse vocale\nÉcoutez votre texte lu à haute voix pour vous entraîner ou vérifier la prononciation.\n\n Bibliothèque de textes\nSauvegardez et organisez tous vos scripts, discours et présentations.\n\n Génération IA (Premium)\nCréez du contenu original grâce à l'intelligence artificielle. Idéal pour les scripts, histoires et textes éducatifs.\n\n Thèmes personnalisables\nChoisissez parmi plusieurs thèmes (clair, sombre, coloré) et personnalisez les couleurs du texte.\n\n Compte à rebours 3-2-1\nPréparez-vous avant que le défilement ne commence.\n\n PARFAIT POUR LES ENFANTS\n\nbobprompt a été conçu avec une attention particulière pour l'apprentissage de la lecture :\n• Syllabes colorées pour faciliter le décodage\n• Interface simple et ludique\n• Textes exemples adaptés\n• Vitesse ajustable pour tous les niveaux\n\n IDÉAL POUR LES CRÉATEURS\n\n• Vidéos YouTube et TikTok\n• Podcasts et voix off\n• Présentations professionnelles\n• Discours et conférences\n\n VERSION PREMIUM\n\nDébloquez tout le potentiel de bobprompt avec un achat unique :\n• Sauvegarde illimitée de textes\n• Génération IA illimitée\n• Toutes les futures fonctionnalités incluses\n\n RESPECT DE VOTRE VIE PRIVÉE\n\n• Aucun compte requis\n• Données stockées localement sur votre appareil\n• Aucune collecte de données personnelles\n\nTéléchargez bobprompt maintenant et transformez votre façon de lire et présenter !",
+     "motsCles": [
+      "téléprompteur",
+      "prompteur",
+      "lecture",
+      "enfant",
+      "syllabes",
+      "discours",
+      "présentation",
+      "vidéo",
+      "script",
+      "karaoké"
+     ],
+     "nouveautes": "• Surlignage visuel de la ligne en cours de lecture\n• Voix synchronisée au défilement : la synthèse vocale suit précisément le texte affiché\n• Mode « un mot par ligne » pour une lecture ultra-guidée\n• Défilement à 120 fps, encore plus fluide et réactif\n• Pause/reprise fiables : la voix redémarre à chaque fois\n• Compte à rebours annulable (appui pendant le décompte pour arrêter)\n• Le texte démarre et termine au centre de l'écran pour un confort optimal",
+     "captures": {
+      "iphone": [
+       "data/apps/prompteur/fr-iphone-1.jpg?v=ea3c65f2",
+       "data/apps/prompteur/fr-iphone-2.jpg?v=82ee48c4",
+       "data/apps/prompteur/fr-iphone-3.jpg?v=2d6910a1",
+       "data/apps/prompteur/fr-iphone-4.jpg?v=32447ddd",
+       "data/apps/prompteur/fr-iphone-5.jpg?v=a2ed9df7",
+       "data/apps/prompteur/fr-iphone-6.jpg?v=4d13da23"
+      ],
+      "ipad": [
+       "data/apps/prompteur/fr-ipad-1.jpg?v=638a1c07",
+       "data/apps/prompteur/fr-ipad-2.jpg?v=1a6d59e1",
+       "data/apps/prompteur/fr-ipad-3.jpg?v=f4158352"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "releve",
+   "bundleId": "com.oulhen.releve",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/multireleve/id6803667972",
+   "lienInternational": "https://apps.apple.com/app/id6803667972",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "LIFESTYLE",
+   "genre": {
+    "fr": "Style de vie",
+    "en": "Lifestyle"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-08-27T07:33:53Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/releve/",
+   "assistance": "https://boboul-cloud.github.io/releve/",
+   "confidentialite": "https://boboul-cloud.github.io/releve/politique-confidentialite.html",
+   "icone": "data/apps/releve/icone.png?v=1c5b0062",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "MultiReleve",
+     "sousTitre": "La généalogie par les lieux",
+     "promo": "Relevez votre famille comme on lève une carte : chaque personne un point, chaque acte un fait daté, chaque sépulture une borne que l'on retrouve. Sans compte ni serveur.",
+     "description": "Relevé est une application de généalogie tenue comme une carte d'état-major. La famille y est lue comme un territoire : chaque personne est un point coté, chaque acte un fait daté et situé, chaque sépulture une borne que l'on peut retrouver — le carré, le rang, la concession.\n\nTout reste sur votre iPhone. Aucun compte à créer, aucun serveur, aucun suivi.\n\nL'ARBRE\nAscendance et descendance depuis la personne de votre choix, dépliables branche par branche. La ligne directe se distingue du collatéral d'un coup d'œil.\n\nLA CARTE\nTous les lieux du relevé posés sur une carte : naissances, résidences, cimetières. Une famille qui se déplace se voit se déplacer.\n\nLE LIEU ET LA TOMBE\nLe cimetière n'est pas la tombe. L'emplacement d'un défunt lui appartient — carré, rang, concession — avec l'observation relevée devant la stèle et sa photographie. Une feuille PDF par lieu vous accompagne sur le terrain : l'entrée du cimetière, puis chaque stèle sous le nom du défunt.\n\nLE FAIT EST LA SOURCE DES DATES\nUne fiche ne saisit que ce qui ne se date pas : nom, prénom, métier. Tout le reste est un fait — naissance, baptême, mariage, résidence, décès, sépulture — qui porte sa date, son lieu et son degré de certitude : relevé sur un acte, déduit, ou supposé. Une généalogie honnête dit ce qu'elle sait et ce qu'elle croit.\n\nLE LIEN DE PARENTÉ\nLe nom exact du lien entre deux fiches — cousin issu de germain, grand-oncle, trisaïeule, épouse de votre arrière-grand-père — avec le chemin qui le justifie, génération par génération, et le degré au sens du droit civil.\n\nLA CHRONOLOGIE\nUne frise qui met les vies en regard, et fait apparaître ce qu'une liste cache : les recouvrements, les veuvages, les générations qui se chevauchent.\n\nVOS DONNÉES VOUS APPARTIENNENT\nRelevé n'a pas de serveur. Rien n'est envoyé, rien n'est mesuré, rien n'est revendu. L'affichage des cartes et la recherche d'une adresse passent par Apple, comme dans Plans : c'est le seul échange avec l'extérieur, et il ne transporte pas votre relevé.\n\nL'export produit un fichier lisible, photos comprises, que vous rangez où vous voulez — Fichiers, iCloud Drive, une clé. C'est votre copie, et elle ne dépend de personne.\n\nPOUR ESSAYER\nUne famille d'exemple du Finistère, 1834-2009, se charge et se retire d'un geste depuis les Réglages : lieux, tombes et actes compris.\n\nCE QUE L'APPLICATION NE FAIT PAS\nIl n'y a ni synchronisation entre appareils, ni import GEDCOM, ni consultation d'archives en ligne. L'application n'affiche que ce que vous y saisissez. L'import et l'export GEDCOM sont au programme d'une version future.\n\nApplication gratuite, sans achat intégré et sans publicité. iPhone et iPad, iOS 17 ou plus récent.\n\nÉcrite et maintenue par une seule personne : un lien mal nommé, un mot qui sonne faux, une date qui ne se laisse pas saisir — écrivez, la réponse vient.",
+     "motsCles": [
+      "ancêtres",
+      "aïeux",
+      "arbre",
+      "famille",
+      "filiation",
+      "parenté",
+      "cimetière",
+      "sépulture",
+      "tombe",
+      "acte",
+      "archives"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/releve/fr-iphone-1.jpg?v=bd12c41b",
+       "data/apps/releve/fr-iphone-2.jpg?v=09e81c44",
+       "data/apps/releve/fr-iphone-3.jpg?v=e8e46006",
+       "data/apps/releve/fr-iphone-4.jpg?v=b53e5257",
+       "data/apps/releve/fr-iphone-5.jpg?v=c2917b82",
+       "data/apps/releve/fr-iphone-6.jpg?v=25c2ba12"
+      ],
+      "ipad": [
+       "data/apps/releve/fr-ipad-1.jpg?v=bf9a1f41",
+       "data/apps/releve/fr-ipad-2.jpg?v=e6636a5e",
+       "data/apps/releve/fr-ipad-3.jpg?v=dc91adf9"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "rendumonnaie",
+   "bundleId": "com.oulhen.rendumonnaie",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/rendumonnaie/id6794941086",
+   "lienInternational": "https://apps.apple.com/app/id6794941086",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "FINANCE",
+   "genre": {
+    "fr": "Finance",
+    "en": "Finance"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-07-30T07:00:00Z",
+   "version": "1.1",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/comptoir-de-change/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/rendumonnaie/icone.png?v=7446f16f",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "RenduMonnaie",
+     "sousTitre": "",
+     "promo": "Rendez la monnaie juste, dans n'importe quelle devise : commission et pourboire détaillés, historique achats/ventes, écran client et saisie en gros caractères.",
+     "description": "Comptoir de change calcule le rendu de monnaie entre deux devises, avec toute la transparence dont vous avez besoin — en voyage, derrière un étal, ou à un comptoir de change.\n\nRENDU DE MONNAIE, DANS N'IMPORTE QUELLE DEVISE\n• Prix, montant reçu et rendu dans deux devises au choix, taux de change en direct\n• Le rendu peut aussi se faire dans une troisième devise, au taux du marché\n• Détail exact des billets et pièces à rendre\n• Suggestion de règlement (montant arrondi, billet existant)\n\nCOMMISSION ET POURBOIRE, SANS AMBIGUÏTÉ\n• Commission du comptoir et pourboire calculés et affichés séparément, jamais mélangés au prix\n• Détail visible dans toutes les devises concernées (prix, reçu, rendu)\n\nÉCRAN CLIENT RÉVERSIBLE\n• Retournez le téléphone : le client voit le prix, le montant reçu et la monnaie rendue, en toute transparence\n\nACHATS ET VENTES, HISTORIQUE SÉPARÉ\n• Achats et ventes suivis séparément, avec bilan chiffré dans la devise de votre choix\n• Lieu de chaque transaction (facultatif) et export du bilan en PDF\n\nACCESSIBILITÉ\n• Écran de saisie en gros caractères, pensé pour les malvoyants\n\nRESPECT DE LA VIE PRIVÉE\n• Aucun compte à créer, aucune publicité, aucun suivi\n• Toutes vos données restent sur votre appareil\n• Fonctionne même hors connexion, grâce aux derniers taux enregistrés\n\nCompatible iPhone et iPad. Disponible en français et en anglais.",
+     "motsCles": [
+      "rendu",
+      "monnaie",
+      "devise",
+      "taux",
+      "pourboire",
+      "commission",
+      "voyage",
+      "caisse",
+      "billet",
+      "pièce",
+      "achat",
+      "vente",
+      "malvoyant"
+     ],
+     "nouveautes": "Quoi de neuf dans la version 1.1 :\n\nPlus de 40 devises — dirham, riyal, franc CFA, dinar tunisien, dollar taïwanais et bien d'autres s'ajoutent au catalogue.\n \nCalcul de change autonome — convertis un montant d'une devise à l'autre avec commission, indépendamment du rendu de monnaie.\n\nÉcran en gros caractères — une saisie et un résultat pensés pour les malvoyants, synchronisés en temps réel avec l'écran principal.\nEt une meilleure lisibilité générale des écrans de résultat.",
+     "captures": {
+      "iphone": [
+       "data/apps/rendumonnaie/fr-iphone-1.jpg?v=8613d2bd",
+       "data/apps/rendumonnaie/fr-iphone-2.jpg?v=e0b302e8",
+       "data/apps/rendumonnaie/fr-iphone-3.jpg?v=e389fbe0",
+       "data/apps/rendumonnaie/fr-iphone-4.jpg?v=c567909b",
+       "data/apps/rendumonnaie/fr-iphone-5.jpg?v=b3124989",
+       "data/apps/rendumonnaie/fr-iphone-6.jpg?v=0031d28b"
+      ],
+      "ipad": [
+       "data/apps/rendumonnaie/fr-ipad-1.jpg?v=86f8b8bf",
+       "data/apps/rendumonnaie/fr-ipad-2.jpg?v=052ff21c",
+       "data/apps/rendumonnaie/fr-ipad-3.jpg?v=b4a1ca6b"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "riskelo",
+   "bundleId": "com.oulhen.riskelo",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/riskelo/id6806804539",
+   "lienInternational": "https://apps.apple.com/app/id6806804539",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-09-07T07:00:00Z",
+   "version": "1.5",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/riskelo/",
+   "assistance": "https://boboul-cloud.github.io/riskelo/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/riskelo/confidentialite.html",
+   "icone": "data/apps/riskelo/icone.png?v=93d15688",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Riskelo",
+     "sousTitre": "Conquête et culture générale",
+     "promo": "2 400 questions, quatre plateaux, trois manières de se battre, dés compris. Seul, à plusieurs sur un appareil, ou au loin avec un code. Aucune publicité, aucun compte.",
+     "description": "Riskelo est un jeu de conquête au tour par tour où le lancer de dés est remplacé par une question de culture générale.\n\nL'attaquant choisit le thème et le nombre de questions — ce sont ses dés. Le défenseur répond, dans le temps du sablier. Bonne réponse, et c'est l'attaquant qui laisse un homme ; mauvaise réponse ou temps écoulé, et c'est le défenseur. Une question vaut exactement une paire de dés : elle coûte un homme à l'un des deux camps.\n\nTROIS MANIÈRES DE SE BATTRE\n\n• Classique — l'attaquant pose la question et choisit le terrain ; le défenseur seul répond. La culture est une armure.\n• Face à face — les deux joueurs reçoivent la même question. Les deux savent ? Le sablier tranche. Aucun des deux ? La place tient, comme sur une égalité de dés. Et le défenseur peut doubler l'enjeu avant de répondre.\n• Dés — comme dans la boîte : jusqu'à trois dés contre deux, l'égalité au défenseur.\n\nL'USURE DU SIÈGE\n\nSans hasard, un joueur qui sait ne perdrait jamais sa place. Ce qui remplace le dé, c'est le temps : quinze secondes à la première question, et le sablier se resserre à chaque question subie par un même territoire dans le même tour. Presser une place finit par payer — mais c'est le souffle du défenseur qui cède, pas le sort.\n\nQUATRE PLATEAUX\n\n• L'Anneau — un monde inventé, cinq terres en cercle, 28 territoires.\n• Europe — de l'Atlantique à la mer Noire, 38 territoires.\n• Monde — les six continents en hexagones, 42 territoires.\n• Monde réel — les mêmes 42 territoires sur les vraies côtes, vingt traversées.\n\nDE DEUX À QUATRE JOUEURS\n\n• Seul contre la machine, dont la culture se règle de 35 à 90 % de bonnes réponses et la manœuvre en trois niveaux — savoir et bien jouer sont deux choses différentes.\n• À plusieurs sur un même appareil, qui se passe de main en main.\n• À plusieurs appareils, un par joueur : dans la même pièce, sans rien à configurer — ou au loin, chacun chez soi, avec un code de six lettres envoyé par message. Sans compte, dans les deux cas.\n\nLES RÈGLES DE LA BOÎTE, EN OPTION\n\n• Cartes de territoire, avec le barème qui monte à chaque échange.\n• Guerre totale : tous les territoires, sans exception.\n• Conquêtes personnelles : chacun reçoit au départ un objectif que lui seul connaît — deux continents, tant de places tenues, un camp à faire tomber. Le remplir gagne la partie, et le compte des territoires ne dit plus qui va gagner.\n• Renfort d'érudition : un homme de plus toutes les N bonnes réponses dans un même thème.\n\nDEUX MILLE QUATRE CENTS QUESTIONS\n\nSix thèmes — Géographie, Histoire, Sciences & Nature, Arts & Lettres, Sports & Loisirs, Écrans & Musique — quatre cents questions chacun, trois niveaux de difficulté. Le dosage se choisit à la mise en place : faciles pour jouer avec des enfants, mêlées comme dans une boîte de jeu, corsées pour ceux qui trouvent le reste trop facile. Et une question ne revient pas : l'appareil fait passer devant celles que vous n'avez jamais vues.\n\nLA PARTIE SE GARDE\n\nElle se retrouve où vous l'avez laissée. Et la bibliothèque enregistre chaque tour sans qu'on le demande : on peut revenir au moment où tout a basculé et rejouer la suite, sans effacer la partie d'origine.\n\nUne partie au loin tient sur plusieurs soirées, et vous pouvez en avoir plusieurs à la fois — une avec votre sœur, une avec un ami. Il faut seulement être là en même temps.\n\nCE QUE RISKELO NE FAIT PAS\n\nAucune publicité. Aucun abonnement. Aucun compte. Aucun traceur, aucune mesure d'audience. Les questions sont dans l'application : jouer ne demande aucune connexion. Seule la partie au loin passe par un relais, qui n'apprend rien de vous et ne garde pas la partie.\n\nDIX-SEPT PACKS, EN OPTION\n\nSeize packs scolaires — Histoire, Géographie, Français et SVT, pour les quatre années du collège — et « Rock 70-80 ». Achetés une fois, gardés pour toujours. Le jeu est entier sans eux, et celui qui rejoint une partie joue les packs de l'hôte.\n\niPhone, iPad et Mac — une seule application, en français et en anglais.",
+     "motsCles": [
+      "stratégie",
+      "quiz",
+      "dés",
+      "plateau",
+      "territoires",
+      "duel",
+      "solo",
+      "famille",
+      "hors ligne",
+      "géographie",
+      "histoire",
+      "questions"
+     ],
+     "nouveautes": "LE MONDE RÉEL\n• Un quatrième plateau : le monde tel qu'il est, dessiné d'après les vraies côtes. Les quarante-deux territoires et les six continents du Monde, mais vingt traversées par la mer au lieu de trois — le Kamtchatka retrouve sa distance, et l'on n'y joue plus pareil.\n• Le Monde en hexagones reste : ce sont deux parties différentes, et l'on choisit à la mise en place.\n• La carte se promène et se rapproche sous le doigt. Les noms paraissent à mesure qu'on rapproche, sans jamais se chevaucher ; le nombre d'hommes, lui, se lit toujours.\n\nLES DÉS, COMME DANS LA BOÎTE\n• Pour ceux qui préfèrent le jeu de plateau : un troisième mode, sans question. L'assaillant lance jusqu'à trois dés, le défenseur un ou deux, à son choix ; les plus forts se comparent paire par paire, et l'égalité va au défenseur. Un même lancer peut coûter un homme à chacun.\n• Deux dés font plus mal à l'assaillant, mais peuvent coûter deux hommes d'un coup ; un seul n'en coûte jamais plus d'un. Le choix se fait à chaque assaut, contre un ami comme contre la machine.\n• Il se choisit à la mise en place, à côté du Classique et du Face à face, et se joue aussi à plusieurs appareils : les deux écrans voient tomber les mêmes dés.\n\nLA CONFIDENTIALITÉ, DITE EXACTEMENT\n• Pour qu'une partie au loin se reprenne un autre soir, le relais garde une semaine un numéro tiré au sort à l'installation. Il ne désigne personne, et aucun nom ne lui parvient. La fiche de l'App Store et la politique de confidentialité le disent désormais.\n\niPhone, iPad et Mac, comme toujours.",
+     "captures": {
+      "iphone": [
+       "data/apps/riskelo/fr-iphone-1.jpg?v=0a957d28",
+       "data/apps/riskelo/fr-iphone-2.jpg?v=50298af1",
+       "data/apps/riskelo/fr-iphone-3.jpg?v=7305982e",
+       "data/apps/riskelo/fr-iphone-4.jpg?v=85b0fde9",
+       "data/apps/riskelo/fr-iphone-5.jpg?v=77020c8e",
+       "data/apps/riskelo/fr-iphone-6.jpg?v=85d1a5ae"
+      ],
+      "ipad": [
+       "data/apps/riskelo/fr-ipad-1.jpg?v=85fbf72b",
+       "data/apps/riskelo/fr-ipad-2.jpg?v=307b211e",
+       "data/apps/riskelo/fr-ipad-3.jpg?v=dc865158"
+      ]
+     }
+    },
+    "en": {
+     "nom": "Riskelo",
+     "sousTitre": "",
+     "promo": "2,400 questions, four boards, three ways to fight — dice included. Play alone, around one device, or far apart with a six-letter code. No ads, no account.",
+     "description": "Riskelo is a turn-based conquest game where the roll of the dice is replaced by a trivia question.\n\nThe attacker picks the subject and how many questions — those are the dice. The defender answers against the clock. A right answer and it is the attacker who loses a man; a wrong answer, or time running out, and it is the defender. One question is worth exactly one roll: it costs a man to one side or the other.\n\nTHREE WAYS TO FIGHT\n\n• Classic — the attacker asks and picks the ground; the defender answers alone. What you know is your armor.\n• Showdown — both players get the same question. Both know it? The clock settles it. Neither? The territory holds, the way a tied roll holds it. And the defender can double the stake before answering.\n• Dice — just like the box: up to three dice against two, ties to the defender.\n\nTHE PRESSURE OF A SIEGE\n\nWithout chance, a player who knows would never lose a place. What replaces the dice is time: fifteen seconds on the first question, and the clock tightens with every question the same territory takes in the same turn. Pressing a place eventually pays — but it is the defender's breath that gives out, not their luck.\n\nFOUR BOARDS\n\n• The Ring — an invented world, five lands in a circle, 28 territories.\n• Europe — from the Atlantic to the Black Sea, 38 territories.\n• World — six continents in hexagons, 42 territories.\n• Real World — the same 42 territories on the real coastlines, twenty sea crossings.\n\nTWO TO FOUR PLAYERS\n\n• Alone against the machine, whose knowledge sets anywhere from 35% to 90% correct answers and whose play has three levels — knowing and playing well are two different things.\n• Around one device, passed from hand to hand.\n• On several devices, one per player: in the same room, with nothing to set up — or far away, each of you at home, with a six-letter code sent by message. No account either way.\n\nTHE RULES FROM THE BOX, OPTIONAL\n\n• Territory cards, with the trade-in climbing at every exchange.\n• Total war: every territory, no exception.\n• Personal conquests: each player is dealt an objective only they can see — two continents, so many places held, one side to bring down. Filling it wins outright, and the territory count no longer tells you who is winning.\n• Scholar's reinforcement: one extra man for every few right answers in the same subject.\n\n2,400 QUESTIONS IN THE GAME\n\nSix subjects — Geography, History, Science & Nature, Arts & Literature, Sports & Games, Screen & Music — four hundred questions each, at three levels of difficulty. The mix is set before the game: easy for playing with children, mixed the way a boxed game would be, tough for anyone who finds the rest too easy. And a question does not come back: the device remembers what has already been asked, and puts the ones you have never seen in front.\n\nTHE GAME KEEPS\n\nYou find it where you left it. And the library records every turn without being asked: you can go back to the moment it all turned and play the rest again, without erasing the original.\n\nA game played far away can span several evenings: the code stays good for a week, and the game starts again on the turn you had reached. You can have several at once — one with your sister, one with a friend — and none of them erases the others. You do have to be there at the same time: a question is answered against the clock.\n\nWHAT RISKELO DOES NOT DO\n\nNo ads. No subscription. No account. No tracker, no analytics. The questions are in the app: playing needs no connection at all. Only a game played far away goes through a relay, which learns nothing about you and does not keep the game.\n\nSEVENTEEN PACKS, IF YOU WANT THEM\n\nSixteen school decks — History, Geography, English and Science, for grades 6 through 9 — and Rock 70-80. Bought once, kept for good. The base game is whole without them, and whoever joins a table plays the host's packs.\n\niPhone, iPad and Mac — one app, in English and French.",
+     "motsCles": [
+      "quiz",
+      "strategy",
+      "board",
+      "territory",
+      "turn-based",
+      "offline",
+      "online",
+      "multiplayer",
+      "family",
+      "geography",
+      "history",
+      "dice"
+     ],
+     "nouveautes": "THE REAL WORLD\n• A fourth board: the world as it is, drawn from the real coastlines. The World's forty-two territories and six continents, but twenty sea crossings instead of three — Kamchatka is far away again, and it no longer plays the same.\n• The hexagon World stays: they are two different games, and you choose when you set up.\n• Drag and pinch the map. Names appear as you zoom in and never overlap; the number of men in each territory always shows.\n\nDICE, JUST LIKE THE BOX\n• For those who prefer the board game: a third mode, with no questions. The attacker rolls up to three dice, the defender one or two, as they choose; the highest are compared pair by pair, and ties go to the defender. A single roll can cost each side a man.\n• Two dice hurt the attacker more, but can cost two men at once; one never costs more than one. The choice comes with every assault, against a friend or against the machine.\n• Choose it when you set up, alongside Classic and Showdown. It plays across devices too: both screens see the same dice fall.\n\nPRIVACY, STATED EXACTLY\n• So that a game far away can pick up again another evening, the relay keeps a number drawn at random at installation for a week. It designates nobody, and no name ever reaches it. The App Store page and the privacy policy now say so.\n\niPhone, iPad and Mac, as always.",
+     "captures": {
+      "iphone": [
+       "data/apps/riskelo/en-iphone-1.jpg?v=e102e1e7",
+       "data/apps/riskelo/en-iphone-2.jpg?v=b5d3a7bf",
+       "data/apps/riskelo/en-iphone-3.jpg?v=b01957c6",
+       "data/apps/riskelo/en-iphone-4.jpg?v=d522610f",
+       "data/apps/riskelo/en-iphone-5.jpg?v=7e866b2a",
+       "data/apps/riskelo/en-iphone-6.jpg?v=6a312e19"
+      ],
+      "ipad": [
+       "data/apps/riskelo/en-ipad-1.jpg?v=c887ee66",
+       "data/apps/riskelo/en-ipad-2.jpg?v=93029c9c",
+       "data/apps/riskelo/en-ipad-3.jpg?v=126c38ec"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "romancier",
+   "bundleId": "bob.oulhen-gmail.com.Romancier-",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/romancier/id6769827003",
+   "lienInternational": "https://apps.apple.com/app/id6769827003",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "26.1",
+   "note": null,
+   "sortie": "2026-05-18T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/Romancier-Plus/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/romancier/icone.png?v=95db5661",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Romancier+",
+     "sousTitre": "Votre roman, assisté par l'IA",
+     "promo": "Écrivez votre roman avec l'aide de l'IA. Générez, reformulez, développez et gardez le contrôle de chaque mot.",
+     "description": "Romancier+ est l'atelier d'écriture de poche pour les auteurs ambitieux. Concevez votre roman, votre essai ou votre nouvelle de A à Z, avec l'intelligence artificielle comme co-auteur discret.\n\nDémarrez en quelques secondes\nChoisissez un genre (roman, thriller, fantasy, romance…), un ton d'écriture, un objectif de mots et laissez l'IA construire un plan complet avec chapitres et sections.\n\nRédigez avec l'IA à vos côtés\nGénérez du contenu, continuez votre texte, reformulez, condensez, développez ou rendez une scène plus vivante. Huit actions rapides, une instruction libre : l'IA s'adapte à votre style.\n\nLisez votre livre comme un vrai livre\nLe mode Lecteur affiche votre manuscrit page par page, en typographie Georgia, avec tournage de page animé.\n\nGardez la cohérence\nL'analyse chronologique détecte les incohérences temporelles dans votre récit et propose des corrections en un tap.\n\nExportez quand vous voulez\nPDF mis en page au format A4, Markdown compatible Obsidian/Notion, ou texte brut prêt pour l'imprimerie ou l'auto-édition.\n\nAucun mot perdu\nChaque fragment remplacé par l'IA est archivé et consultable. Vous pouvez toujours revenir en arrière.",
+     "motsCles": [
+      "roman",
+      "écriture",
+      "IA",
+      "auteur",
+      "livre",
+      "rédaction",
+      "écrivain",
+      "fiction",
+      "thriller",
+      "fantasy",
+      "scénario",
+      "manuscrit"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/romancier/fr-iphone-1.jpg?v=dd681382",
+       "data/apps/romancier/fr-iphone-2.jpg?v=a7afc23d",
+       "data/apps/romancier/fr-iphone-3.jpg?v=7db08405",
+       "data/apps/romancier/fr-iphone-4.jpg?v=ce6785ce",
+       "data/apps/romancier/fr-iphone-5.jpg?v=690d6419",
+       "data/apps/romancier/fr-iphone-6.jpg?v=ba222dde"
+      ],
+      "ipad": [
+       "data/apps/romancier/fr-ipad-1.jpg?v=3e286dfd",
+       "data/apps/romancier/fr-ipad-2.jpg?v=f2039653",
+       "data/apps/romancier/fr-ipad-3.jpg?v=a849ed1c"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "stopphone",
+   "bundleId": "com.stopphone.driver",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/stopphone/id6775483855",
+   "lienInternational": "https://apps.apple.com/app/id6775483855",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-06-06T07:00:00Z",
+   "version": "1.2",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/StopPhone/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/stopphone/icone.png?v=9da39861",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "StopPhone",
+     "sousTitre": "",
+     "promo": "StopPhone bloque automatiquement les apps distrayantes dès que vous prenez le volant, pour que vous restiez concentré sur la route.",
+     "description": "COMMENT ÇA MARCHE\nStopPhone détecte la conduite grâce à la vitesse GPS de votre iPhone. Dès que vous dépassez le seuil configuré (15 km/h par défaut), les apps de votre choix sont bloquées via Screen Time d'Apple. Un écran d'alerte rouge couvre l'affichage et une notification vous rappelle à l'ordre. Quand vous vous arrêtez, le blocage se lève automatiquement.\n\nAucun serveur. Aucun compte. Aucune donnée collectée. Tout fonctionne en local, sur votre appareil.\n\nFONCTIONNALITÉS\n• Détection GPS — S'active au-dessus d'un seuil réglable (5–120 km/h)\n• Déclencheur Bluetooth — S'active dès que le kit mains-libres de votre voiture se connecte\n• Blocage personnalisé — Choisissez les apps et catégories à bloquer via Screen Time\n• Verrouillage total — Mode d'urgence qui bloque toutes les apps et les sites web\n• Écran d'alerte rouge — Recouvre tout l'écran, impossible à ignorer\n• Alerte vocale — Annonce l'alerte dans les enceintes de la voiture via Bluetooth\n• Historique des trajets — Distance, durée, vitesse max et trace GPS de chaque conduite\n• Gestion multi-véhicules — Associez vos appareils Bluetooth à des véhicules nommés\n• Mode passager — Pause de 15 minutes pour les passagers\n• Verrouillage parental — Protégez les réglages par un code PIN à 4 chiffres\n• Désactivation automatique — Réactivation automatique après 15, 30, 60 ou 120 min\n• Raccourcis Siri — Automatisations via stopphone://activate et stopphone://deactivate\n• Entièrement bilingue — Français et anglais\n\nCONFIDENTIALITÉ\nStopPhone ne collecte aucune donnée personnelle. La localisation sert uniquement à mesurer la vitesse, en local. L'historique des trajets est stocké sur votre iPhone et n'en sort jamais.\n\nNécessite iOS 17 ou version ultérieure.",
+     "motsCles": [
+      "conduite",
+      "téléphone",
+      "blocage",
+      "sécurité",
+      "voiture",
+      "bluetooth",
+      "vitesse",
+      "distraction",
+      "screen time",
+      "enfants",
+      "route"
+     ],
+     "nouveautes": "StopPhone 1.2— Notes de version\nNouveautés\n\nHistorique des trajets — Chaque trajet est désormais enregistré automatiquement : heure de début et de fin, vitesse maximale et moyenne, source de déclenchement (GPS ou Bluetooth). Un tableau de bord récapitulatif est accessible depuis l'écran principal, avec la possibilité de supprimer des trajets individuellement ou de tout effacer.\n\nMise à jour Trajets\n\nFiltres par période\nFiltrez vos trajets par jour, semaine, mois ou définissez une plage de dates personnalisée. Les statistiques (nombre de trajets, durée, distance, vitesse max) se mettent à jour automatiquement selon le filtre actif.\n\nEstimation du coût carburant\nRenseignez la consommation moyenne (L/100 km) de chaque véhicule dans sa fiche, puis saisissez le prix du carburant directement dans l'écran Trajets. Le coût estimé s'affiche sur chaque trajet et en total cumulé pour la période sélectionnée.\n\nExport PDF\nExportez vos trajets en un PDF soigné : une page par trajet avec la carte du parcours, le tracé GPS en couleur, et la fiche complète (durée, distance, vitesses, coût estimé). Partagez le fichier par mail, AirDrop ou sauvegardez-le dans Fichiers.\n\nAffichage amélioré\nLes informations de chaque trajet (durée, distance, vitesse max, coût) sont maintenant présentées ligne par ligne pour une meilleure lisibilité.\nGestion des véhicules — Ajoutez vos véhicules et associez-les à leur nom de périphérique Bluetooth (autoradio, kit mains-libres…). StopPhone reconnaît votre voiture automatiquement à la connexion et peut déclencher la protection en conséquence.\n\nMode passager — Un bouton « Passager 15 min » permet de suspendre temporairement la protection sans saisir de code PIN. La suspension expire automatiquement après 15 minutes. Ce bouton est aussi disponible directement depuis l'overlay rouge.\n\nPIN parental — Définissez un code à 4 chiffres pour verrouiller la désactivation de la protection. Sans le bon code, il est impossible de couper StopPhone — idéal pour les jeunes conducteurs.\n\nAuto-désactivation — Configurez une durée d'inactivité (15, 30, 60 ou 120 min) au-delà de laquelle la protection se coupe seule.\nAlertes vocales — Un retour vocal peut être activé dans les Réglages pour signaler le début et la fin de la protection.\n\nCorrections\n\nL'overlay rouge ne reste plus bloqué à l'écran lorsque la connexion Bluetooth est la source du déclenchement.\n\nDébounceur de notifications GPS : les alertes ne se répètent plus en cas de signal instable (délai de 30 secondes).\n\nLa protection se désactive automatiquement si l'accès à la localisation est refusé ou restreint.",
+     "captures": {
+      "iphone": [
+       "data/apps/stopphone/fr-iphone-1.jpg?v=f8986c63",
+       "data/apps/stopphone/fr-iphone-2.jpg?v=f2a131c1",
+       "data/apps/stopphone/fr-iphone-3.jpg?v=8b9d2f88",
+       "data/apps/stopphone/fr-iphone-4.jpg?v=61f54274",
+       "data/apps/stopphone/fr-iphone-5.jpg?v=9f7a20d0",
+       "data/apps/stopphone/fr-iphone-6.jpg?v=1b49e22b"
+      ],
+      "ipad": [
+       "data/apps/stopphone/fr-ipad-1.jpg?v=e93086d2",
+       "data/apps/stopphone/fr-ipad-2.jpg?v=07e549e9",
+       "data/apps/stopphone/fr-ipad-3.jpg?v=a3e52cea"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "temps-de-jeu",
+   "bundleId": "bob.oulhen-gmail.com.Temps-De-Jeu",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/temps-de-jeu/id6758916303",
+   "lienInternational": "https://apps.apple.com/app/id6758916303",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SPORTS",
+   "genre": {
+    "fr": "Sports",
+    "en": "Sports"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-02-19T08:00:00Z",
+   "version": "1.6.1",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/Temps-De-Jeu/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/temps-de-jeu/icone.png?v=ab714b23",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Temps De Jeu",
+     "sousTitre": "",
+     "promo": "Temps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.",
+     "description": "TEMPS DE JEU \n\n l'outil indispensable des éducateurs de football amateur.\nGérez vos matchs, vos entraînements et vos effectifs depuis votre iPhone. Conçue par un éducateur, pour les éducateurs.\n\n GESTION DE MATCH EN TEMPS RÉEL\nLancez le chrono, effectuez vos remplacements en un geste, et suivez en direct le temps de jeu de chaque joueur. Le minuteur intelligent calcule automatiquement le temps additionnel selon les arrêts de jeu (touche, corner, faute, penalty, blessure, VAR…). Enregistrez buts, passes décisives, fautes et cartons au fil du match.\n\n ÉQUITÉ DU TEMPS DE JEU\nUn indicateur visuel vous alerte en temps réel si l'écart de temps de jeu entre vos joueurs se creuse. Vert, orange ou rouge : impossible d'oublier quelqu'un sur le banc.\n\nSUIVI DES CARTONS \nJaunes, rouges, doubles jaunes et cartons blancs (exclusion temporaire avec compte à rebours). Tableau de bord dédié, historique par joueur, gestion des suspensions purgées.\n\n STATISTIQUES COMPLÈTES \nPossession, passes, fautes par joueur et par période, temps effectif de jeu, détail des arrêts de jeu. Récapitulatif de match auto-généré et partageable en un tap.\n\n MULTI-CATÉGORIES\nU7 à Seniors : gérez toutes vos équipes depuis une seule app. Base de joueurs partagée entre catégories, badges couleur pour visualiser les prêts.\n\nCASCADE INTER-ÉQUIPES: Partagez votre composition par iMessage : l'équipe suivante voit automatiquement les joueurs déjà retenus comme indisponibles. Plus de doublons le week-end.\n\nGESTION DU STAFF: Entraîneurs adjoints, arbitres, délégués, préparateurs physiques, responsables médicaux… Ajoutez votre encadrement avec rôles personnalisables et coordonnées directes.\n\n ENTRAÎNEMENTS & PRÉSENCES\nPointez la présence, invitez des joueurs d'autres catégories, ajoutez des notes. Exportez les feuilles de présence en PDF.\n\n SONDAGES DE DISPONIBILITÉ\nCréez un sondage et partagez le lien. Vos joueurs répondent Présent, Absent ou Incertain depuis leur navigateur. Les réponses s'intègrent automatiquement.\n\n SAISONS & HISTORIQUE  \nOrganisez matchs et entraînements par saison. Archivez et démarrez une nouvelle saison en un tap, sans perdre vos données.\n\nEXPORT & PARTAGE \nPDF, compositions (.tdj), matchs (.tdjm) : partagez par iMessage, AirDrop ou e-mail avec import automatique sur l'appareil du destinataire.\n\nWIDGET \nAffichez votre prochain match ou entraînement directement sur l'écran d'accueil.\n\nPREMIUM \n5 matchs gratuits pour tester toutes les fonctionnalités. Passez en Premium (achat unique) pour un nombre de matchs illimité et toutes les futures mises à jour incluses.\n\nTEMPS DE JEU, c'est moins de paperasse et plus de terrain.",
+     "motsCles": [
+      "football",
+      "coach",
+      "entraîneur",
+      "temps de jeu",
+      "gestion équipe",
+      "match",
+      "remplacements",
+      "stats",
+      "amateur",
+      "jeunes"
+     ],
+     "nouveautes": "Nouveautes de la version 1.6.1\n\nGESTION DES CARTONS\nNouveau tableau de bord complet : cartons jaunes, rouges, doubles jaunes et cartons blancs (exclusion temporaire 10 min avec compte a rebours en direct). Suivez l'historique par joueur et marquez les sanctions comme purgees.\n\nTEMPS DE JEU EQUITABLE\nIndicateur en temps reel de l'equite du temps de jeu pendant le match. Code couleur intuitif : vert (ecart inferieur a 5 min), orange (inferieur a 10 min), rouge (superieur a 10 min). Plus aucun joueur oublie sur le banc.\n\nSTATISTIQUES AVANCEES\nPossession, passes, fautes par joueur et par periode, temps effectif, detail des arrets de jeu par type (corner, touche, penalty, VAR, blessure). Tout est analyse automatiquement.\n\nGESTION DU STAFF\nAjoutez entraineurs adjoints, arbitres, delegues, preparateurs physiques et creez vos propres roles. Chaque membre peut etre affecte a plusieurs categories.\n\nSONDAGES DE DISPONIBILITE\nCreez un sondage, partagez-le par iMessage, e-mail ou AirDrop. Vos joueurs repondent Present, Absent ou Incertain et les reponses s'appliquent automatiquement a la feuille de presence.\n\nCASCADE INTER-EQUIPES\nPartagez votre composition : l'equipe suivante voit automatiquement les joueurs deja retenus comme indisponibles. Fini les doublons le week-end.\n\nWIDGET ECRAN D'ACCUEIL\nProchain match ou entrainement visible d'un coup d'oeil depuis l'ecran d'accueil.\n\nMULTI-CATEGORIES\nGerez U13, U15, Seniors depuis une seule app avec une base de joueurs partagee et des badges couleur pour les prets entre categories.\n\nEXPORT ET PARTAGE\nFeuilles de presence et recaps en PDF. Compositions et matchs partageables par iMessage avec import automatique.\n\nPLACEMENT TACTIQUE SUR LE TERRAIN\nVisualisez et organisez votre equipe directement sur un terrain interactif. Glissez-deposez vos titulaires et remplacants pour definir leur position avant le match. Outils de demonstrations tactiques (ballon, adversaires, fleches de mouvements)\n\nSONDAGE DE DISPONIBILITE PAR SMS\nCreez un sondage de disponibilite depuis l'application et envoyez-le par SMS aux joueurs dont le numero est enregistre. Suivez les reponses en temps reel et anticipez votre effectif.\n\nCorrections de bugs et ameliorations de performances.",
+     "captures": {
+      "iphone": [
+       "data/apps/temps-de-jeu/fr-iphone-1.jpg?v=62dc23c7",
+       "data/apps/temps-de-jeu/fr-iphone-2.jpg?v=d6dc4919",
+       "data/apps/temps-de-jeu/fr-iphone-3.jpg?v=060959dd",
+       "data/apps/temps-de-jeu/fr-iphone-4.jpg?v=0fd10c13",
+       "data/apps/temps-de-jeu/fr-iphone-5.jpg?v=95513e85",
+       "data/apps/temps-de-jeu/fr-iphone-6.jpg?v=e48ba52c"
+      ],
+      "ipad": [
+       "data/apps/temps-de-jeu/fr-ipad-1.jpg?v=a0912266",
+       "data/apps/temps-de-jeu/fr-ipad-2.jpg?v=6ad1e4d3",
+       "data/apps/temps-de-jeu/fr-ipad-3.jpg?v=805723c2"
+      ]
+     }
+    }
+   }
+  }
+ ]
+}
