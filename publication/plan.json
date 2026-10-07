@@ -20,11 +20,19 @@
    "slug": "bobcrapette",
    "fiche": {},
    "visuel": {}
+  },
+  {
+   "slug": "canonball",
+   "fiche": {},
+   "visuel": {}
   }
  ],
  "jours": [
+  0,
   1,
+  2,
   3,
+  4,
   5,
   6
  ],
