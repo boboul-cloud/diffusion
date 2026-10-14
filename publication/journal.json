@@ -147,10 +147,22 @@
   "date": "2026-10-13T16:26:50.051Z",
   "slug": "materiel",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "Pour tous ceux qui aiment les outils pratiques : Prêt Matériel 🛠️\n\nGérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !\n\n✅ Gestion du matériel\n✅ Gestion des personnes\n✅ Prêts\n✅ Emprunts\n\nLe lien est dans ma bio 👆\n\n#Prêt #Emprunt #Astuce #iPhone #Matériel",
   "image": "posts/2026-10-14-materiel-mv6w8n53.jpg",
   "bufferId": "6ace5bd3d9d45db80a05ec03",
-  "mode": "automatic"
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DeexJMvFAQh/",
+  "publieLe": "2026-10-14T16:24:11.498Z"
+ },
+ {
+  "creneau": "2026-10-15T16:00:00.000Z",
+  "date": "2026-10-14T16:24:05.775Z",
+  "slug": "temps-de-jeu",
+  "reseau": "instagram",
+  "statut": "erreur",
+  "legende": "Pour les sportifs, les clubs et les éducateurs : Temps De Jeu ⚽\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nLe lien est dans ma bio 👆\n\n#Football #Coach #Sport #iPhone #Entraîneur",
+  "image": "posts/2026-10-15-temps-de-jeu-mv8bkz7h.jpg",
+  "erreur": "Command failed: git push origin HEAD:main\nremote: Internal Server Error        \nremote: Request ID C881:38D65:9B8D0:12E013:6ACFACA8        \nremote: Time 2026-10-14T16:24:11Z\nTo https://github.com/boboul-cloud/diffusion\n ! [remote rejected] HEAD -> main (Internal Server Error)\nerror: failed to push some refs to 'https://github.com/boboul-cloud/diffusion'\n"
  }
 ]
