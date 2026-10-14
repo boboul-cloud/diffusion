@@ -1,10 +1,6 @@
 {
  "buffer": {
   "canal": "wilfrid.lalouse",
-  "verifie": "2026-10-14T16:24:05.775Z"
- },
- "derniereErreur": {
-  "date": "2026-10-14T16:24:11.314Z",
-  "message": "Command failed: git push origin HEAD:main\nremote: Internal Server Error        \nremote: Request ID C881:38D65:9B8D0:12E013:6ACFACA8        \nremote: Time 2026-10-14T16:24:11Z\nTo https://github.com/boboul-cloud/diffusion\n ! [remote rejected] HEAD -> main (Internal Server Error)\nerror: failed to push some refs to 'https://github.com/boboul-cloud/diffusion'\n"
+  "verifie": "2026-10-14T17:19:09.990Z"
  }
 }

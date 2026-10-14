@@ -164,5 +164,16 @@
   "legende": "Pour les sportifs, les clubs et les éducateurs : Temps De Jeu ⚽\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nLe lien est dans ma bio 👆\n\n#Football #Coach #Sport #iPhone #Entraîneur",
   "image": "posts/2026-10-15-temps-de-jeu-mv8bkz7h.jpg",
   "erreur": "Command failed: git push origin HEAD:main\nremote: Internal Server Error        \nremote: Request ID C881:38D65:9B8D0:12E013:6ACFACA8        \nremote: Time 2026-10-14T16:24:11Z\nTo https://github.com/boboul-cloud/diffusion\n ! [remote rejected] HEAD -> main (Internal Server Error)\nerror: failed to push some refs to 'https://github.com/boboul-cloud/diffusion'\n"
+ },
+ {
+  "creneau": "2026-10-15T16:00:00.000Z",
+  "date": "2026-10-14T17:19:09.990Z",
+  "slug": "temps-de-jeu",
+  "reseau": "instagram",
+  "statut": "programme",
+  "legende": "Pour les sportifs, les clubs et les éducateurs : Temps De Jeu ⚽\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nLe lien est dans ma bio 👆\n\n#Football #Coach #Sport #iPhone #Entraîneur",
+  "image": "posts/2026-10-15-temps-de-jeu-mv8djslk.jpg",
+  "bufferId": "6acfb99b85bfcf9073675a62",
+  "mode": "automatic"
  }
 ]
