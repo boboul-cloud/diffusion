@@ -209,10 +209,23 @@
   "date": "2026-10-17T16:20:24.332Z",
   "slug": "canonball",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "Pour tous ceux qui aiment jouer : BobCanonBall 🎲\n\nUn défi nouveau chaque jour, le même pour tout le monde. Plus dix terrains, un atelier de création et le duel à deux appareils, sans compte ni connexion.\n\n✅ Le défi du jour\n✅ Dix terrains, et un dixième qui ne se raconte pas\n✅ L'atelier\n✅ À deux\n\nLe lien est dans ma bio 👆\n\n#Artillerie #Canon #JeuMobile #iPhone #Tir",
   "image": "posts/2026-10-18-canonball-mvclrs6g.jpg",
   "bufferId": "6ad3a0540a208cb3232bc718",
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DepEGQFmxMZ/",
+  "publieLe": "2026-10-18T16:20:52.572Z"
+ },
+ {
+  "creneau": "2026-10-19T16:00:00.000Z",
+  "date": "2026-10-18T16:20:49.044Z",
+  "slug": "materiel",
+  "reseau": "instagram",
+  "statut": "programme",
+  "legende": "🛠️ Prêt Matériel : prêts, emprunts et locations\n\nGérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !\n\n✅ Gestion du matériel\n✅ Gestion des personnes\n✅ Prêts\n✅ Emprunts\n\nGratuit sur l’App Store : lien en bio 👆\n\n#Prêt #Emprunt #Astuce #iPhone #Matériel",
+  "image": "posts/2026-10-19-materiel-mve185re.jpg",
+  "bufferId": "6ad4f1e4ae173d6e000c992c",
   "mode": "automatic"
  }
 ]
