@@ -400,10 +400,23 @@
   "date": "2026-11-01T18:21:47.693Z",
   "slug": "riskelo",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "🎲 Riskelo : conquête et culture générale\n\n2 400 questions, quatre plateaux, trois manières de se battre, dés compris. Seul, à plusieurs sur un appareil, ou au loin avec un code. Aucune publicité, aucun compte.\n\n✅ Trois manières de se battre\n✅ L'usure du siège\n✅ Quatre plateaux\n✅ De deux à quatre joueurs\n\nGratuit sur l’App Store : lien en bio 👆\n\n#Stratégie #Quiz #JeuMobile #iPhone #Dés",
   "image": "posts/2026-11-02-riskelo-mvy5pnzm.jpg",
   "bufferId": "6ae78346cfdcf9feb7196396",
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DfPzLScFBFT/",
+  "publieLe": "2026-11-02T17:13:01.819Z"
+ },
+ {
+  "creneau": "2026-11-03T17:00:00.000Z",
+  "date": "2026-11-02T17:12:51.545Z",
+  "slug": "canonball",
+  "reseau": "instagram",
+  "statut": "programme",
+  "legende": "Pour tous ceux qui aiment jouer : BobCanonBall 🎲\n\nUn défi nouveau chaque jour, le même pour tout le monde. Plus dix terrains, un atelier de création et le duel à deux appareils, sans compte ni connexion.\n\n✅ Le défi du jour\n✅ Dix terrains, et un dixième qui ne se raconte pas\n✅ L'atelier\n✅ À deux\n\nLe lien est dans ma bio 👆\n\n#Artillerie #Canon #JeuMobile #iPhone #Tir",
+  "image": "posts/2026-11-03-canonball-mvziov5v.jpg",
+  "bufferId": "6ae8c49ddd69ed08c74bb9b1",
   "mode": "automatic"
  }
 ]
