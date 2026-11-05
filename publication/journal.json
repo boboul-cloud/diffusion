@@ -439,10 +439,21 @@
   "date": "2026-11-04T17:12:34.934Z",
   "slug": "temps-de-jeu",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "⚽ Temps De Jeu : l'outil indispensable des éducateurs de football amateur\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nGratuit sur l’App Store : lien en bio 👆\n\n#Football #Coach #Sport #iPhone #Entraîneur",
   "image": "posts/2026-11-05-temps-de-jeu-mw2dk7n0.jpg",
   "bufferId": "6aeb678d491f63648cead0d1",
-  "mode": "automatic"
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DfXhjbVG7Ty/",
+  "publieLe": "2026-11-05T17:13:59.552Z"
+ },
+ {
+  "creneau": "2026-11-06T17:00:00.000Z",
+  "date": "2026-11-05T17:13:43.703Z",
+  "slug": "bobcrapette",
+  "reseau": "instagram",
+  "statut": "erreur",
+  "legende": "🎲 Bobcrapette : la crapette au jeu de tarot\n\nUn adversaire qui vous surveille, des atouts qui font une cinquième famille, et le plaisir de crier « Crapette ! » quand il oublie un coup obligatoire.\n\n✅ Au jeu de tarot, atouts compris\n✅ Un adversaire qui joue vraiment\n✅ « crapette ! »\n✅ Une aide qui se coupe\n\nGratuit sur l’App Store : lien en bio 👆\n\n#Cartes #Réussite #JeuMobile #iPhone #Solitaire",
+  "erreur": "Chrome n’a pas démarré."
  }
 ]
