@@ -513,10 +513,23 @@
   "date": "2026-11-09T17:14:22.212Z",
   "slug": "temps-de-jeu",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "Vous connaissez Temps De Jeu ? ⚽\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nCherche « Temps De Jeu » sur l’App Store 🔎\n\n#Football #Coach #Sport #iPhone #Entraîneur",
   "image": "posts/2026-11-10-temps-de-jeu-mw9itrp3.jpg",
   "bufferId": "6af1ff71704ab85a6bd83ab1",
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DfkZjeHFrUL/",
+  "publieLe": "2026-11-10T17:12:19.248Z"
+ },
+ {
+  "creneau": "2026-11-11T17:00:00.000Z",
+  "date": "2026-11-10T17:12:15.252Z",
+  "slug": "bobcrapette",
+  "reseau": "instagram",
+  "statut": "programme",
+  "legende": "Je viens de publier Bobcrapette sur l’App Store 🎲\n\nUn adversaire qui vous surveille, des atouts qui font une cinquième famille, et le plaisir de crier « Crapette ! » quand il oublie un coup obligatoire.\n\n✅ Au jeu de tarot, atouts compris\n✅ Un adversaire qui joue vraiment\n✅ « crapette ! »\n✅ Une aide qui se coupe\n\nCherche « Bobcrapette » sur l’App Store 🔎\n\n#Cartes #Réussite #JeuMobile #iPhone #Solitaire",
+  "image": "posts/2026-11-11-bobcrapette-mway6wg4.jpg",
+  "bufferId": "6af35073eca53e2861f3d8be",
   "mode": "automatic"
  }
 ]
