@@ -15,7 +15,8 @@ import {
   longueur,
   recoller,
 } from '../public/js/textes.js';
-import { CANAUX, ORDRE_LANCEMENT, canal } from '../public/js/canaux.js';
+import { CANAUX, ORDRE_LANCEMENT, canal, canauxDe } from '../public/js/canaux.js';
+import { bandeau } from '../public/js/textes.js';
 import { creerZip } from '../public/js/zip.js';
 
 const APP = {
@@ -178,8 +179,8 @@ test('toutes les apps importées passent', { skip: !fs.existsSync(new URL('../pu
   const { apps } = JSON.parse(fs.readFileSync(new URL('../public/data/apps.json', import.meta.url), 'utf8'));
   for (const app of apps) {
     for (const L of ['fr', 'en']) {
-      const c = contexte(app, L, {}, REGLAGES, { nbApps: 23 });
-      for (const k of CANAUX) {
+      const c = contexte(app, L, {}, REGLAGES, { nbApps: 23, nbWeb: 25 });
+      for (const k of canauxDe(app)) {
         for (const ch of generer(k, c, 0)) {
           if (ch.limite) assert.ok(longueur(ch.valeur, ch.compte) <= ch.limite, `${app.slug} ${L} ${k.id}/${ch.cle}`);
           assert.doesNotMatch(ch.valeur, /undefined|\[object/, `${app.slug} ${k.id}`);
@@ -187,4 +188,72 @@ test('toutes les apps importées passent', { skip: !fs.existsSync(new URL('../pu
       }
     }
   }
+});
+
+/** Une app web, comme l'import la tire du Dico. */
+const WEB = {
+  slug: 'web-briquette',
+  bundleId: '',
+  plateforme: 'web',
+  enLigne: true,
+  lien: 'https://briquette.exemple.dev/',
+  lienInternational: 'https://briquette.exemple.dev/',
+  gratuit: true,
+  prix: '',
+  achats: false,
+  categorie: 'GAMES',
+  genre: { fr: 'Jeux', en: 'Games' },
+  appareils: ['web'],
+  iosMin: '',
+  note: null,
+  sortie: '',
+  version: '',
+  developpeur: 'Robert Oulhen',
+  site: '',
+  icone: '',
+  languePrincipale: 'fr',
+  nouveau: true,
+  langues: {
+    fr: {
+      nom: 'Briquette',
+      sousTitre: 'Jeu de construction',
+      promo: 'Un plateau, des briques, zéro limite : un jeu de construction en 3D.',
+      description: 'Un plateau, des briques, zéro limite : un jeu de construction en 3D.\n\nConstruire brique par brique, tourner autour, recommencer. Installable et jouable hors ligne.',
+      motsCles: ['Jeu de construction'],
+      nouveautes: '',
+      captures: { iphone: [], ipad: [] },
+    },
+  },
+};
+
+test('une app web ne parle ni d’App Store ni d’iPhone, et renvoie vers son adresse', () => {
+  const canaux = canauxDe(WEB);
+  assert.ok(!canaux.some((k) => k.id === 'apple-nomination'), 'pas de nomination App Store');
+  assert.equal(canaux.length, CANAUX.length - 1);
+  for (const L of ['fr', 'en']) {
+    const c = contexte(WEB, L, {}, REGLAGES, { nbApps: 29, nbWeb: 25 });
+    for (const k of canaux) {
+      for (const v of [0, 1, 2]) {
+        for (const ch of generer(k, c, v)) {
+          // « À propos » parle de l'auteur et de toutes ses apps : l'App Store y a sa place.
+          const sansAPropos = ch.valeur.replace(/^.*(crée des applications|independent developer of).*$/gm, '');
+          assert.doesNotMatch(sansAPropos, /App Store|iPhone|iOS/, `${L} ${k.id}/${ch.cle} v${v}`);
+          if (ch.limite) assert.ok(longueur(ch.valeur, ch.compte) <= ch.limite, `${L} ${k.id}/${ch.cle}`);
+        }
+      }
+    }
+  }
+  const c = contexte(WEB, 'fr', {}, REGLAGES);
+  assert.equal(bandeau(c), 'Gratuit, dans le navigateur');
+  assert.match(generer(canal('instagram-post'), c, 0)[0].valeur, /lien en bio/);
+  assert.match(generer(canal('x'), c, 0)[0].valeur, /https:\/\/briquette\.exemple\.dev\//);
+  assert.match(generer(canal('whatsapp'), c, 0)[0].valeur, /ordinateur, tablette et téléphone/);
+  assert.ok(c.recente, 'marquée « nouveau » dans le Dico : présentée comme toute récente');
+  assert.ok(c.hashtags.includes('#AppWeb') && !c.hashtags.some((h) => /iphone|ios/i.test(h)));
+});
+
+test('les légendes Instagram renvoient toutes vers la bio', () => {
+  const c = contexte(APP, 'fr', {}, REGLAGES);
+  for (const v of [0, 1, 2]) assert.match(generer(canal('instagram-post'), c, v)[0].valeur, /bio 👆/);
+  assert.equal(bandeau(c), 'Gratuit sur l’App Store');
 });

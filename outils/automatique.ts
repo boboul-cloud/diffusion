@@ -13,10 +13,11 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { aProgrammer, appSuivante, rotation } from '../public/js/planning.js';
-import { contexte, generer } from '../public/js/textes.js';
+import { bandeau, contexte, generer } from '../public/js/textes.js';
 import { canal } from '../public/js/canaux.js';
 import { Rendeur } from './rendre.ts';
 import { canalInstagram, programmer as confierABuffer, statut } from './buffer.ts';
+import { ecrireBio } from './bio.ts';
 import {
   PUBLICATION,
   RACINE,
@@ -59,7 +60,8 @@ function preparer(plan: Plan, journal: Entree[], apps: any[], slugForce: string 
 
   const L = plan.langue ?? 'fr';
   const r = rotation(journal, app.slug);
-  const c = contexte(app, L, (choix as any).fiche ?? {}, plan.signature ?? {}, { nbApps: apps.length });
+  const nbWeb = apps.filter((a) => a.plateforme === 'web').length;
+  const c = contexte(app, L, (choix as any).fiche ?? {}, plan.signature ?? {}, { nbApps: apps.length - nbWeb, nbWeb });
   const legende = generer(canal('instagram-post'), c, r.variante)[0].valeur;
 
   const visuel = ((choix as any).visuel ?? {}) as Record<string, any>;
@@ -81,7 +83,7 @@ function preparer(plan: Plan, journal: Entree[], apps: any[], slugForce: string 
       titre: c.nom,
       sousTitre: c.sousTitre,
       accroche: c.accroche,
-      bandeau: L === 'fr' ? `${c.prix} sur l’App Store` : `${c.prix} on the App Store`,
+      bandeau: bandeau(c),
       couleur: visuel.couleur ?? '',
     },
   };
@@ -208,6 +210,12 @@ async function programmerCreneaux() {
   nettoyerImages(journal);
   ecrireJournal(journal);
   ecrireEtat(etat);
+  try {
+    // La page « lien en bio » : l'app du post qui vient d'etre programme passera en haut a son heure.
+    ecrireBio(depot);
+  } catch (e) {
+    console.error(`Page lien en bio : ${(e as Error).message}`);
+  }
   envoyer('Journal des publications');
   if (aFaire.length && journal.slice(-aFaire.length).every((e) => e.statut === 'erreur')) process.exitCode = 1;
 }

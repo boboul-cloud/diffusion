@@ -108,7 +108,7 @@ export const CANAUX = [
     conseils: [
       'Sur iPhone, « Partager l’image » copie la légende puis ouvre la feuille de partage : choisis Instagram et colle la légende.',
       'Instagram ne garde que 5 hashtags par publication.',
-      'Un lien dans une légende n’est pas cliquable : mets celui de l’App Store dans ta bio.',
+      'Un lien dans une légende n’est pas cliquable : mets dans ta bio l’adresse de ta page « lien en bio » (page Auto). Elle montre l’app du dernier post en premier.',
     ],
   },
   {
@@ -408,7 +408,7 @@ export const CANAUX = [
 
   // ---------------- Apple, web, imprime ----------------
   {
-    id: 'apple-nomination', nom: 'Mise en avant par Apple', precision: 'nomination', groupe: 'web',
+    id: 'apple-nomination', nom: 'Mise en avant par Apple', precision: 'nomination', groupe: 'web', appstore: true,
     couleur: '#1D1D1F', sigle: '', style: 'nomination', copie: true,
     ouvrir: () => 'https://appstoreconnect.apple.com/apps',
     conseils: [
@@ -443,5 +443,8 @@ export const ORDRE_LANCEMENT = [
 ];
 
 export const canal = (id) => CANAUX.find((c) => c.id === id);
+
+/** Les canaux qui ont un sens pour cette app : pas de nomination App Store pour une app web. */
+export const canauxDe = (app) => CANAUX.filter((k) => !(k.appstore && app?.plateforme === 'web'));
 
 export const conseils = (canal, c) => (canal.conseils ?? []).map((x) => (typeof x === 'function' ? x(c) : x));

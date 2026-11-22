@@ -32,36 +32,24 @@ function trouverChrome(): string {
   return c;
 }
 
-const pause = (ms: number) => new Promise((r) => setTimeout(r, ms));
+export const pause = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export class Rendeur {
-  private serveur?: http.Server;
+/** Chrome sans ecran, pilote par son protocole de debogage. */
+export class Navigateur {
   private chrome?: ChildProcess;
   private ws?: WebSocket;
   private id = 0;
   private attente = new Map<number, (r: any) => void>();
   private profil = fs.mkdtempSync(path.join(os.tmpdir(), 'diffusion-chrome-'));
 
-  async demarrer(): Promise<void> {
-    // Un petit serveur sur la racine du projet : la page charge visuels.js et les images.
-    this.serveur = http.createServer((req, res) => {
-      const chemin = decodeURIComponent(new URL(req.url ?? '/', 'http://x').pathname);
-      const fichier = path.resolve(RACINE, `.${chemin}`);
-      if (!fichier.startsWith(RACINE + path.sep) || !fs.existsSync(fichier) || !fs.statSync(fichier).isFile()) {
-        res.writeHead(404).end();
-        return;
-      }
-      res.writeHead(200, { 'Content-Type': TYPES[path.extname(fichier).toLowerCase()] ?? 'application/octet-stream' });
-      fs.createReadStream(fichier).pipe(res);
-    });
-    await new Promise<void>((ok) => this.serveur!.listen(0, '127.0.0.1', ok));
-    const port = (this.serveur.address() as { port: number }).port;
-
+  /** gpu : faux pour les visuels (un canvas 2D suffit) ; vrai pour photographier des pages en 3D (WebGL). */
+  async ouvrir(gpu = false): Promise<void> {
     const portDebogage = 9400 + Math.floor(Math.random() * 400);
     this.chrome = spawn(
       trouverChrome(),
       [
-        '--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', '--hide-scrollbars',
+        '--headless=new', '--no-first-run', '--no-default-browser-check', '--hide-scrollbars',
+        ...(gpu ? ['--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--enable-webgl'] : ['--disable-gpu']),
         ...(process.platform === 'linux' ? ['--no-sandbox'] : []),
         `--remote-debugging-port=${portDebogage}`, `--user-data-dir=${this.profil}`, 'about:blank',
       ],
@@ -93,16 +81,9 @@ export class Rendeur {
         f(j);
       }
     };
-    await this.commande('Page.navigate', { url: `http://127.0.0.1:${port}/outils/rendu.html` });
-    for (let i = 0; i < 100; i++) {
-      const r = await this.evaluer('window.pret === true');
-      if (r === true) return;
-      await pause(100);
-    }
-    throw new Error('La page de rendu ne s’est pas chargée.');
   }
 
-  private commande(method: string, params: object = {}): Promise<any> {
+  commande(method: string, params: object = {}): Promise<any> {
     return new Promise((ok) => {
       const id = ++this.id;
       this.attente.set(id, ok);
@@ -110,10 +91,47 @@ export class Rendeur {
     });
   }
 
-  private async evaluer(expression: string): Promise<unknown> {
+  async evaluer(expression: string): Promise<unknown> {
     const r = await this.commande('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true });
     if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? 'Erreur de rendu');
     return r.result?.result?.value;
+  }
+
+  async fermer(): Promise<void> {
+    this.ws?.close();
+    this.chrome?.kill();
+    await pause(200);
+    fs.rmSync(this.profil, { recursive: true, force: true });
+  }
+}
+
+/** Dessine les visuels avec visuels.js, dans la page outils/rendu.html. */
+export class Rendeur extends Navigateur {
+  private serveur?: http.Server;
+
+  async demarrer(): Promise<void> {
+    // Un petit serveur sur la racine du projet : la page charge visuels.js et les images.
+    this.serveur = http.createServer((req, res) => {
+      const chemin = decodeURIComponent(new URL(req.url ?? '/', 'http://x').pathname);
+      const fichier = path.resolve(RACINE, `.${chemin}`);
+      if (!fichier.startsWith(RACINE + path.sep) || !fs.existsSync(fichier) || !fs.statSync(fichier).isFile()) {
+        res.writeHead(404).end();
+        return;
+      }
+      res.writeHead(200, { 'Content-Type': TYPES[path.extname(fichier).toLowerCase()] ?? 'application/octet-stream' });
+      fs.createReadStream(fichier).pipe(res);
+    });
+    await new Promise<void>((ok) => this.serveur!.listen(0, '127.0.0.1', ok));
+    const port = (this.serveur.address() as { port: number }).port;
+
+    await this.ouvrir();
+    await this.commande('Page.navigate', { url: `http://127.0.0.1:${port}/outils/rendu.html` });
+    for (let i = 0; i < 100; i++) {
+      const r = await this.evaluer('window.pret === true');
+      if (r === true) return;
+      await pause(100);
+    }
+    throw new Error('La page de rendu ne s’est pas chargée.');
   }
 
   /** o : les options de dessiner() ; les images en chemins depuis la racine du projet. */
@@ -124,11 +142,8 @@ export class Rendeur {
   }
 
   async fermer(): Promise<void> {
-    this.ws?.close();
-    this.chrome?.kill();
     this.serveur?.close();
-    await pause(200);
-    fs.rmSync(this.profil, { recursive: true, force: true });
+    await super.fermer();
   }
 }
 

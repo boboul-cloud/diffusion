@@ -1,5 +1,6 @@
 # Sur le Mac seulement : toutes les apps (y compris pas encore publiées), l'app du Dock, le serveur
 public/data/
+liste-apps.json
 Diffusion.app/
 .diffusion.pid
 .diffusion.log

@@ -2,7 +2,7 @@
 // il repond (tu vois toujours la derniere version), sinon dans le cache.
 // Les images des apps, elles, ne changent pas : cache d'abord.
 
-const CACHE = 'diffusion-v1';
+const CACHE = 'diffusion-v2';
 const COQUILLE = [
   './',
   'index.html',

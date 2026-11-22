@@ -20,7 +20,10 @@ messages, Apple, web et affiches. Pour chaque app et chaque canal, Diffusion
 
 ## Utiliser
 
-1. **Apps** : tes apps, les moins diffusées d'abord.
+1. **Apps** : tes apps, les moins diffusées d'abord : celles de l'App Store,
+   les **apps web** du Dico et celles pas encore publiées. **Ajouter ou enlever
+   des apps** (sur le Mac) choisit lesquelles Diffusion fait connaître (voir
+   plus bas).
 2. Une app ▸ **Publier** : « Par où continuer » propose les canaux dans
    l'ordre conseillé pour un lancement. Un canal ouvert montre :
    - le texte, modifiable, avec le compteur de la limite du réseau ;
@@ -58,6 +61,46 @@ Ces canaux-là restent en « prépare, tu cliques ». Seul Instagram est automat
 
 Liens de partage et limites vérifiés en septembre 2026 (voir `public/js/canaux.js`).
 
+## Ajouter ou enlever des apps
+
+Bouton **Ajouter ou enlever des apps** en haut de la page Apps, sur le Mac.
+
+- Arrivent d'elles-mêmes, à chaque « Mettre à jour » : tes apps de l'App Store
+  (même si leur projet n'est plus sur le Bureau : la page développeur les donne
+  toutes), les **apps web du Dico** (`/Volumes/Travail/Dico/js/data.js`), et
+  les apps pas encore publiées dont la feuille `SOUMISSION.md` est prête.
+- **Ajouter** : pour une app que Diffusion ne trouve pas, colle le lien de sa
+  fiche App Store, ou l'adresse d'une app web : son nom, sa description et
+  son icône sont lus sur sa page.
+- **Enlever** : l'app sort de Diffusion, de la page « lien en bio » et de la
+  publication automatique. Elle reste en bas de la page, prête à revenir
+  (« Remettre » ; pour Instagram, il faut la recocher dans Auto).
+
+Tes choix sont dans `liste-apps.json`, sur le Mac seulement (pas sur GitHub).
+
+## Les apps web
+
+Elles viennent du Dico : nom, définition, domaine, icône. N'ayant pas de fiche
+App Store, leurs **captures** sont prises en ligne par Chrome sans fenêtre,
+comme sur un iPhone puis un iPad, 3D comprise (une seule fois : `npm run
+importer -- --forcer` pour les refaire). Leurs textes disent « Gratuit, dans
+ton navigateur » au lieu de l'App Store, et la nomination Apple ne les concerne
+pas. Le disque Travail débranché, l'import garde les apps web de la fois
+d'avant.
+
+## La page « lien en bio »
+
+Instagram ne rend pas cliquables les liens des légendes : elles disent « lien
+en bio ». L'adresse à mettre dans la bio Instagram, une fois pour toutes :
+**https://boboul-cloud.github.io/diffusion/** (GitHub Pages, dossier `docs/`).
+
+En haut, l'app du dernier post, avec son bouton (App Store, ou l'app web
+elle-même) ; puis les derniers posts, comme la grille d'Instagram (un toucher
+ouvre l'app du post) ; puis toutes les apps, App Store et web. Le robot la
+refait à chaque passage ; un post programmé la veille y apparaît tout seul à
+son heure. Le Mac la refait aussi quand la liste change. À la main :
+`node outils/bio.ts`.
+
 ## Publication automatique sur Instagram
 
 Menu **Auto** : tu coches les apps à mettre en avant, leur ordre, les jours et
@@ -90,13 +133,15 @@ GitHub ; il ne contient ni clé ni mot de passe, ni les apps pas encore sorties.
 Bouton **Mettre à jour depuis mes projets** en bas de la liste (sur le Mac),
 ou `npm run importer`. L'import :
 
-- trouve tes projets Xcode du Bureau (le code d'AgentDouble) ;
+- trouve tes projets Xcode du Bureau (le code d'AgentDouble), et tes autres
+  apps publiées par ta page développeur de l'App Store ;
 - lit la fiche publique de l'App Store des apps en ligne : nom, description,
   icône, captures, lien, en français et en anglais ;
 - lit dans **App Store Connect, en lecture seule**, avec la clé d'AgentDouble,
   le sous-titre, le texte promotionnel et les mots-clés de la version en ligne ;
 - lit le `SOUMISSION.md` du projet pour les apps pas encore publiées
   (icône Icon Composer comprise) ;
+- lit les apps web du Dico et les photographie en ligne ;
 - copie icônes et captures dans `public/data/apps/`.
 
 Options : `-- --en-ligne` (seulement les apps publiées), `-- --forcer`
@@ -114,7 +159,9 @@ avec GitHub Pages sur ce dossier, et Diffusion s'installe sur l'iPhone
 
 | | |
 |---|---|
-| `public/data/apps.json` | les fiches importées |
+| `public/data/apps.json` | les fiches importées (et, à part, les apps enlevées) |
+| `liste-apps.json` | tes choix : apps enlevées, apps ajoutées par leur lien (sur le Mac) |
+| `docs/` | la page « lien en bio » (GitHub Pages) |
 | `public/data/apps/<app>/` | icône et captures |
 | le navigateur de chaque appareil | réglages, suivi, textes retouchés : Réglages ▸ Sauvegarder / Restaurer pour passer de l'un à l'autre |
 

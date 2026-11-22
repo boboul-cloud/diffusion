@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mes apps</title>
+<meta name="description" content="Les apps présentées sur Instagram : la dernière en haut, toutes les autres en dessous.">
+<meta name="theme-color" content="#f6f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111114" media="(prefers-color-scheme: dark)">
+<style>
+  :root { --fond:#f6f6f8; --carte:#fff; --texte:#111114; --doux:#6b6b76; --trait:#e4e4ea; --accent:#0a66ff; --accent-texte:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --fond:#111114; --carte:#1c1c21; --texte:#f2f2f5; --doux:#9d9da8; --trait:#2c2c33; --accent:#4d8dff; } }
+  * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
+  body { margin:0; background:var(--fond); color:var(--texte); font:16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; -webkit-text-size-adjust:100%; }
+  main { max-width:560px; margin:0 auto; padding:max(20px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom)); }
+  h1 { font-size:26px; margin:4px 0 2px; letter-spacing:-0.01em; }
+  .intro { color:var(--doux); margin:0 0 20px; }
+  .une { background:var(--carte); border:1px solid var(--trait); border-radius:22px; padding:16px; margin-bottom:28px; }
+  .surtitre { margin:0 0 10px; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--doux); }
+  .visuel img { display:block; width:100%; height:auto; border-radius:14px; }
+  .tete { display:flex; gap:14px; align-items:center; margin:16px 0 8px; }
+  .tete h2 { margin:0; font-size:22px; line-height:1.2; }
+  .tete p { margin:2px 0 0; color:var(--doux); }
+  .accroche { margin:6px 0 14px; }
+  .icone { border-radius:22%; flex:none; object-fit:cover; background:var(--trait); }
+  .icone.vide { display:inline-flex; align-items:center; justify-content:center; font-weight:700; color:var(--doux); }
+  .bouton { display:block; text-align:center; background:var(--accent); color:var(--accent-texte); text-decoration:none; font-weight:650; font-size:17px; padding:15px 18px; border-radius:14px; }
+  .bouton:active { opacity:.85; }
+  .ou { text-align:center; color:var(--doux); font-size:14px; margin:8px 0 0; }
+  .discret { text-align:center; font-size:14px; margin:10px 0 0; }
+  .discret a, footer a { color:var(--doux); }
+  h3 { font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:var(--doux); margin:28px 0 10px; }
+  .grille { display:grid; grid-template-columns:repeat(3, 1fr); gap:3px; border-radius:14px; overflow:hidden; }
+  .grille a { position:relative; display:block; aspect-ratio:4/5; background:var(--trait); }
+  .grille img { width:100%; height:100%; object-fit:cover; display:block; }
+  .apps { list-style:none; margin:0; padding:0; background:var(--carte); border:1px solid var(--trait); border-radius:16px; overflow:hidden; }
+  .apps li + li { border-top:1px solid var(--trait); }
+  .apps a { display:flex; align-items:center; gap:12px; padding:10px 14px; color:inherit; text-decoration:none; min-height:64px; }
+  .apps span { flex:1; min-width:0; }
+  .apps strong { display:block; font-weight:600; }
+  .apps small { display:block; color:var(--doux); font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .apps i { color:var(--doux); font-style:normal; font-size:22px; }
+  footer { text-align:center; color:var(--doux); font-size:14px; margin-top:32px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mes apps</h1>
+  <p class="intro">Les apps présentées sur Instagram. Touche une app pour l’ouvrir.</p>
+
+    <article class="une" data-t="2026-11-23T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/bobcanonball/id6808388554"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-23-canonball-mws3fzxg.jpg" alt="BobCanonBall" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/canonball.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>BobCanonBall</h2><p>Duel d&#39;artillerie et d&#39;astuce</p></div>
+      </div>
+      <p class="accroche">Un défi nouveau chaque jour, le même pour tout le monde. Plus dix terrains, un atelier de création et le duel à deux appareils, sans compte ni connexion.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/bobcanonball/id6808388554">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      
+    </article>
+    <article class="une" data-t="2026-11-22T17:00:00.000Z" >
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/riskelo/id6806804539"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-22-riskelo-mwqo02mq.jpg" alt="Riskelo" width="1080" height="1350"></a>
+      <div class="tete">
+        <img class="icone" src="icones/riskelo.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Riskelo</h2><p>Conquête et culture générale</p></div>
+      </div>
+      <p class="accroche">2 400 questions, quatre plateaux, trois manières de se battre, dés compris. Seul, à plusieurs sur un appareil, ou au loin avec un code. Aucune publicité, aucun compte.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/riskelo/id6806804539">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DgDSz7dlAoQ/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-21T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/bobcrapette/id6811610709"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-21-bobcrapette-mwp8kivf.jpg" alt="Bobcrapette" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/bobcrapette.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Bobcrapette</h2><p>La crapette au jeu de tarot</p></div>
+      </div>
+      <p class="accroche">Un adversaire qui vous surveille, des atouts qui font une cinquième famille, et le plaisir de crier « Crapette ! » quand il oublie un coup obligatoire.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/bobcrapette/id6811610709">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DgAuHk2lUWX/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-20T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-20-temps-de-jeu-mwnt5d6l.jpg" alt="Temps De Jeu" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/temps-de-jeu.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Temps De Jeu</h2><p>Matchs, effectifs, tactique 3D</p></div>
+      </div>
+      <p class="accroche">Temps De Jeu, l&#39;assistant qui fait gagner du temps à ceux qui font jouer.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Df-JmufieAA/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-19T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-19-materiel-mwmdq0mb.jpg" alt="Prêt Matériel" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/materiel.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Prêt Matériel</h2><p>Prêts, emprunts et locations</p></div>
+      </div>
+      <p class="accroche">Gérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Df7ktbGEWTo/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-18T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/bobcanonball/id6808388554"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-18-canonball-mwkybo1a.jpg" alt="BobCanonBall" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/canonball.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>BobCanonBall</h2><p>Duel d&#39;artillerie et d&#39;astuce</p></div>
+      </div>
+      <p class="accroche">Un défi nouveau chaque jour, le même pour tout le monde. Plus dix terrains, un atelier de création et le duel à deux appareils, sans compte ni connexion.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/bobcanonball/id6808388554">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Df4_-xwFjOz/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-17T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/riskelo/id6806804539"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-17-riskelo-mwjivgld.jpg" alt="Riskelo" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/riskelo.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Riskelo</h2><p>Conquête et culture générale</p></div>
+      </div>
+      <p class="accroche">2 400 questions, quatre plateaux, trois manières de se battre, dés compris. Seul, à plusieurs sur un appareil, ou au loin avec un code. Aucune publicité, aucun compte.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/riskelo/id6806804539">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Df2bM9ToPQ4/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-16T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/bobcrapette/id6811610709"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-16-bobcrapette-mwi3cq0z.jpg" alt="Bobcrapette" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/bobcrapette.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Bobcrapette</h2><p>La crapette au jeu de tarot</p></div>
+      </div>
+      <p class="accroche">Un adversaire qui vous surveille, des atouts qui font une cinquième famille, et le plaisir de crier « Crapette ! » quand il oublie un coup obligatoire.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/bobcrapette/id6811610709">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Dfz2fFDib8N/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-15T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-15-temps-de-jeu-mwgnwpnt.jpg" alt="Temps De Jeu" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/temps-de-jeu.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Temps De Jeu</h2><p>Matchs, effectifs, tactique 3D</p></div>
+      </div>
+      <p class="accroche">Temps De Jeu, l&#39;assistant qui fait gagner du temps à ceux qui font jouer.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DfxRU72FNwr/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-14T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-14-materiel-mwf8iqel.jpg" alt="Prêt Matériel" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/materiel.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Prêt Matériel</h2><p>Prêts, emprunts et locations</p></div>
+      </div>
+      <p class="accroche">Gérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DfusjyTlL42/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-13T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/bobcanonball/id6808388554"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-13-canonball-mwdt409n.jpg" alt="BobCanonBall" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/canonball.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>BobCanonBall</h2><p>Duel d&#39;artillerie et d&#39;astuce</p></div>
+      </div>
+      <p class="accroche">Un défi nouveau chaque jour, le même pour tout le monde. Plus dix terrains, un atelier de création et le duel à deux appareils, sans compte ni connexion.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/bobcanonball/id6808388554">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DfsH-2cFvGI/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-12T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/riskelo/id6806804539"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-12-riskelo-mwcdr4s2.jpg" alt="Riskelo" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/riskelo.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Riskelo</h2><p>Conquête et culture générale</p></div>
+      </div>
+      <p class="accroche">2 400 questions, quatre plateaux, trois manières de se battre, dés compris. Seul, à plusieurs sur un appareil, ou au loin avec un code. Aucune publicité, aucun compte.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/riskelo/id6806804539">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DfpjGfACRaz/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-11T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/bobcrapette/id6811610709"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-11-bobcrapette-mway6wg4.jpg" alt="Bobcrapette" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/bobcrapette.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Bobcrapette</h2><p>La crapette au jeu de tarot</p></div>
+      </div>
+      <p class="accroche">Un adversaire qui vous surveille, des atouts qui font une cinquième famille, et le plaisir de crier « Crapette ! » quand il oublie un coup obligatoire.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/bobcrapette/id6811610709">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Dfm-gjjEcwr/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-10T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-10-temps-de-jeu-mw9itrp3.jpg" alt="Temps De Jeu" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/temps-de-jeu.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Temps De Jeu</h2><p>Matchs, effectifs, tactique 3D</p></div>
+      </div>
+      <p class="accroche">Temps De Jeu, l&#39;assistant qui fait gagner du temps à ceux qui font jouer.</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/DfkZjeHFrUL/">Revoir le post sur Instagram</a></p>
+    </article>
+    <article class="une" data-t="2026-11-09T17:00:00.000Z" hidden>
+      <p class="surtitre">Le dernier post</p>
+      <a class="visuel" href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000"><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-09-materiel-mw8399wo.jpg" alt="Prêt Matériel" width="1080" height="1350" loading="lazy"></a>
+      <div class="tete">
+        <img class="icone" src="icones/materiel.png" alt="" width="64" height="64" loading="lazy">
+        <div><h2>Prêt Matériel</h2><p>Prêts, emprunts et locations</p></div>
+      </div>
+      <p class="accroche">Gérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !</p>
+      <a class="bouton" href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000">Télécharger sur l’App Store</a>
+      <p class="ou">Sur l’App Store, pour iPhone et iPad</p>
+      <p class="discret"><a href="https://www.instagram.com/p/Dfh0z49oOwc/">Revoir le post sur Instagram</a></p>
+    </article>
+
+  <h3>Les derniers posts</h3>
+  <div class="grille"><a href="https://apps.apple.com/fr/app/bobcanonball/id6808388554" data-t="2026-11-23T17:00:00.000Z" hidden><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-23-canonball-mws3fzxg.jpg" alt="BobCanonBall" loading="lazy"></a><a href="https://apps.apple.com/fr/app/riskelo/id6806804539" data-t="2026-11-22T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-22-riskelo-mwqo02mq.jpg" alt="Riskelo" loading="lazy"></a><a href="https://apps.apple.com/fr/app/bobcrapette/id6811610709" data-t="2026-11-21T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-21-bobcrapette-mwp8kivf.jpg" alt="Bobcrapette" loading="lazy"></a><a href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303" data-t="2026-11-20T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-20-temps-de-jeu-mwnt5d6l.jpg" alt="Temps De Jeu" loading="lazy"></a><a href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000" data-t="2026-11-19T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-19-materiel-mwmdq0mb.jpg" alt="Prêt Matériel" loading="lazy"></a><a href="https://apps.apple.com/fr/app/bobcanonball/id6808388554" data-t="2026-11-18T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-18-canonball-mwkybo1a.jpg" alt="BobCanonBall" loading="lazy"></a><a href="https://apps.apple.com/fr/app/riskelo/id6806804539" data-t="2026-11-17T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-17-riskelo-mwjivgld.jpg" alt="Riskelo" loading="lazy"></a><a href="https://apps.apple.com/fr/app/bobcrapette/id6811610709" data-t="2026-11-16T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-16-bobcrapette-mwi3cq0z.jpg" alt="Bobcrapette" loading="lazy"></a><a href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303" data-t="2026-11-15T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-15-temps-de-jeu-mwgnwpnt.jpg" alt="Temps De Jeu" loading="lazy"></a><a href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000" data-t="2026-11-14T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-14-materiel-mwf8iqel.jpg" alt="Prêt Matériel" loading="lazy"></a><a href="https://apps.apple.com/fr/app/bobcanonball/id6808388554" data-t="2026-11-13T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-13-canonball-mwdt409n.jpg" alt="BobCanonBall" loading="lazy"></a><a href="https://apps.apple.com/fr/app/riskelo/id6806804539" data-t="2026-11-12T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-12-riskelo-mwcdr4s2.jpg" alt="Riskelo" loading="lazy"></a><a href="https://apps.apple.com/fr/app/bobcrapette/id6811610709" data-t="2026-11-11T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-11-bobcrapette-mway6wg4.jpg" alt="Bobcrapette" loading="lazy"></a><a href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303" data-t="2026-11-10T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-10-temps-de-jeu-mw9itrp3.jpg" alt="Temps De Jeu" loading="lazy"></a><a href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000" data-t="2026-11-09T17:00:00.000Z" ><img src="https://raw.githubusercontent.com/boboul-cloud/diffusion/main/publication/posts/2026-11-09-materiel-mw8399wo.jpg" alt="Prêt Matériel" loading="lazy"></a></div>
+
+  <h3>Sur l’App Store</h3>
+  <ul class="apps">
+      <li><a href="https://apps.apple.com/fr/app/blocgenda/id6799521493"><img class="icone" src="icones/blocgenda.png" alt="" width="48" height="48" loading="lazy"><span><strong>Blocgenda</strong><small>Ne ratez plus un anniversaire : Blocgenda écrit le message et l&#39;envoie pour vous.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bob-conjugaison/id6815283259"><img class="icone" src="icones/bobconjugaison.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bob Conjugaison</strong><small>Quiz et conjugueur en couleurs</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bob-m%C3%A9cano/id6815190163"><img class="icone" src="icones/bobmecano.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bob Mécano</strong><small>Machines improbables</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bob-planning/id6815354524"><img class="icone" src="icones/bobplanning.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bob Planning</strong><small>Horaires d&#39;équipe et coûts</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bobcanonball/id6808388554"><img class="icone" src="icones/canonball.png" alt="" width="48" height="48" loading="lazy"><span><strong>BobCanonBall</strong><small>Duel d&#39;artillerie et d&#39;astuce</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bobcrapette/id6811610709"><img class="icone" src="icones/bobcrapette.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bobcrapette</strong><small>La crapette au jeu de tarot</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bobmockup/id6758100933"><img class="icone" src="icones/bobmockup.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bobmockup</strong><small>Un labo photo pour vos captures d&#39;écran.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bobportrait/id6815783401"><img class="icone" src="icones/bobportrait.png" alt="" width="48" height="48" loading="lazy"><span><strong>BobPortrait</strong><small>Portraits en points numérotés</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bobprompt/id6758165213"><img class="icone" src="icones/prompteur.png" alt="" width="48" height="48" loading="lazy"><span><strong>bobprompt</strong><small>Téléprompteur simple et fun</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/bons-comptes/id6761653191"><img class="icone" src="icones/bons-comptes.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bons Comptes +</strong><small>Partagez vos dépenses en groupe simplement : voyages, colocs, sorties.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/cmamaison/id6796610063"><img class="icone" src="icones/mamaison.png" alt="" width="48" height="48" loading="lazy"><span><strong>C&#39;MaMaison</strong><small>Suivez vos travaux pièce par pièce : tâches, artisans, paiements, achats et locations de matériel.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/calcul-de-limpot/id6763001988"><img class="icone" src="icones/calcul-de-l-impot.png" alt="" width="48" height="48" loading="lazy"><span><strong>calcul de l&#39;impot</strong><small>Simulation d&#39;impôt simplifiée</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/courriercode/id6757985873"><img class="icone" src="icones/courriercode.png" alt="" width="48" height="48" loading="lazy"><span><strong>CourrierCode</strong><small>Encodez vos messages secrets !</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/foot2026/id6785886701"><img class="icone" src="icones/foot2026.png" alt="" width="48" height="48" loading="lazy"><span><strong>FOOT2026</strong><small>Ne manquez aucun match de l&#39;été foot 2026 : calendrier des 104 rencontres, scores en direct, classements, tableau final et pronostics.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/grands-chemins/id6819401816"><img class="icone" src="icones/grandschemins.png" alt="" width="48" height="48" loading="lazy"><span><strong>Grands Chemins</strong><small>Randonnées au long cours</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/li%C3%A8vre-demi-fond-et-vma/id6819346455"><img class="icone" src="icones/vdt.png" alt="" width="48" height="48" loading="lazy"><span><strong>Lièvre – Demi-fond et VMA</strong><small>Tests VMA, plots et séances</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/monpetitreseau/id6764667201"><img class="icone" src="icones/monpetitreseau.png" alt="" width="48" height="48" loading="lazy"><span><strong>MonPetitReseau</strong><small>Le réseau privé de votre famille.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/multigroop/id6760623513"><img class="icone" src="icones/groop.png" alt="" width="48" height="48" loading="lazy"><span><strong>MultiGroop</strong><small>Commandes groupees faciles</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/multireleve/id6803667972"><img class="icone" src="icones/releve.png" alt="" width="48" height="48" loading="lazy"><span><strong>MultiReleve</strong><small>La généalogie par les lieux</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/operations-plus/id6770241928"><img class="icone" src="icones/operations.png" alt="" width="48" height="48" loading="lazy"><span><strong>operations plus</strong><small>Maths, méthodes historiques &amp; jeux éducatifs</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/pleins-et-d%C3%A9li%C3%A9s/id6809700017"><img class="icone" src="icones/orthoprof.png" alt="" width="48" height="48" loading="lazy"><span><strong>Pleins et déliés</strong><small>Dictée aménagée et orthophonie</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/pngtojpg/id6758070086"><img class="icone" src="icones/pngtojpg.png" alt="" width="48" height="48" loading="lazy"><span><strong>pngtojpg</strong><small>Nouveau ! Convertissez vos PNG en JPG en quelques secondes.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000"><img class="icone" src="icones/materiel.png" alt="" width="48" height="48" loading="lazy"><span><strong>Prêt Matériel</strong><small>Prêts, emprunts et locations</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/read-my-book/id6758413324"><img class="icone" src="icones/pretmat.png" alt="" width="48" height="48" loading="lazy"><span><strong>Read my Book</strong><small>Gérez vos livres et vos prêts</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/rendumonnaie/id6794941086"><img class="icone" src="icones/rendumonnaie.png" alt="" width="48" height="48" loading="lazy"><span><strong>RenduMonnaie</strong><small>Rendez la monnaie juste, dans n&#39;importe quelle devise : commission et pourboire détaillés, historique achats/ventes, écr</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/riskelo/id6806804539"><img class="icone" src="icones/riskelo.png" alt="" width="48" height="48" loading="lazy"><span><strong>Riskelo</strong><small>Conquête et culture générale</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/romancier/id6769827003"><img class="icone" src="icones/romancier.png" alt="" width="48" height="48" loading="lazy"><span><strong>Romancier+</strong><small>Votre roman, assisté par l&#39;IA</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/stopphone/id6775483855"><img class="icone" src="icones/stopphone.png" alt="" width="48" height="48" loading="lazy"><span><strong>StopPhone</strong><small>StopPhone bloque automatiquement les apps distrayantes dès que vous prenez le volant, pour que vous restiez concentré sur la route.</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://apps.apple.com/fr/app/temps-de-jeu/id6758916303"><img class="icone" src="icones/temps-de-jeu.png" alt="" width="48" height="48" loading="lazy"><span><strong>Temps De Jeu</strong><small>Matchs, effectifs, tactique 3D</small></span><i aria-hidden="true">›</i></a></li>
+  </ul>
+
+  <h3>Sur le web, sans rien installer</h3>
+  <ul class="apps">
+      <li><a href="https://aquiloutil.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-aquiloutil.png" alt="" width="48" height="48" loading="lazy"><span><strong>À qui l&#39;outil ?</strong><small>Jeu des métiers</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://boboul-cloud.github.io/bob1n2/"><img class="icone" src="icones/web-bob1n2.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bob 1N2</strong><small>Pronostics foot</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://bobcalc.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-bobcalc.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bob Calc</strong><small>Calculatrice</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://bob-droit.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-bobdroit.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bob Droit</strong><small>Droit français</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://bobcine.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-bobcine.png" alt="" width="48" height="48" loading="lazy"><span><strong>Bobciné</strong><small>Jeu de cartes du cinéma</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://bobechecs.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-bobechecs.png" alt="" width="48" height="48" loading="lazy"><span><strong>BobÉchecs</strong><small>Échecs</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://bobsurface.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-bobsurface.png" alt="" width="48" height="48" loading="lazy"><span><strong>BobSurface</strong><small>Surfaces</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://briquette.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-briquette.png" alt="" width="48" height="48" loading="lazy"><span><strong>Briquette</strong><small>Jeu de construction</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://capimath.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-capimath.png" alt="" width="48" height="48" loading="lazy"><span><strong>Capymath</strong><small>Calcul et géographie</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://circuitip.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-circuitip.png" alt="" width="48" height="48" loading="lazy"><span><strong>Circuit IP</strong><small>Électronique</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://conduite-a-brest.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-conduite.png" alt="" width="48" height="48" loading="lazy"><span><strong>Conduite à Brest</strong><small>Jeu de conduite</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://contrepied.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-contrepied.png" alt="" width="48" height="48" loading="lazy"><span><strong>Contrepied</strong><small>Jeu de mots</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://coquilles.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-coquilles.png" alt="" width="48" height="48" loading="lazy"><span><strong>Coquilles</strong><small>Vente groupée</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://crescendo.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-crescendo.png" alt="" width="48" height="48" loading="lazy"><span><strong>Crescendo</strong><small>Jeu d&#39;ambiance</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://cubimage.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-cubimage.png" alt="" width="48" height="48" loading="lazy"><span><strong>Cubimage</strong><small>Jeu de cubes</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://ecoloto.pages.dev/"><span class="icone vide" style="width:48px;height:48px">E</span><span><strong>ECOLOTO</strong><small>Épargne</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://boboul-cloud.github.io/gares-de-paris/"><img class="icone" src="icones/web-garesdeparis.png" alt="" width="48" height="48" loading="lazy"><span><strong>Gares de Paris</strong><small>Histoire du rail</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://gestionfoot.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-gestionfoot.png" alt="" width="48" height="48" loading="lazy"><span><strong>GestionFoot</strong><small>Équipement du club</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://inventaire.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-inventaire.png" alt="" width="48" height="48" loading="lazy"><span><strong>Gestionnaire d&#39;Inventaire</strong><small>Stock et caisse</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://puzzdep.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-puzzdep.png" alt="" width="48" height="48" loading="lazy"><span><strong>PuzzDép</strong><small>Géographie</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://retraite.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-retraite.png" alt="" width="48" height="48" loading="lazy"><span><strong>Retraite</strong><small>Capital de retraite</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://roisdefrance.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-roisdefrance.png" alt="" width="48" height="48" loading="lazy"><span><strong>Rois de France</strong><small>Jeu d&#39;histoire</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://soinsmedicaux.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-soinsmedicaux.png" alt="" width="48" height="48" loading="lazy"><span><strong>Soins Médicaux</strong><small>Cabinet de soins</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://chantierpro.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-chantierpro.png" alt="" width="48" height="48" loading="lazy"><span><strong>Suivi de Chantier Pro</strong><small>Gestion de chantier</small></span><i aria-hidden="true">›</i></a></li>
+      <li><a href="https://tclp.riskelo-salon.workers.dev/"><img class="icone" src="icones/web-tclp.png" alt="" width="48" height="48" loading="lazy"><span><strong>TCLP</strong><small>Jeu musical</small></span><i aria-hidden="true">›</i></a></li>
+  </ul>
+  <footer><p>Toutes mes créations, de A à Z : <a href="https://dico.riskelo-salon.workers.dev/">le Dico</a></p></footer>
+</main>
+<script>
+  // Les posts programmes a l'avance apparaissent une fois leur heure passee.
+  (function () {
+    var maintenant = Date.now();
+    var paru = function (el) { return new Date(el.dataset.t).getTime() <= maintenant; };
+    document.querySelectorAll('.grille [data-t]').forEach(function (el) { el.hidden = !paru(el); });
+    var unes = Array.prototype.slice.call(document.querySelectorAll('.une')).filter(paru);
+    unes.sort(function (a, b) { return a.dataset.t < b.dataset.t ? 1 : -1; });
+    document.querySelectorAll('.une').forEach(function (el) { el.hidden = el !== unes[0]; });
+    var grille = document.querySelector('.grille');
+    if (grille) {
+      var vus = Array.prototype.slice.call(grille.children).filter(function (el) { return !el.hidden; });
+      vus.slice(12).forEach(function (el) { el.hidden = true; });
+    }
+  })();
+</script>
+</body>
+</html>

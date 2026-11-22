@@ -417,3 +417,22 @@ summary { cursor: pointer; font-weight: 600; }
 .apercu-auto { margin-top: 12px; }
 .guide { padding-left: 20px; }
 .guide li { margin: 8px 0; }
+
+/* ---------------- Ajouter ou enlever des apps ---------------- */
+
+.badge.web { color: #6a3aa6; background: #f1e8fb; }
+.badge.ig { color: #c13584; background: #fde8f1; }
+@media (prefers-color-scheme: dark) {
+  .badge.web { color: #c9a7f2; background: #2a1d3a; }
+  .badge.ig { color: #f48fbf; background: #3a1828; }
+}
+.ajout { display: flex; flex-wrap: wrap; gap: 8px; }
+.ajout input { flex: 1 1 260px; min-width: 0; }
+.liste-apps { list-style: none; margin: 0; padding: 0; }
+.liste-apps li { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+.liste-apps li + li { border-top: 1px solid var(--bord); }
+.liste-apps .icone-app.petite { width: 40px; height: 40px; }
+.liste-apps .infos { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.liste-apps .sous { color: var(--doux); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.liste-apps .btn { flex: none; min-width: 92px; }
+.adresse-bio { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-weight: 600; word-break: break-all; }

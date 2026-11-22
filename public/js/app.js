@@ -5,8 +5,8 @@
 // le reseau deja rempli, partager l'image, ecrire l'e-mail. Rien ne part
 // sans ton clic.
 
-import { CANAUX, GROUPES, FORMATS, ORDRE_LANCEMENT, canal as trouverCanal, conseils } from './canaux.js';
-import { contexte, generer, texteComplet, longueur } from './textes.js';
+import { CANAUX, GROUPES, FORMATS, ORDRE_LANCEMENT, canal as trouverCanal, canauxDe, conseils } from './canaux.js';
+import { bandeau, contexte, generer, texteComplet, longueur } from './textes.js';
 import { dessiner, versFichier, MODELES, dessinerQr, chargerImage } from './visuels.js';
 import { lire, ecrire, modifier, exporter, importer } from './stockage.js';
 import { creerZip } from './zip.js';
@@ -29,6 +29,8 @@ const etat = {
   apercus: new Map(),
   local: false,
   installation: null,
+  // La page « Ajouter ou enlever » : l'app en cours de traitement, la liste Instagram.
+  liste: { occupe: '', instagram: [], bio: '' },
 };
 
 const env = {
@@ -49,6 +51,9 @@ const env = {
 
 const reglages = () => lire('reglages', {});
 const nbEnLigne = () => etat.apps.filter((a) => a.enLigne).length;
+const estWeb = (a) => a.plateforme === 'web';
+/** Pour les textes : combien d'apps sur l'App Store, combien sur le web. */
+const comptes = () => ({ nbApps: etat.apps.filter((a) => a.enLigne && !estWeb(a)).length, nbWeb: etat.apps.filter(estWeb).length });
 const appDe = (slug) => etat.apps.find((a) => a.slug === slug);
 
 function langueDe(app) {
@@ -58,7 +63,7 @@ function langueDe(app) {
 function ctx(app, L) {
   const fiche = lire('fiches', {})[app.slug]?.[L] ?? {};
   const angle = lire('angles', {})[app.slug];
-  return contexte(app, L, { ...fiche, angle }, reglages(), { nbApps: nbEnLigne() });
+  return contexte(app, L, { ...fiche, angle }, reglages(), comptes());
 }
 
 const cleTexte = (slug, canalId, L, cle) => `${slug}|${canalId}|${L}|${cle}`;
@@ -77,7 +82,10 @@ function champsDe(app, canal, L) {
 
 const langueCanal = (app, canal) => canal.langue ?? langueDe(app);
 const suiviDe = (slug) => lire('suivi', {})[slug] ?? {};
-const faits = (slug) => Object.keys(suiviDe(slug)).filter((id) => trouverCanal(id)).length;
+const faits = (slug) => {
+  const ids = new Set(canauxDe(appDe(slug)).map((k) => k.id));
+  return Object.keys(suiviDe(slug)).filter((id) => ids.has(id)).length;
+};
 
 function capturesDe(app, L) {
   const v = lire('visuels', {})[app.slug] ?? {};
@@ -95,9 +103,6 @@ function reglagesVisuel(app) {
 function optionsVisuel(app, format, L) {
   const c = ctx(app, L);
   const v = reglagesVisuel(app);
-  const bandeau = c.enLigne
-    ? L === 'fr' ? `${c.prix} sur l’App Store` : `${c.prix} on the App Store`
-    : L === 'fr' ? 'Bientôt sur l’App Store' : 'Coming soon to the App Store';
   return {
     format,
     modele: v.modele,
@@ -106,7 +111,7 @@ function optionsVisuel(app, format, L) {
     titre: c.nom,
     sousTitre: c.sousTitre,
     accroche: c.accroche,
-    bandeau,
+    bandeau: bandeau(c),
     couleur: v.couleur,
     qr: v.qr && c.lien ? c.lien : null,
   };
@@ -198,13 +203,13 @@ function ouvrirAdresse(url) {
 function route() {
   const [page, slug, onglet, canalId] = location.hash.replace(/^#\/?/, '').split('/');
   if (page === 'app' && slug) return { page: 'app', slug: decodeURIComponent(slug), onglet: onglet || 'publier', canal: canalId };
-  if (page === 'journal' || page === 'reglages' || page === 'automatique') return { page };
+  if (page === 'journal' || page === 'reglages' || page === 'automatique' || page === 'liste') return { page };
   return { page: 'accueil' };
 }
 
 function rendre() {
   const r = etat.route;
-  document.querySelectorAll('.nav a').forEach((a) => a.classList.toggle('actif', a.dataset.page === r.page || (r.page === 'app' && a.dataset.page === 'accueil')));
+  document.querySelectorAll('.nav a').forEach((a) => a.classList.toggle('actif', a.dataset.page === r.page || ((r.page === 'app' || r.page === 'liste') && a.dataset.page === 'accueil')));
   const main = $('#principal');
   if (!etat.donnees) {
     main.innerHTML = `<p class="vide">Chargement…</p>`;
@@ -216,6 +221,10 @@ function rendre() {
     if (app) apresRenduApp(app, r.onglet);
   } else if (r.page === 'journal') main.innerHTML = pageJournal();
   else if (r.page === 'reglages') main.innerHTML = pageReglages();
+  else if (r.page === 'liste') {
+    main.innerHTML = pageListe();
+    if (etat.local && !etat.liste.charge) chargerListe();
+  }
   else if (r.page === 'automatique') {
     main.innerHTML = pageAutomatique();
     apresRenduAutomatique();
@@ -226,9 +235,9 @@ function rendre() {
 // ---------------- Accueil ----------------
 
 function pageAccueil() {
-  const total = CANAUX.length;
   let apps = etat.apps.filter((a) => {
-    if (etat.filtreApps === 'enligne' && !a.enLigne) return false;
+    if (etat.filtreApps === 'enligne' && (!a.enLigne || estWeb(a))) return false;
+    if (etat.filtreApps === 'web' && !estWeb(a)) return false;
     if (etat.filtreApps === 'bientot' && a.enLigne) return false;
     const q = etat.recherche.trim().toLocaleLowerCase('fr');
     if (!q) return true;
@@ -241,17 +250,21 @@ function pageAccueil() {
     return faits(a.slug) - faits(b.slug) || nomApp(a).localeCompare(nomApp(b), 'fr');
   });
   const publications = etat.apps.reduce((n, a) => n + faits(a.slug), 0);
+  const { nbApps, nbWeb } = comptes();
+  const bientot = etat.apps.length - nbApps - nbWeb;
 
   return `
     <section class="bandeau-accueil">
       <h1>Mes apps</h1>
-      <p>${etat.apps.length} apps · ${nbEnLigne()} en ligne · ${publications} publication${publications > 1 ? 's' : ''} faite${publications > 1 ? 's' : ''}</p>
+      <p>${etat.apps.length} apps · ${nbApps} sur l’App Store${nbWeb ? ` · ${nbWeb} web` : ''}${bientot ? ` · ${bientot} pas encore publiée${bientot > 1 ? 's' : ''}` : ''} · ${publications} publication${publications > 1 ? 's' : ''} faite${publications > 1 ? 's' : ''}</p>
+      ${etat.local ? `<p><a class="btn" href="#/liste">Ajouter ou enlever des apps</a></p>` : ''}
     </section>
     <div class="outils">
       <input type="search" placeholder="Chercher une app" value="${esc(etat.recherche)}" data-action="rechercher" aria-label="Chercher une app">
       <select data-action="filtre-apps" aria-label="Filtrer">
         <option value="toutes" ${etat.filtreApps === 'toutes' ? 'selected' : ''}>Toutes</option>
-        <option value="enligne" ${etat.filtreApps === 'enligne' ? 'selected' : ''}>En ligne</option>
+        <option value="enligne" ${etat.filtreApps === 'enligne' ? 'selected' : ''}>Sur l’App Store</option>
+        <option value="web" ${etat.filtreApps === 'web' ? 'selected' : ''}>Apps web</option>
         <option value="bientot" ${etat.filtreApps === 'bientot' ? 'selected' : ''}>Pas encore publiées</option>
       </select>
       <select data-action="tri" aria-label="Trier">
@@ -261,16 +274,23 @@ function pageAccueil() {
       </select>
     </div>
     <div class="grille-apps">
-      ${apps.map((a) => carteApp(a, total)).join('') || '<p class="vide">Aucune app ne correspond.</p>'}
+      ${apps.map((a) => carteApp(a)).join('') || '<p class="vide">Aucune app ne correspond.</p>'}
     </div>
     ${piedDonnees()}`;
 }
 
 const nomApp = (a) => a.langues[a.languePrincipale]?.nom || a.slug;
 
-function carteApp(a, total) {
+/** La pastille d'une app : ou elle est. */
+const badgeApp = (a) =>
+  estWeb(a)
+    ? '<span class="badge web">Web</span>'
+    : `<span class="badge ${a.enLigne ? 'ok' : 'attente'}">${a.enLigne ? 'App Store' : 'Pas encore publiée'}</span>`;
+
+function carteApp(a) {
   const l = a.langues[a.languePrincipale] ?? {};
   const n = faits(a.slug);
+  const total = canauxDe(a).length;
   const c = ctx(a, a.languePrincipale);
   return `
     <a class="carte-app" href="#/app/${encodeURIComponent(a.slug)}">
@@ -279,7 +299,7 @@ function carteApp(a, total) {
         <strong>${esc(l.nom || a.slug)}</strong>
         <span class="sous">${esc(c.sousTitre)}</span>
         <span class="meta">
-          <span class="badge ${a.enLigne ? 'ok' : 'attente'}">${a.enLigne ? 'En ligne' : 'Pas encore publiée'}</span>
+          ${badgeApp(a)}
           <span class="progres" style="--p:${(n / total) * 100}%" aria-label="${n} canaux sur ${total}"><i></i></span>
           <span class="compte">${n}/${total}</span>
         </span>
@@ -295,6 +315,116 @@ function piedDonnees() {
       <p>Fiches importées le ${quand}.</p>
       ${etat.local ? `<button class="btn" data-action="importer-apps">Mettre à jour depuis mes projets</button>` : `<p class="discret">Pour les mettre à jour : <code>npm run importer</code> sur le Mac.</p>`}
     </footer>`;
+}
+
+// ---------------- Ajouter ou enlever des apps ----------------
+
+async function chargerListe() {
+  try {
+    const r = await fetch('api/liste', { cache: 'no-store' });
+    if (r.ok) Object.assign(etat.liste, await r.json());
+  } catch {
+    // Hors du Mac : la page se lit, sans les marques Instagram.
+  }
+  etat.liste.charge = true;
+  if (etat.route.page === 'liste') rendre();
+}
+
+/** Les apps par famille : App Store, web, pas encore publiees ; de A a Z dans chacune. */
+function parFamille(apps) {
+  const tri = (a, b) => nomApp(a).localeCompare(nomApp(b), 'fr', { sensitivity: 'base' });
+  return [
+    ['Sur l’App Store', apps.filter((a) => a.enLigne && !estWeb(a)).sort(tri)],
+    ['Apps web', apps.filter(estWeb).sort(tri)],
+    ['Pas encore publiées', apps.filter((a) => !a.enLigne).sort(tri)],
+  ].filter(([, liste]) => liste.length);
+}
+
+function ligneListe(a, action) {
+  const l = a.langues[a.languePrincipale] ?? {};
+  const instagram = etat.liste.instagram?.includes(a.slug);
+  const occupe = etat.liste.occupe;
+  return `
+    <li>
+      <img class="icone-app petite" src="${esc(a.icone)}" alt="" width="40" height="40" loading="lazy">
+      <span class="infos">
+        <strong>${esc(nomApp(a))}</strong>
+        <span class="sous">${esc(l.sousTitre || l.promo || '')}</span>
+        ${instagram ? '<span><span class="badge ig" title="Dans la publication automatique Instagram">Instagram auto</span></span>' : ''}
+      </span>
+      <button class="btn${action === 'remettre' ? ' primaire' : ''}" data-action="${action}-app" data-slug="${esc(a.slug)}" ${occupe ? 'disabled' : ''}>
+        ${occupe === a.slug ? '…' : action === 'remettre' ? 'Remettre' : 'Enlever'}
+      </button>
+    </li>`;
+}
+
+function pageListe() {
+  const q = (etat.liste.recherche ?? '').trim().toLocaleLowerCase('fr');
+  const filtre = (apps) => (q ? apps.filter((a) => `${nomApp(a)} ${a.slug}`.toLocaleLowerCase('fr').includes(q)) : apps);
+  const gardees = filtre(etat.apps);
+  const enlevees = filtre(etat.enlevees ?? []);
+  const occupe = etat.liste.occupe;
+
+  return `
+    <a class="retour" href="#/">‹ Mes apps</a>
+    <section class="bandeau-accueil">
+      <h1>Ajouter ou enlever des apps</h1>
+      <p>Les apps que Diffusion fait connaître : dans la liste des apps, dans la publication automatique sur Instagram et sur la page « lien en bio ».</p>
+    </section>
+    ${etat.local ? '' : '<p class="alerte">La liste se modifie depuis l’app Diffusion du Mac.</p>'}
+
+    <section class="bloc-auto">
+      <h2>Ajouter une app</h2>
+      <p class="discret">Tes apps de l’App Store et les apps web du Dico arrivent toutes seules à chaque mise à jour, comme une app pas encore publiée dès que sa feuille <code>SOUMISSION.md</code> est prête. Ici, une app que Diffusion ne trouve pas : colle le lien de sa fiche App Store, ou l’adresse de l’app web.</p>
+      <form class="ajout" data-action="ajouter-app">
+        <input type="text" name="lien" inputmode="url" autocomplete="off" placeholder="https://apps.apple.com/fr/app/…/id… ou https://…" aria-label="Lien App Store ou adresse de l’app web" ${etat.local && !occupe ? '' : 'disabled'}>
+        <button class="btn primaire" type="submit" ${etat.local && !occupe ? '' : 'disabled'}>${occupe === '+' ? 'Ajout… (environ une minute)' : 'Ajouter'}</button>
+      </form>
+      ${etat.local ? `<p><button class="lien-btn" data-action="importer-apps" ${occupe ? 'disabled' : ''}>Mettre à jour depuis mes projets, l’App Store et le Dico</button></p>` : ''}
+    </section>
+
+    <div class="outils">
+      <input type="search" placeholder="Chercher une app" value="${esc(etat.liste.recherche ?? '')}" data-action="chercher-liste" aria-label="Chercher une app">
+    </div>
+
+    <section class="bloc-auto">
+      <h2>Dans la liste <span class="discret">(${etat.apps.length})</span></h2>
+      <p class="discret">« Enlever » la retire de Diffusion, de la page « lien en bio » et de la publication automatique. Elle reste prête à revenir, plus bas.</p>
+      ${parFamille(gardees).map(([titre, apps]) => `
+        <h3>${esc(titre)} <span class="discret">(${apps.length})</span></h3>
+        <ul class="liste-apps">${apps.map((a) => ligneListe(a, 'enlever')).join('')}</ul>`).join('') || '<p class="vide">Aucune app ne correspond.</p>'}
+    </section>
+
+    <section class="bloc-auto">
+      <h2>Enlevées <span class="discret">(${(etat.enlevees ?? []).length})</span></h2>
+      ${enlevees.length
+        ? `<p class="discret">Remise dans la liste, une app retrouve ses textes et ses visuels. Pour Instagram, recoche-la dans la page Auto.</p>
+           <ul class="liste-apps">${enlevees.map((a) => ligneListe(a, 'remettre')).join('')}</ul>`
+        : `<p class="discret">${q && (etat.enlevees ?? []).length ? 'Aucune app enlevée ne correspond.' : 'Aucune pour l’instant.'}</p>`}
+    </section>`;
+}
+
+/** Enlever, remettre, ajouter : le Mac s'en charge, puis la page se recharge. */
+async function modifierListe(corps, occupe) {
+  etat.liste.occupe = occupe;
+  rendre();
+  try {
+    const r = await fetch('api/liste', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corps) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.erreur || 'échec');
+    await chargerDonnees();
+    etat.apercus.clear();
+    etat.auto.charge = false;
+    toast(j.message);
+    etat.liste.occupe = '';
+    await chargerListe();
+    return true;
+  } catch (e) {
+    toast(e.message, 'erreur');
+    etat.liste.occupe = '';
+    rendre();
+    return false;
+  }
 }
 
 // ---------------- Page d'une app ----------------
@@ -313,10 +443,10 @@ function pageApp(app, onglet) {
         <h1>${esc(c.nom)}</h1>
         <p class="sous">${esc(c.sousTitre)}</p>
         <p class="liens">
-          <span class="badge ${app.enLigne ? 'ok' : 'attente'}">${app.enLigne ? 'En ligne' : 'Pas encore publiée'}</span>
-          ${app.lien ? `<a href="${esc(app.lien)}" target="_blank" rel="noopener">App Store ↗</a>` : ''}
+          ${badgeApp(app)}
+          ${app.lien ? `<a href="${esc(app.lien)}" target="_blank" rel="noopener">${estWeb(app) ? 'Ouvrir l’app' : 'App Store'} ↗</a>` : ''}
           ${app.site ? `<a href="${esc(app.site)}" target="_blank" rel="noopener">Site ↗</a>` : ''}
-          <span class="discret">${n} canal${n > 1 ? 'aux' : ''} sur ${CANAUX.length}</span>
+          <span class="discret">${n} canal${n > 1 ? 'aux' : ''} sur ${canauxDe(app).length}</span>
         </p>
       </div>
     </header>
@@ -341,8 +471,9 @@ function pageApp(app, onglet) {
 
 function ongletPublier(app, L) {
   const suivi = suiviDe(app.slug);
-  const prochains = ORDRE_LANCEMENT.filter((id) => !suivi[id]).slice(0, 4).map(trouverCanal);
-  const liste = CANAUX.filter((k) => (etat.groupe === 'tous' || k.groupe === etat.groupe) && (etat.statut === 'tous' || (etat.statut === 'faits' ? suivi[k.id] : !suivi[k.id])));
+  const possibles = canauxDe(app);
+  const prochains = ORDRE_LANCEMENT.filter((id) => !suivi[id]).map(trouverCanal).filter((k) => possibles.includes(k)).slice(0, 4);
+  const liste = possibles.filter((k) => (etat.groupe === 'tous' || k.groupe === etat.groupe) && (etat.statut === 'tous' || (etat.statut === 'faits' ? suivi[k.id] : !suivi[k.id])));
 
   return `
     ${prochains.length ? `
@@ -504,8 +635,8 @@ function ongletVisuels(app, L) {
       <div class="rang">
         <span class="etiquette">Appareil</span>
         <div class="segments">
-          <button data-action="visuel" data-cle="appareil" data-valeur="iphone" aria-pressed="${!ipad}">iPhone</button>
-          <button data-action="visuel" data-cle="appareil" data-valeur="ipad" aria-pressed="${!!ipad}">iPad</button>
+          <button data-action="visuel" data-cle="appareil" data-valeur="iphone" aria-pressed="${!ipad}">${estWeb(app) ? 'Téléphone' : 'iPhone'}</button>
+          <button data-action="visuel" data-cle="appareil" data-valeur="ipad" aria-pressed="${!!ipad}">${estWeb(app) ? 'Tablette' : 'iPad'}</button>
         </div>
       </div>` : ''}
       <div class="rang">
@@ -518,7 +649,7 @@ function ongletVisuels(app, L) {
         <button class="lien-btn" data-action="visuel" data-cle="couleur" data-valeur="" aria-pressed="${!v.couleur}">Celle de l’icône</button>
       </div>
       <div class="rang">
-        <label class="case"><input type="checkbox" data-action="qr" ${v.qr ? 'checked' : ''}> QR code vers l’App Store</label>
+        <label class="case"><input type="checkbox" data-action="qr" ${v.qr ? 'checked' : ''}> QR code vers ${estWeb(app) ? 'l’app' : 'l’App Store'}</label>
       </div>
     </section>
     <div class="grille-visuels">
@@ -551,7 +682,7 @@ const CHAMPS_FICHE = [
 
 function ongletFiche(app, L) {
   const fiche = lire('fiches', {})[app.slug]?.[L] ?? {};
-  const auto = contexte(app, L, {}, reglages(), { nbApps: nbEnLigne() });
+  const auto = contexte(app, L, {}, reglages(), comptes());
   const valeurAuto = {
     nom: auto.nom, sousTitre: auto.sousTitre, accroche: auto.accroche, pointsForts: auto.pointsForts.join('\n'),
     public: auto.public, hashtags: auto.hashtags.join(' '), lien: auto.lien,
@@ -573,14 +704,14 @@ function ongletFiche(app, L) {
       <h2>Fiche importée</h2>
       <dl>
         <dt>Catégorie</dt><dd>${esc(app.genre?.fr || '—')}</dd>
-        <dt>Appareils</dt><dd>${esc(app.appareils.map((x) => (x === 'ipad' ? 'iPad' : 'iPhone')).join(', '))}</dd>
+        <dt>Appareils</dt><dd>${esc(estWeb(app) ? 'Dans le navigateur : ordinateur, tablette, téléphone' : app.appareils.map((x) => (x === 'ipad' ? 'iPad' : 'iPhone')).join(', '))}</dd>
         <dt>Prix</dt><dd>${esc(auto.prix)}${app.achats ? ', achats intégrés' : ''}</dd>
         ${app.version ? `<dt>Version</dt><dd>${esc(app.version)}</dd>` : ''}
         ${app.sortie ? `<dt>Sortie</dt><dd>${new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(new Date(app.sortie))}</dd>` : ''}
         ${app.note ? `<dt>Note</dt><dd>${String(app.note.moyenne).replace('.', ',')} ★ (${app.note.avis} avis)</dd>` : ''}
-        <dt>Bundle</dt><dd><code>${esc(app.bundleId)}</code></dd>
+        ${estWeb(app) ? `<dt>Adresse</dt><dd><a href="${esc(app.lien)}" target="_blank" rel="noopener">${esc(app.lien)}</a></dd>` : `<dt>Bundle</dt><dd><code>${esc(app.bundleId)}</code></dd>`}
       </dl>
-      ${l.description ? `<details><summary>Description de l’App Store</summary><pre>${esc(l.description)}</pre></details>` : ''}
+      ${l.description ? `<details><summary>${estWeb(app) ? 'Description (du Dico ou de la page)' : 'Description de l’App Store'}</summary><pre>${esc(l.description)}</pre></details>` : ''}
       ${l.nouveautes ? `<details><summary>Nouveautés de la version ${esc(app.version)}</summary><pre>${esc(l.nouveautes)}</pre></details>` : ''}
     </section>`;
 }
@@ -733,7 +864,7 @@ function pageAutomatique() {
           <button class="lien-btn" data-action="auto-retirer" data-slug="${esc(x.slug)}">Retirer</button></li>` : '';
       }).join('')}</ol>` : '<p class="alerte">Aucune app choisie pour l’instant.</p>'}
       <details ${plan.apps.length ? '' : 'open'}>
-        <summary>Choisir parmi mes ${enLigne.length} apps en ligne</summary>
+        <summary>Choisir parmi mes ${enLigne.length} apps en ligne (App Store et web)</summary>
         <div class="choix-apps">${enLigne.map((app) => `
           <label class="case"><input type="checkbox" data-action="auto-app" data-slug="${esc(app.slug)}" ${choisies.has(app.slug) ? 'checked' : ''}>
           <img class="icone-app petite" src="${esc(app.icone)}" alt="" width="32" height="32"> ${esc(nomApp(app))}</label>`).join('')}
@@ -791,6 +922,14 @@ function pageAutomatique() {
       }).join('')}</ul>` : '<p class="discret">Rien encore.</p>'}
     </section>
 
+    <section class="bloc-auto" id="lien-en-bio">
+      <h2>Le lien en bio</h2>
+      <p>Instagram ne rend pas les liens cliquables dans les légendes : elles disent « lien en bio ». Mets cette adresse dans ta bio, une fois pour toutes. La page montre en haut l’app du dernier post, puis les derniers posts (un toucher ouvre l’app), puis toutes tes apps. Le robot la tient à jour.</p>
+      ${a.bio ? `<p class="adresse-bio"><a href="${esc(a.bio)}" target="_blank" rel="noopener">${esc(a.bio)}</a>
+        <button class="btn" data-action="copier-bio">Copier l’adresse</button></p>
+      <p class="discret">Dans l’app Instagram : ton profil ▸ Modifier le profil ▸ Liens ▸ Ajouter un lien externe, colle l’adresse. Tu peux remplacer le lien de ta page développeur App Store : celle-ci contient aussi tes apps web.</p>` : ''}
+    </section>
+
     <section class="bloc-auto" id="relier">
       <h2>Relier Instagram</h2>
       ${guideInstagram()}
@@ -800,7 +939,7 @@ function pageAutomatique() {
 /** La legende de la prochaine publication, telle que le robot l'ecrira. */
 function legendeAuto(app, choix) {
   const L = etat.auto.plan.langue ?? 'fr';
-  const c = contexte(app, L, choix?.fiche ?? lire('fiches', {})[app.slug]?.[L] ?? {}, { hashtags: reglages().hashtags }, { nbApps: nbEnLigne() });
+  const c = contexte(app, L, choix?.fiche ?? lire('fiches', {})[app.slug]?.[L] ?? {}, { hashtags: reglages().hashtags }, comptes());
   return generer(trouverCanal('instagram-post'), c, rotation(etat.auto.journal, app.slug).variante)[0].valeur;
 }
 
@@ -921,7 +1060,7 @@ async function dossierPresse(app) {
     donnees: [
       `${c.nom} — ${c.sousTitre}`,
       '',
-      `App Store : ${app.lien || 'bientôt'}`,
+      estWeb(app) ? `En ligne : ${app.lien}` : `App Store : ${app.lien || 'bientôt'}`,
       app.site ? `Site : ${app.site}` : '',
       `Prix : ${c.prix}${app.achats ? ', achats intégrés facultatifs' : ''}`,
       `Appareils : ${c.appareils}${c.iosMin ? `, iOS ${c.iosMin} ou ultérieur` : ''}`,
@@ -1008,7 +1147,7 @@ ${app.lien ? `<meta name="apple-itunes-app" content="app-id=${esc(app.lienIntern
     <h1>${esc(c.nom)}</h1>
     <p class="sous">${esc(c.sousTitre)}</p>
     <p class="accroche">${esc(v('accroche'))}</p>
-    ${app.lien ? `<a class="bouton" href="${esc(fr ? app.lien : app.lienInternational)}">${fr ? 'Télécharger sur l’App Store' : 'Download on the App Store'}</a>` : `<p><strong>${fr ? 'Bientôt sur l’App Store' : 'Coming soon to the App Store'}</strong></p>`}
+    ${app.lien && estWeb(app) ? `<a class="bouton" href="${esc(app.lien)}">${fr ? 'Ouvrir l’app' : 'Open the app'}</a>` : app.lien ? `<a class="bouton" href="${esc(fr ? app.lien : app.lienInternational)}">${fr ? 'Télécharger sur l’App Store' : 'Download on the App Store'}</a>` : `<p><strong>${fr ? 'Bientôt sur l’App Store' : 'Coming soon to the App Store'}</strong></p>`}
   </header>
   <div class="captures">${captures.filter(Boolean).map((s, i) => `<img src="${s}" alt="${fr ? 'Capture d’écran' : 'Screenshot'} ${i + 1}">`).join('')}</div>
   <ul class="points">${v('points').split('\n').filter(Boolean).map((p) => `<li>${esc(p)}</li>`).join('')}</ul>
@@ -1074,7 +1213,7 @@ async function importerApps() {
   const bouton = $('[data-action="importer-apps"]');
   if (bouton) {
     bouton.disabled = true;
-    bouton.textContent = 'Import en cours… (environ 30 s)';
+    bouton.textContent = 'Import en cours… (une à deux minutes)';
   }
   try {
     const r = await fetch('api/importer', { method: 'POST' });
@@ -1226,6 +1365,13 @@ document.addEventListener('click', async (e) => {
       rendre();
       toast('Fiche rétablie.');
       break;
+    case 'enlever-app':
+    case 'remettre-app':
+      modifierListe({ action: action === 'enlever-app' ? 'enlever' : 'remettre', slug: cible.dataset.slug }, cible.dataset.slug);
+      break;
+    case 'copier-bio':
+      copier(etat.auto.bio);
+      break;
     case 'importer-apps':
       await importerApps();
       break;
@@ -1282,8 +1428,26 @@ document.addEventListener('click', async (e) => {
   }
 });
 
+document.addEventListener('submit', async (e) => {
+  const f = e.target.closest('form[data-action="ajouter-app"]');
+  if (!f) return;
+  e.preventDefault();
+  const lien = f.elements.lien.value.trim();
+  if (!lien) return;
+  if (await modifierListe({ action: 'ajouter', lien }, '+')) rendre();
+});
+
 document.addEventListener('input', (e) => {
   const t = e.target;
+  if (t.dataset.action === 'chercher-liste') {
+    etat.liste.recherche = t.value;
+    const fin = t.selectionEnd;
+    rendre();
+    const champ = $('[data-action="chercher-liste"]');
+    champ?.focus();
+    champ?.setSelectionRange(fin, fin);
+    return;
+  }
   const app = etat.route.page === 'app' ? appDe(etat.route.slug) : null;
 
   if (t.dataset.champ && app && etat.ouvert) {
@@ -1414,6 +1578,7 @@ async function chargerDonnees() {
   if (!r.ok) throw new Error('data/apps.json introuvable : lance « npm run importer » sur le Mac.');
   etat.donnees = await r.json();
   etat.apps = etat.donnees.apps;
+  etat.enlevees = etat.donnees.enlevees ?? [];
 }
 
 async function demarrer() {

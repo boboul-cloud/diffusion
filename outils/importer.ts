@@ -6,6 +6,12 @@
  * - Toutes : la feuille SOUMISSION.md du projet, lue par AgentDouble, pour ce
  *   que l'App Store ne publie pas (sous-titre, texte promotionnel, mots-cles),
  *   et pour tout le reste quand l'app n'est pas encore publiee.
+ * - Tes apps de l'App Store dont le projet n'est pas sur le Bureau : leur
+ *   fiche publique seule (la page developpeur les donne toutes).
+ * - Les apps web du Dico de nos creations (/Volumes/Travail/Dico) : nom,
+ *   definition, icone, et des captures prises en ligne par Chrome sans ecran.
+ * - Ce que tu as ajoute ou enleve dans « Ajouter ou enlever » (liste-apps.json) :
+ *   les apps enlevees restent pretes a revenir, a part.
  *
  *   npm run importer                    toutes les apps
  *   npm run importer -- --en-ligne      seulement les apps publiees
@@ -19,6 +25,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { pathToFileURL } from 'node:url';
 import { discover, type Discovered } from '../../AgentDouble/src/commands/scan.ts';
 import {
   lireDocument,
@@ -27,6 +34,8 @@ import {
   trouverFeuilleAchats,
   type Lecture,
 } from '../../AgentDouble/src/app/document.ts';
+import { adresseWeb, cleApp, ecrireJson, lireChoix, repartir, type Choix } from './liste.ts';
+import { Capteur } from './capturer.ts';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(RACINE, 'public', 'data');
@@ -37,6 +46,7 @@ const SEULEMENT_EN_LIGNE = options.has('--en-ligne');
 const FORCER = options.has('--forcer');
 const SANS_ASC = options.has('--sans-asc');
 const AGENT_DOUBLE = path.resolve(RACINE, '..', 'AgentDouble');
+const DICO = process.env.DICO ?? '/Volumes/Travail/Dico';
 
 const MAX_IPHONE = 6;
 const MAX_IPAD = 3;
@@ -60,6 +70,8 @@ type Langue = {
 export type AppDiffusion = {
   slug: string;
   bundleId: string;
+  /** appstore : une app iPhone, iPad ou Mac ; web : une app qui s'ouvre dans le navigateur. */
+  plateforme: 'appstore' | 'web';
   enLigne: boolean;
   lien: string;
   lienInternational: string;
@@ -80,6 +92,8 @@ export type AppDiffusion = {
   icone: string;
   languePrincipale: 'fr' | 'en';
   langues: { fr?: Langue; en?: Langue };
+  /** Marquee « nouveau » dans le Dico : les textes la disent toute recente. */
+  nouveau?: boolean;
 };
 
 type FicheApple = {
@@ -103,7 +117,9 @@ type FicheApple = {
   releaseDate?: string;
   version?: string;
   artistName?: string;
+  artistId?: number;
   sellerUrl?: string;
+  wrapperType?: string;
 };
 
 // ---------------------------------------------------------------
@@ -172,16 +188,17 @@ const LIBELLES: Record<string, [string, string]> = {
 //  App Store : la recherche publique, sans compte ni cle
 // ---------------------------------------------------------------
 
-async function ficheApple(bundleIds: string[], langue: 'fr' | 'en'): Promise<Map<string, FicheApple>> {
+/** Les fiches, par bundle id ; `par: 'id'` pour chercher par numero App Store (ou numero de developpeur). */
+async function ficheApple(cles: (string | number)[], langue: 'fr' | 'en', par: 'bundleId' | 'id' = 'bundleId'): Promise<Map<string, FicheApple>> {
   const fiches = new Map<string, FicheApple>();
   // Des paquets de 25 : l'adresse reste courte, et une erreur n'emporte pas tout.
-  for (let i = 0; i < bundleIds.length; i += 25) {
-    const lot = bundleIds.slice(i, i + 25).join(',');
-    const url = `https://itunes.apple.com/lookup?bundleId=${lot}&country=fr&entity=software${langue === 'en' ? '&lang=en_us' : ''}`;
+  for (let i = 0; i < cles.length; i += 25) {
+    const lot = cles.slice(i, i + 25).join(',');
+    const url = `https://itunes.apple.com/lookup?${par}=${lot}&country=fr&entity=software&limit=200${langue === 'en' ? '&lang=en_us' : ''}`;
     const reponse = await fetch(url);
     if (!reponse.ok) throw new Error(`App Store : ${reponse.status} pour ${url}`);
     const json = (await reponse.json()) as { results: FicheApple[] };
-    for (const r of json.results) fiches.set(r.bundleId, r);
+    for (const r of json.results) if (r.bundleId && r.wrapperType !== 'artist') fiches.set(r.bundleId, r);
   }
   return fiches;
 }
@@ -316,6 +333,27 @@ class Images {
   locale(nom: string, fichier: string, cote: number, format: 'jpeg' | 'png'): string {
     const empreinte = `${fichier}@${fs.statSync(fichier).mtimeMs}`;
     if (!this.dejaLa(nom, empreinte)) convertir(fichier, path.join(this.dossier, nom), cote, format);
+    return nom;
+  }
+
+  /** Les images deja faites a partir de cette source (les captures d'une app web), dans l'ordre. */
+  existantes(source: string): string[] {
+    if (FORCER) return [];
+    const noms = Object.entries(this.sources)
+      .filter(([nom, s]) => s === source && fs.existsSync(path.join(this.dossier, nom)))
+      .map(([nom]) => nom)
+      .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+    for (const nom of noms) this.nouvelles[nom] = source;
+    return noms;
+  }
+
+  /** Une image faite ici (une capture d'app web), ramenee a la taille des autres. */
+  contenu(nom: string, source: string, octets: Buffer, cote: number, format: 'jpeg' | 'png' = 'jpeg'): string {
+    this.nouvelles[nom] = source;
+    const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'diffusion-')), nom);
+    fs.writeFileSync(tmp, octets);
+    convertir(tmp, path.join(this.dossier, nom), cote, format);
+    fs.rmSync(path.dirname(tmp), { recursive: true, force: true });
     return nom;
   }
 
@@ -458,7 +496,8 @@ async function assembler(
   en: FicheApple | undefined,
   asc: FicheAsc | undefined,
 ): Promise<AppDiffusion | string> {
-  const doc = trouverDocument(d.projectPath);
+  // Une app de l'App Store sans projet sur le Bureau : sa fiche publique seule.
+  const doc = d.projectPath ? trouverDocument(d.projectPath) : null;
   const lu = doc ? lireDocument(fs.readFileSync(doc, 'utf8')) : null;
   const langueFeuille: 'fr' | 'en' = lu?.locale === 'en-US' ? 'en' : 'fr';
 
@@ -564,6 +603,7 @@ async function assembler(
   return {
     slug: d.slug,
     bundleId: d.bundleId,
+    plateforme: 'appstore',
     enLigne: !!fr,
     lien: fr ? lienPropre(fr.trackViewUrl) : '',
     lienInternational: fr ? `https://apps.apple.com/app/id${fr.trackId}` : '',
@@ -587,7 +627,355 @@ async function assembler(
   };
 }
 
+// ---------------------------------------------------------------
+//  Les apps de l'App Store sans projet sur le Bureau
+// ---------------------------------------------------------------
+
+/** « Lièvre – Demi-fond et VMA » → « lievre » */
+function slugifier(nom: string): string {
+  return nom
+    .split(/\s[–—:-]\s|:/)[0]
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'app';
+}
+
+function slugLibre(base: string, pris: Set<string>): string {
+  let slug = base;
+  for (let n = 2; pris.has(slug); n++) slug = `${base}-${n}`;
+  pris.add(slug);
+  return slug;
+}
+
+/**
+ * Tes apps publiees que le Bureau ne connait pas (projet range ailleurs),
+ * et celles ajoutees a la main par leur lien App Store.
+ */
+async function appsSansProjet(
+  projets: Discovered[],
+  fr: Map<string, FicheApple>,
+  choix: Choix,
+): Promise<Discovered[]> {
+  const connus = new Set(projets.map((p) => p.bundleId));
+  const pris = new Set(projets.map((p) => p.slug));
+  const developpeurs = [...new Set([...fr.values()].map((f) => f.artistId).filter((x): x is number => !!x))];
+  const ajouts = choix.ajoutees.filter((a) => a.type === 'appstore').map((a) => (a as { id: number }).id);
+
+  const trouvees = new Map<string, FicheApple>();
+  if (developpeurs.length) for (const [id, f] of await ficheApple(developpeurs, 'fr', 'id')) trouvees.set(id, f);
+  if (ajouts.length) for (const [id, f] of await ficheApple(ajouts, 'fr', 'id')) trouvees.set(id, f);
+
+  const sans: Discovered[] = [];
+  for (const f of trouvees.values()) {
+    if (connus.has(f.bundleId)) continue;
+    connus.add(f.bundleId);
+    fr.set(f.bundleId, f);
+    sans.push({
+      slug: slugLibre(slugifier(f.trackName), pris),
+      projectName: f.trackName,
+      projectPath: '',
+      bundleId: f.bundleId,
+      version: f.version ?? '',
+      build: '',
+      platform: 'ios',
+    });
+  }
+  return sans;
+}
+
+// ---------------------------------------------------------------
+//  Les apps web : celles du Dico, et celles ajoutees par leur adresse
+// ---------------------------------------------------------------
+
+/** La famille du Dico → la categorie de l'App Store (public, emoji, hashtags). */
+const FAMILLES_DICO: Record<string, string> = {
+  jeux: 'GAMES',
+  ecole: 'EDUCATION',
+  outils: 'UTILITIES',
+  maison: 'PRODUCTIVITY',
+  sport: 'SPORTS',
+  famille: 'LIFESTYLE',
+};
+
+type EntreeWeb = {
+  id: string;
+  nom: string;
+  sousTitre: string;
+  promo: string;
+  description: string;
+  motsCles: string[];
+  lien: string;
+  site: string;
+  categorie: string;
+  iconeLocale: string;
+  iconeSvg: string;
+  nouveau: boolean;
+  source: 'dico' | 'ajout';
+};
+
+const delai = () => AbortSignal.timeout(20_000);
+const decoder = (s: string) =>
+  s
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;|&#x27;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .trim();
+
+/** Ce que la page d'une app web dit d'elle : titre, description, manifeste, icone. */
+async function lirePage(url: string) {
+  const html = await (await fetch(url, { signal: delai() })).text();
+  const balise = (re: RegExp) => html.match(re)?.[1];
+  const attribut = (tag: string, nom: string) => tag.match(new RegExp(`${nom}\\s*=\\s*["']([^"']*)["']`, 'i'))?.[1];
+  const liens = [...html.matchAll(/<link\b[^>]*>/gi)].map((m) => m[0]);
+  const lien = (rel: RegExp) => {
+    const tag = liens.find((t) => rel.test(attribut(t, 'rel') ?? ''));
+    const href = tag && attribut(tag, 'href');
+    return href ? new URL(href, url).toString() : '';
+  };
+  const meta = (nom: string) => {
+    const tag = [...html.matchAll(/<meta\b[^>]*>/gi)].map((m) => m[0]).find((t) => (attribut(t, 'name') ?? attribut(t, 'property'))?.toLowerCase() === nom);
+    return tag ? decoder(attribut(tag, 'content') ?? '') : '';
+  };
+
+  let manifeste: { name?: string; short_name?: string; description?: string; icons?: { src: string; sizes?: string; type?: string; purpose?: string }[] } = {};
+  const adresseManifeste = lien(/(^|\s)manifest(\s|$)/i);
+  if (adresseManifeste) {
+    try {
+      manifeste = await (await fetch(adresseManifeste, { signal: delai() })).json();
+    } catch {
+      // Pas de manifeste lisible : le titre de la page suffira.
+    }
+  }
+  const icones = (manifeste.icons ?? [])
+    .filter((i) => !/maskable/.test(i.purpose ?? '') || /any/.test(i.purpose ?? ''))
+    .filter((i) => /png/i.test(i.type ?? '') || /\.png(\?|$)/i.test(i.src))
+    .map((i) => ({ src: new URL(i.src, adresseManifeste).toString(), cote: Math.max(...(i.sizes ?? '0x0').split(/\s+/).map((t) => Number(t.split('x')[0]) || 0)) }))
+    .sort((a, b) => b.cote - a.cote);
+
+  return {
+    titre: decoder(balise(/<title[^>]*>([^<]*)<\/title>/i) ?? ''),
+    description: meta('description') || meta('og:description'),
+    nom: manifeste.name || manifeste.short_name || meta('application-name') || meta('apple-mobile-web-app-title'),
+    descriptionManifeste: manifeste.description ?? '',
+    icone: icones[0]?.src || lien(/apple-touch-icon/i),
+    iconeSvg: (() => {
+      const tag = liens.find((t) => /(^|\s)icon(\s|$)/i.test(attribut(t, 'rel') ?? '') && /svg/i.test(`${attribut(t, 'type') ?? ''} ${attribut(t, 'href') ?? ''}`));
+      const href = tag && attribut(tag, 'href');
+      return href ? (href.startsWith('data:') ? href : new URL(href, url).toString()) : '';
+    })(),
+  };
+}
+
+/** Le texte d'une icone SVG : un fichier du Dico, une adresse, ou une adresse « data: ». */
+async function lireSvg(source: string): Promise<string> {
+  if (source.startsWith('data:')) {
+    const [entete, corps] = source.split(',', 2);
+    return /;base64/.test(entete) ? Buffer.from(corps, 'base64').toString('utf8') : decodeURIComponent(corps);
+  }
+  if (/^https?:/.test(source)) return (await fetch(source, { signal: delai() })).text();
+  return fs.readFileSync(source, 'utf8');
+}
+
+/** Les apps web du Dico : son fichier js/data.js, lu tel quel. */
+async function entreesDico(): Promise<EntreeWeb[] | null> {
+  const fichier = path.join(DICO, 'js', 'data.js');
+  if (!fs.existsSync(fichier)) return null;
+  const { APPS } = (await import(pathToFileURL(fichier).href)) as { APPS: any[] };
+  return APPS.filter((a) => a.type === 'web' && a.lien).map((a) => {
+    const icone = a.icone ? path.join(DICO, 'icones', a.icone) : '';
+    return {
+      id: a.id,
+      nom: a.nom,
+      sousTitre: a.dom ?? '',
+      promo: a.def ?? '',
+      description: [a.def, a.detail].filter(Boolean).join('\n\n'),
+      motsCles: [a.dom].filter(Boolean),
+      lien: adresseWeb(a.lien),
+      site: a.site ?? '',
+      categorie: FAMILLES_DICO[a.fam] ?? 'UTILITIES',
+      iconeLocale: icone && /\.(png|jpe?g)$/i.test(icone) && fs.existsSync(icone) ? icone : '',
+      iconeSvg: icone && /\.svg$/i.test(icone) && fs.existsSync(icone) ? icone : '',
+      nouveau: !!a.nouveau,
+      source: 'dico' as const,
+    };
+  });
+}
+
+/** Une app web ajoutee par son adresse : ce que sa page dit d'elle. */
+async function entreeAjout(url: string, nomDonne: string): Promise<EntreeWeb> {
+  const p = await lirePage(url);
+  const nom = p.nom || p.titre.split(/\s[–—|-]\s/)[0] || nomDonne || new URL(url).hostname.split('.')[0];
+  const description = p.descriptionManifeste || p.description;
+  return {
+    id: new URL(url).hostname.split('.')[0],
+    nom,
+    sousTitre: '',
+    promo: description,
+    description: description || `${nom}.`,
+    motsCles: [],
+    lien: url,
+    site: '',
+    categorie: 'UTILITIES',
+    iconeLocale: '',
+    iconeSvg: '',
+    nouveau: false,
+    source: 'ajout',
+  };
+}
+
+let capteur: Capteur | null = null;
+async function capteurPret(): Promise<Capteur> {
+  if (!capteur) {
+    capteur = new Capteur();
+    await capteur.demarrer();
+  }
+  return capteur;
+}
+const capturer = async (url: string) => (await capteurPret()).capturer(url);
+
+async function assemblerWeb(e: EntreeWeb, slug: string, developpeur: string): Promise<AppDiffusion> {
+  const dossier = path.join(DATA, 'apps', slug);
+  const images = new Images(dossier);
+  const web = (nom: string) => `data/apps/${slug}/${nom}?v=${images.version(nom)}`;
+
+  // Les captures : prises une fois, refaites avec --forcer.
+  const source = `capture:${e.lien}`;
+  let noms = images.existantes(source);
+  if (!noms.length) {
+    console.log(`    captures de ${e.nom}…`);
+    const c = await capturer(e.lien);
+    noms = [
+      ...c.iphone.map((b, i) => images.contenu(`fr-iphone-${i + 1}.jpg`, source, b, 1600)),
+      ...c.ipad.map((b, i) => images.contenu(`fr-ipad-${i + 1}.jpg`, source, b, 1600)),
+    ];
+  }
+
+  // L'icone : celle du Dico, sinon celle que la page declare ; une icone SVG est dessinee en PNG.
+  let icone = '';
+  try {
+    const page = e.iconeLocale ? null : await lirePage(e.lien);
+    if (e.iconeLocale) icone = web(images.locale('icone.png', e.iconeLocale, 512, 'png'));
+    else if (page?.icone) icone = web(images.distante('icone.png', page.icone));
+    else if (e.iconeSvg || page?.iconeSvg) {
+      const svg = await lireSvg(e.iconeSvg || page!.iconeSvg);
+      const source = `svg:${createHash('sha1').update(svg).digest('hex')}`;
+      const deja = images.existantes(source);
+      icone = web(deja[0] ?? images.contenu('icone.png', source, await (await capteurPret()).svgEnPng(svg), 512, 'png'));
+    }
+  } catch {
+    // Sans icone, les visuels prennent la couleur par defaut.
+  }
+  await images.terminer();
+
+  const [genreFr, genreEn] = LIBELLES[e.categorie] ?? ['', ''];
+  return {
+    slug,
+    bundleId: '',
+    plateforme: 'web',
+    enLigne: true,
+    lien: e.lien,
+    lienInternational: e.lien,
+    gratuit: true,
+    prix: '',
+    achats: false,
+    categorie: e.categorie,
+    genre: { fr: genreFr, en: genreEn },
+    appareils: ['web'],
+    iosMin: '',
+    note: null,
+    sortie: '',
+    version: '',
+    developpeur,
+    site: e.site,
+    assistance: '',
+    confidentialite: '',
+    icone,
+    languePrincipale: 'fr',
+    langues: {
+      fr: {
+        nom: e.nom,
+        sousTitre: e.sousTitre,
+        promo: e.promo,
+        description: e.description,
+        motsCles: e.motsCles,
+        nouveautes: '',
+        captures: {
+          iphone: noms.filter((n) => n.includes('-iphone-')).map(web),
+          ipad: noms.filter((n) => n.includes('-ipad-')).map(web),
+        },
+      },
+    },
+    nouveau: e.nouveau,
+  };
+}
+
+type Ancien = { apps?: AppDiffusion[]; enlevees?: AppDiffusion[] };
+
+function lireAncien(): Ancien {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(DATA, 'apps.json'), 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Les apps web : celles du Dico, puis les ajouts. Le disque Travail
+ * debranche, on garde les apps web du Dico de l'import precedent.
+ */
+async function appsWeb(choix: Choix, ancien: Ancien, pris: Set<string>, developpeur: string, ignorees: { slug: string; raison: string }[]) {
+  const anciennes = [...(ancien.apps ?? []), ...(ancien.enlevees ?? [])].filter((a) => a.plateforme === 'web');
+  const slugAncien = new Map(anciennes.map((a) => [adresseWeb(a.lien), a.slug]));
+  const apps: AppDiffusion[] = [];
+
+  let entrees = await entreesDico();
+  const dicoLu = !!entrees;
+  if (!entrees) {
+    console.log(`Le Dico est introuvable (${DICO}) : le disque Travail n'est pas branché ? Les apps web de l'import précédent restent.`);
+    const ajouts = new Set(choix.ajoutees.filter((a) => a.type === 'web').map((a) => adresseWeb((a as { url: string }).url)));
+    for (const a of anciennes) {
+      if (ajouts.has(adresseWeb(a.lien))) continue;
+      pris.add(a.slug);
+      apps.push(a);
+    }
+    entrees = [];
+  }
+
+  const vues = new Set(entrees.map((e) => e.lien));
+  for (const a of choix.ajoutees) {
+    if (a.type !== 'web') continue;
+    const url = adresseWeb(a.url);
+    if (vues.has(url)) continue;
+    vues.add(url);
+    try {
+      entrees.push(await entreeAjout(url, a.nom));
+    } catch (e) {
+      ignorees.push({ slug: url, raison: `erreur : page illisible (${(e as Error).message})` });
+    }
+  }
+
+  for (const e of entrees) {
+    const slug = slugAncien.get(e.lien) ?? slugLibre(`web-${slugifier(e.id)}`, pris);
+    pris.add(slug);
+    try {
+      apps.push(await assemblerWeb(e, slug, developpeur));
+      console.log(`  ◆ ${e.nom}  (web${e.source === 'ajout' ? ', ajoutée à la main' : ''})`);
+    } catch (err) {
+      ignorees.push({ slug, raison: `erreur : ${(err as Error).message}` });
+    }
+  }
+  return { apps, dicoLu };
+}
+
 async function main() {
+  const choix = lireChoix();
+  const ancien = lireAncien();
+
   console.log('Recherche des projets Xcode du Bureau…');
   const projets = discover([BUREAU]);
   const ids = projets.map((p) => p.bundleId);
@@ -595,48 +983,80 @@ async function main() {
   console.log(`${projets.length} projets. Lecture de leurs fiches sur l'App Store…`);
   const [fr, en] = await Promise.all([ficheApple(ids, 'fr'), ficheApple(ids, 'en')]);
 
+  // Tes autres apps publiees (projet ailleurs qu'au Bureau), et celles ajoutees par leur lien.
+  let sansProjet: Discovered[] = [];
+  try {
+    sansProjet = await appsSansProjet(projets, fr, choix);
+    if (sansProjet.length) {
+      for (const [id, f] of await ficheApple(sansProjet.map((p) => p.bundleId), 'en')) en.set(id, f);
+      console.log(`${sansProjet.length} app(s) de l'App Store sans projet sur le Bureau : ${sansProjet.map((p) => p.projectName).join(', ')}.`);
+    }
+  } catch (e) {
+    console.log(`Page développeur de l'App Store illisible (${(e as Error).message}) : on fait sans.`);
+  }
+  const tous = [...projets, ...sansProjet];
+
   let asc = new Map<string, FicheAsc>();
   try {
-    const publiees = ids.filter((id) => fr.has(id));
+    const publiees = tous.map((p) => p.bundleId).filter((id) => fr.has(id));
     asc = await lireAppStoreConnect(publiees);
     if (asc.size) console.log(`Sous-titres et mots-clés lus dans App Store Connect pour ${asc.size} apps.`);
   } catch (e) {
     console.log(`App Store Connect n'a pas répondu (${(e as Error).message.split('\n')[0]}) : on fait sans.`);
   }
 
-  const apps: AppDiffusion[] = [];
+  const assemblees: AppDiffusion[] = [];
   const ignorees: { slug: string; raison: string }[] = [];
-  for (const p of projets) {
+  for (const p of tous) {
     try {
       const r = await assembler(p, fr.get(p.bundleId), en.get(p.bundleId), asc.get(p.bundleId));
       if (typeof r === 'string') ignorees.push({ slug: p.slug, raison: r });
       else {
-        apps.push(r);
+        assemblees.push(r);
         const l = r.langues[r.languePrincipale]!;
         const nb = l.captures.iphone.length + l.captures.ipad.length;
-        console.log(`  ${r.enLigne ? '●' : '○'} ${l.nom || r.slug}  (${nb} captures${r.langues.en ? ', anglais' : ''})`);
+        console.log(`  ${r.enLigne ? '●' : '○'} ${l.nom || r.slug}  (${nb} captures${r.langues.en ? ', anglais' : ''}${p.projectPath ? '' : ', sans projet'})`);
       }
     } catch (e) {
       ignorees.push({ slug: p.slug, raison: `erreur : ${(e as Error).message}` });
     }
   }
 
+  console.log('Les apps web…');
+  const developpeur = assemblees.find((a) => a.enLigne && a.developpeur)?.developpeur ?? '';
+  const pris = new Set(assemblees.map((a) => a.slug));
+  try {
+    const web = await appsWeb(choix, ancien, pris, developpeur, ignorees);
+    assemblees.push(...web.apps);
+  } finally {
+    await capteur?.fermer();
+  }
+
+  // Ce que tu as enleve reste pret a revenir, a part.
+  const { apps, enlevees } = repartir(assemblees, choix);
+
   // Les dossiers d'images d'apps disparues de la liste s'en vont aussi.
-  const gardes = new Set(apps.map((a) => a.slug));
+  const gardes = new Set(assemblees.map((a) => a.slug));
   const dossierApps = path.join(DATA, 'apps');
   for (const f of fs.existsSync(dossierApps) ? fs.readdirSync(dossierApps) : []) {
     if (!gardes.has(f)) fs.rmSync(path.join(dossierApps, f), { recursive: true, force: true });
   }
 
-  apps.sort((a, b) => Number(b.enLigne) - Number(a.enLigne) || a.slug.localeCompare(b.slug));
-  const sortie = { genere: new Date().toISOString(), apps, ignorees };
-  fs.mkdirSync(DATA, { recursive: true });
-  const tmp = path.join(DATA, 'apps.json.tmp');
-  fs.writeFileSync(tmp, JSON.stringify(sortie, null, 1));
-  fs.renameSync(tmp, path.join(DATA, 'apps.json'));
+  // Les apps arrivees depuis l'import precedent.
+  const avant = new Set([...(ancien.apps ?? []), ...(ancien.enlevees ?? [])].map((a) => cleApp(a)));
+  const nouvelles = avant.size ? apps.filter((a) => !avant.has(cleApp(a))).map((a) => a.slug) : [];
 
-  const enLigne = apps.filter((a) => a.enLigne).length;
-  console.log(`\n${apps.length} apps prêtes (${enLigne} en ligne, ${apps.length - enLigne} pas encore publiées).`);
+  const tri = (a: AppDiffusion, b: AppDiffusion) => Number(b.enLigne) - Number(a.enLigne) || a.slug.localeCompare(b.slug);
+  apps.sort(tri);
+  enlevees.sort(tri);
+  fs.mkdirSync(DATA, { recursive: true });
+  ecrireJson(path.join(DATA, 'apps.json'), { genere: new Date().toISOString(), apps, enlevees, ignorees, nouvelles });
+
+  const nom = (a: AppDiffusion) => a.langues[a.languePrincipale]?.nom || a.slug;
+  const enLigne = apps.filter((a) => a.enLigne && a.plateforme === 'appstore').length;
+  const web = apps.filter((a) => a.plateforme === 'web').length;
+  console.log(`\n${apps.length} apps prêtes (${enLigne} sur l'App Store, ${web} web, ${apps.length - enLigne - web} pas encore publiées)${enlevees.length ? `, ${enlevees.length} enlevée(s) de la liste` : ''}.`);
+  if (nouvelles.length) console.log(`Nouvelles apps : ${nouvelles.map((s) => nom(apps.find((a) => a.slug === s)!)).join(', ')}.`);
   const erreurs = ignorees.filter((i) => i.raison.startsWith('erreur'));
   if (erreurs.length) {
     console.log('\nProblèmes :');

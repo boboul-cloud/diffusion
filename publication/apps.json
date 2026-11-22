@@ -1,9 +1,10 @@
 {
- "genere": "2026-10-07T23:18:30.186Z",
+ "genere": "2026-11-22T19:50:59.074Z",
  "apps": [
   {
    "slug": "blocgenda",
    "bundleId": "com.oulhen.blocgenda",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/blocgenda/id6799521493",
    "lienInternational": "https://apps.apple.com/app/id6799521493",
@@ -68,8 +69,75 @@
    }
   },
   {
+   "slug": "bobconjugaison",
+   "bundleId": "com.bobconjugaison.app",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bob-conjugaison/id6815283259",
+   "lienInternational": "https://apps.apple.com/app/id6815283259",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-10-01T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bobconjugaison/",
+   "assistance": "https://boboul-cloud.github.io/bobconjugaison/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/bobconjugaison/confidentialite.html",
+   "icone": "data/apps/bobconjugaison/icone.png?v=36663b05",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob Conjugaison",
+     "sousTitre": "Quiz et conjugueur en couleurs",
+     "promo": "5 269 verbes, 22 temps, trois façons de s'entraîner. Le radical en noir, la terminaison en couleur : on voit enfin ce qui change. Sans compte, sans publicité.",
+     "description": "Bob Conjugaison fait réviser la conjugaison française en couleurs : le radical en encre sombre, la terminaison en couleur. On voit d'un coup d'œil ce qui change d'une personne à l'autre, d'un temps à l'autre.\n\nTROIS FAÇONS DE S'ENTRAÎNER\n\n• Terminaisons à compléter — le radical est affiché, on écrit la fin : « vous soumettr… » → « ez ». Un mini-clavier d'accents évite les blocages.\n• Forme complète — on écrit tout le verbe conjugué.\n• Choix multiple — quatre propositions, dont les vraies fautes classiques : « nous lancions » ou « lançions », « vous dites » ou « disez ».\n\nLes trois se mélangent dans une même partie, du niveau Débutant (150 verbes courants, temps de base) au niveau Expert (tous les verbes, tous les temps), ou sur mesure.\n\nUNE CORRECTION QUI EXPLIQUE\n\nChaque réponse est corrigée tout de suite : la bonne forme, sa terminaison mise en évidence, et la règle qui s'applique — groupe, modèle, temps, personne, particularité d'orthographe. Une réponse juste mais mal accentuée est signalée « presque » plutôt que fausse.\n\nTOUTE LA CONJUGAISON\n\n• 5 269 verbes, les trois groupes, les verbes pronominaux, défectifs et impersonnels\n• Les 7 modes et les 22 temps, simples et composés\n• Les auxiliaires être et avoir, l'accord du participe passé\n• Les règles d'orthographe : c → ç, g → ge, consonne doublée, accent grave, y → i, et les variantes admises (je paie / je paye)\n\nQUAND EMPLOYER QUEL TEMPS\n\nL'onglet Emplois explique à quoi sert chaque mode et chacun des 22 temps : quand l'employer, comment il se forme, les mots qui l'annoncent (hier, il faut que, dès que…), le piège à éviter, et des phrases qui le montrent. Huit pièges classiques en plus : imparfait ou passé composé, -rai ou -rais, -er ou -é, indicatif ou subjonctif après « que »…\n\nUN CONJUGUEUR COMPLET\n\nCherchez n'importe quel verbe : son tableau entier s'affiche, en couleurs, avec un bouton pour s'entraîner sur lui.\n\nSES PROGRÈS\n\nNiveau et points d'expérience, taux de réussite par groupe et par temps, série de jours, et une liste des verbes à revoir, qui reviennent plus souvent dans les quiz.\n\nSANS RIEN DE SUPERFLU\n\nPas de compte, pas de publicité, aucune donnée collectée. Tout fonctionne hors connexion, et la progression reste sur l'appareil.\n\nListe des verbes et fréquences : Lexique 3.83 (lexique.org) — New, Pallier, Ferrand et Matos — sous licence CC BY-SA 4.0.",
+     "motsCles": [
+      "verbe",
+      "grammaire",
+      "orthographe",
+      "français",
+      "subjonctif",
+      "imparfait",
+      "passé",
+      "futur",
+      "temps",
+      "exercice",
+      "révision",
+      "école"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/bobconjugaison/fr-iphone-1.jpg?v=aa33e8c8",
+       "data/apps/bobconjugaison/fr-iphone-2.jpg?v=ad691ce4",
+       "data/apps/bobconjugaison/fr-iphone-3.jpg?v=50dfe041",
+       "data/apps/bobconjugaison/fr-iphone-4.jpg?v=bccd4475",
+       "data/apps/bobconjugaison/fr-iphone-5.jpg?v=55359fdd",
+       "data/apps/bobconjugaison/fr-iphone-6.jpg?v=72436d2b"
+      ],
+      "ipad": [
+       "data/apps/bobconjugaison/fr-ipad-1.jpg?v=48c6fdc0"
+      ]
+     }
+    }
+   }
+  },
+  {
    "slug": "bobcrapette",
    "bundleId": "com.oulhen.bobcrapette",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/bobcrapette/id6811610709",
    "lienInternational": "https://apps.apple.com/app/id6811610709",
@@ -136,8 +204,77 @@
    }
   },
   {
+   "slug": "bobmecano",
+   "bundleId": "com.bobmecano.app",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bob-m%C3%A9cano/id6815190163",
+   "lienInternational": "https://apps.apple.com/app/id6815190163",
+   "gratuit": true,
+   "prix": "",
+   "achats": true,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "16.0",
+   "note": null,
+   "sortie": "2026-10-01T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bobmecano-site/",
+   "assistance": "https://boboul-cloud.github.io/bobmecano-site/support.html",
+   "confidentialite": "https://boboul-cloud.github.io/bobmecano-site/confidentialite.html",
+   "icone": "data/apps/bobmecano/icone.png?v=385e9de3",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob Mécano",
+     "sousTitre": "Machines improbables",
+     "promo": "22 énigmes, 49 pièces, un moteur physique maison, et un atelier pour fabriquer vos défis et les envoyer. Sans publicité, sans compte, sans collecte.",
+     "description": "Une bille d'un côté, un bac à l'autre bout de l'atelier, et entre les deux : tout ce qui traîne. Des rampes, des poulies, des dominos, un tapis roulant, un chat, une souris, un aimant, un canon. À vous de monter la machine qui fera — enfin — ce qu'on lui demande.\n\nBob Mécano est un jeu de machines improbables. Vous ne résolvez pas une énigme en trouvant LA bonne réponse : vous bricolez, vous lancez, vous regardez tout rater, et vous recommencez en déplaçant une rampe de dix centimètres.\n\nCE QU'IL Y A DEDANS\n\n• 22 énigmes offertes, de l'échauffement au diabolique\n• 49 pièces : mécanique, électricité, feu, air comprimé, et quelques animaux\n• Un moteur physique écrit pour l'occasion — rien n'est scripté, tout est simulé\n• Un atelier pour fabriquer vos propres défis et les envoyer à qui vous voulez\n• Un bac à sable sans règle ni objectif, avec toutes les pièces\n• Un catalogue qui explique chaque pièce et comment la relier aux autres\n• Des indices quand on bloque vraiment, jamais imposés\n\nLA BOÎTE À OUTILS MENT\n\nElle contient toujours plus de pièces qu'il n'en faut. Une gouttière ressemble à une rampe, un aspirateur à un ventilateur, un tremplin à une bascule. La moitié du jeu consiste à trouver lesquelles servent — et lesquelles vous font perdre dix minutes.\n\nFABRIQUEZ LES VÔTRES\n\nUn atelier à part sert à monter vos propres défis, en quatre temps : ce que le défi demande, les pièces dont il parle, le décor monté autour d'elles, puis l'épreuve — vous résolvez votre défi vous-même, et la machine qui réussit est enregistrée avec lui. C'est elle qui prouve qu'il est possible.\n\nQuatre sortes de missions : livrer une pièce dans un bac, faire se toucher deux pièces, faire monter une pièce au-dessus d'une hauteur, ou mettre une lampe sous tension.\n\nUn défi tient dans un petit fichier. Il s'envoie par message, par AirDrop ou par courriel, comme une photo. Un défi reçu est rejoué en entier avant d'être rangé : s'il ne se résout pas, il est refusé. Personne ne peut vous envoyer une énigme impossible. Aucun serveur, aucun compte, aucun catalogue public.\n\nTROIS LOTS SUPPLÉMENTAIRES\n\n• Tour de chauffe — 20 énigmes qui sortent les pièces restées au fond de la boîte : la fusée, les ciseaux, la dynamite, l'aspirateur, le butoir\n• Boîte à malices — 21 machines à deux temps : déclencher avant de livrer\n• Machines infernales — 22 monstres à trois étages, pour qui a déjà tout démonté\n\nCe sont des achats définitifs, pas des abonnements, et ils sont partageables en famille.\n\nSANS RIEN DE CE QU'ON SUBIT AILLEURS\n\nPas de publicité. Pas de compte à créer. Pas de collecte de données, pas de traqueur, pas de statistiques. Le jeu fonctionne entièrement hors ligne : seuls les achats passent par l'App Store.",
+     "motsCles": [
+      "puzzle",
+      "physique",
+      "mecanique",
+      "engrenage",
+      "logique",
+      "bricolage",
+      "rube",
+      "goldberg",
+      "editeur",
+      "defi",
+      "enfant",
+      "hors-ligne"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/bobmecano/fr-iphone-1.jpg?v=a3b20c63",
+       "data/apps/bobmecano/fr-iphone-2.jpg?v=a5121216",
+       "data/apps/bobmecano/fr-iphone-3.jpg?v=e16d4c48",
+       "data/apps/bobmecano/fr-iphone-4.jpg?v=4f4c552e",
+       "data/apps/bobmecano/fr-iphone-5.jpg?v=1c601707",
+       "data/apps/bobmecano/fr-iphone-6.jpg?v=3980e76c"
+      ],
+      "ipad": [
+       "data/apps/bobmecano/fr-ipad-1.jpg?v=9268dac7",
+       "data/apps/bobmecano/fr-ipad-2.jpg?v=bf5690c4",
+       "data/apps/bobmecano/fr-ipad-3.jpg?v=aa4d686a"
+      ]
+     }
+    }
+   }
+  },
+  {
    "slug": "bobmockup",
    "bundleId": "com.boboulcloud.bobmockup",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/bobmockup/id6758100933",
    "lienInternational": "https://apps.apple.com/app/id6758100933",
@@ -201,8 +338,144 @@
    }
   },
   {
+   "slug": "bobplanning",
+   "bundleId": "com.oulhen.bobplanning",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bob-planning/id6815354524",
+   "lienInternational": "https://apps.apple.com/app/id6815354524",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "BUSINESS",
+   "genre": {
+    "fr": "Économie et entreprise",
+    "en": "Business"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-10-01T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bobplanning/",
+   "assistance": "https://boboul-cloud.github.io/bobplanning/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/bobplanning/confidentialite.html",
+   "icone": "data/apps/bobplanning/icone.png?v=608f84d6",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob Planning",
+     "sousTitre": "Horaires d'équipe et coûts",
+     "promo": "On choisit un nom, on touche les cases : la semaine de l'équipe se remplit heure par heure, les heures de chacun se comptent seules, le coût du mois suit.",
+     "description": "Bob Planning remplit le planning d'une équipe heure par heure et poste par poste. On choisit un nom, on touche les cases : chaque créneau prend la couleur de la personne qui le tient, et les heures de chacun se comptent au fil de la saisie.\n\nPour un café, un restaurant, un commerce, un accueil : tous ceux qui organisent leur semaine en services et en postes.\n\nREMPLIR UNE SEMAINE EN QUELQUES GESTES\n\n• Le pinceau : on choisit une personne, puis on touche les cases. Un second appui libère la case, la gomme efface.\n• Une plage d'un coup : de 10H à 15H en un seul choix.\n• Les heures fermées : la cuisine qui ne sert pas l'après-midi se marque une fois pour les sept jours, et sort du calcul de ce qui reste à pourvoir.\n• La semaine suivante déjà prête : une semaine vierge s'ouvre avec le planning de la précédente. Un bandeau permet d'annuler.\n• Toute semaine se recopie, une ancienne comme une suivante.\n• La colonne des heures reste figée quand la grille défile : on sait toujours à quelle heure correspond la ligne.\n\nUNE GRILLE À VOTRE MESURE\n\nPremière heure, amplitude, nombre de postes et leur nom, week-end affiché ou non : un bar de 17H à 02H, un magasin de 9H à 19H, un accueil à cinq guichets.\n\nLES HEURES DE CHACUN\n\n• Le total d'heures de chaque personne reste affiché sous la grille.\n• Le récapitulatif donne les heures de la semaine par personne et le taux de couverture de chaque journée.\n\nLE COÛT DU MOIS\n\nAvec le taux horaire de chacun, l'onglet Coût mensuel donne par employé le brut, le net avant impôt et le coût employeur, puis la masse salariale du mois et le détail des cotisations. Une semaine à cheval sur deux mois est répartie au jour près. Le SMIC horaire sert de repère et signale un taux en dessous. Ces montants sont des estimations, à partir des taux que vous réglez : ils ne remplacent pas un bulletin de paie.\n\nEXCEL, PDF ET RETOUR\n\n• Export CSV, qui s'ouvre dans Excel ou Numbers, accents compris.\n• Export PDF en A4 paysage, prêt à afficher.\n• Import CSV : un planning exporté, même retouché dans Excel, se réimporte. C'est aussi le moyen de passer un planning d'un appareil à l'autre.\n\nSANS RIEN DE SUPERFLU\n\nPas de compte, pas de publicité, aucune donnée collectée. Le planning reste sur votre appareil et tout fonctionne hors connexion.\n\nCONFIDENTIALITÉ ET CONDITIONS\n\n• Politique de confidentialité : https://boboul-cloud.github.io/bobplanning/confidentialite.html\n• Conditions d'utilisation : https://boboul-cloud.github.io/bobplanning/conditions.html",
+     "motsCles": [
+      "restaurant",
+      "bar",
+      "commerce",
+      "salarié",
+      "employé",
+      "roulement",
+      "service",
+      "créneau",
+      "semaine",
+      "paie",
+      "smic",
+      "excel",
+      "cuisine"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/bobplanning/fr-iphone-1.jpg?v=b539ac9a",
+       "data/apps/bobplanning/fr-iphone-2.jpg?v=eb860b21",
+       "data/apps/bobplanning/fr-iphone-3.jpg?v=b7029e7f",
+       "data/apps/bobplanning/fr-iphone-4.jpg?v=7bf70366",
+       "data/apps/bobplanning/fr-iphone-5.jpg?v=ea7b1486"
+      ],
+      "ipad": [
+       "data/apps/bobplanning/fr-ipad-1.jpg?v=bf3b4105",
+       "data/apps/bobplanning/fr-ipad-2.jpg?v=803974b2",
+       "data/apps/bobplanning/fr-ipad-3.jpg?v=88f2c662"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "slug": "bobportrait",
+   "bundleId": "com.bobportrait.app",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/bobportrait/id6815783401",
+   "lienInternational": "https://apps.apple.com/app/id6815783401",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GRAPHICS_AND_DESIGN",
+   "genre": {
+    "fr": "Graphisme et design",
+    "en": "Graphics & Design"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-10-05T07:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bobportrait/",
+   "assistance": "https://boboul-cloud.github.io/bobportrait/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/bobportrait/confidentialite.html",
+   "icone": "data/apps/bobportrait/icone.png?v=87b47224",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "BobPortrait",
+     "sousTitre": "Portraits en points numérotés",
+     "promo": "Choisissez une photo, imprimez la feuille : un portrait en cercles numérotés, à remplir crayon après crayon. Un numéro dans chaque cercle, garanti.",
+     "description": "Choisissez un portrait : BobPortrait en fait une feuille à remplir. Des centaines de cercles, grands dans les ombres, petits dans les lumières, chacun marqué du numéro de sa couleur. On imprime, on prend ses crayons, et le visage apparaît cercle après cercle.\n\nUN NUMÉRO DANS CHAQUE CERCLE\n\n• Chaque chiffre est mesuré pour tenir dans son cercle ; ceux qui seraient trop petits sont ouverts juste assez.\n• Avant d'imprimer, l'app dit si la feuille porte un numéro partout, et propose le bon nombre de cercles pour le format choisi.\n• Trois tailles de chiffres, confortables, standard ou serrés : plus ou moins de détail sur la même feuille.\n\nDE LA PHOTO AU DESSIN\n\n• Le visage est détecté sur l'appareil : les yeux, le nez et la bouche reçoivent davantage de points.\n• « Transformer en dessin » casse les dégradés en aplats, affirme les couleurs et marque les contours.\n• Quatre ambiances, de Doux à Graphique, et une trentaine de réglages fins pour qui veut aller plus loin.\n\nVOS COULEURS\n\n• De 2 à 36 teintes, en couleur, en niveaux de gris ou d'une seule encre.\n• Chaque numéro se repeint à la couleur exacte de vos crayons, au sélecteur ou par son code.\n• La tablette des couleurs est imprimée au pied de chaque feuille.\n\nIMPRIMER ET EXPORTER\n\n• Impression directe, sans passer par un fichier.\n• PDF : aperçu en couleur, feuille à remplir, feuille à colorier, nuancier, un calque par teinte.\n• A5, A4, A3 ou Letter, sur une seule feuille ou sur plusieurs à assembler, repères de coupe compris.\n• SVG en millimètres pour un traceur ou une découpeuse, PNG jusqu'à 600 ppp.\n\nSANS RIEN DE SUPERFLU\n\n• Pas de compte, pas de publicité, aucun achat intégré.\n• Aucune donnée collectée : la photo reste sur votre appareil, tout est calculé hors connexion.\n• Chaque réglage s'annule et se rétablit ; le dernier portrait se rouvre au lancement.",
+     "motsCles": [
+      "coloriage",
+      "numéro",
+      "pointillisme",
+      "dessin",
+      "photo",
+      "visage",
+      "crayons",
+      "feutres",
+      "imprimer",
+      "peinture",
+      "loisir",
+      "cercles"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/bobportrait/fr-iphone-1.jpg?v=9bddd40a",
+       "data/apps/bobportrait/fr-iphone-2.jpg?v=d876704f",
+       "data/apps/bobportrait/fr-iphone-3.jpg?v=33f204a8",
+       "data/apps/bobportrait/fr-iphone-4.jpg?v=849abd26",
+       "data/apps/bobportrait/fr-iphone-5.jpg?v=777ef393"
+      ],
+      "ipad": [
+       "data/apps/bobportrait/fr-ipad-1.jpg?v=77a9d375",
+       "data/apps/bobportrait/fr-ipad-2.jpg?v=258614af",
+       "data/apps/bobportrait/fr-ipad-3.jpg?v=c7438613"
+      ]
+     }
+    }
+   }
+  },
+  {
    "slug": "bons-comptes",
    "bundleId": "bob.oulhen-gmail.com.Bons-Comptes",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/bons-comptes/id6761653191",
    "lienInternational": "https://apps.apple.com/app/id6761653191",
@@ -270,6 +543,7 @@
   {
    "slug": "calcul-de-l-impot",
    "bundleId": "bob.oulhen-gmail.com.calcul-de-l-impot",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/calcul-de-limpot/id6763001988",
    "lienInternational": "https://apps.apple.com/app/id6763001988",
@@ -335,6 +609,7 @@
   {
    "slug": "canonball",
    "bundleId": "com.canonball.game",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/bobcanonball/id6808388554",
    "lienInternational": "https://apps.apple.com/app/id6808388554",
@@ -401,6 +676,7 @@
   {
    "slug": "courriercode",
    "bundleId": "com.courriercode.app",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/courriercode/id6757985873",
    "lienInternational": "https://apps.apple.com/app/id6757985873",
@@ -469,6 +745,7 @@
   {
    "slug": "foot2026",
    "bundleId": "bob.oulhen-gmail.com.FOOT2026",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/foot2026/id6785886701",
    "lienInternational": "https://apps.apple.com/app/id6785886701",
@@ -531,8 +808,74 @@
    }
   },
   {
+   "slug": "grandschemins",
+   "bundleId": "com.oulhen.grandschemins",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/grands-chemins/id6819401816",
+   "lienInternational": "https://apps.apple.com/app/id6819401816",
+   "gratuit": true,
+   "prix": "",
+   "achats": true,
+   "categorie": "TRAVEL",
+   "genre": {
+    "fr": "Voyages",
+    "en": "Travel"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-11-21T08:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/grandschemins/",
+   "assistance": "https://boboul-cloud.github.io/grandschemins/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/grandschemins/confidentialite.html",
+   "icone": "data/apps/grandschemins/icone.png?v=14f50601",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Grands Chemins",
+     "sousTitre": "Randonnées au long cours",
+     "promo": "Le sentier des douaniers (GR® 34) offert, deux chemins de Compostelle à débloquer : étapes, hébergements, réservations, GPS et plan B, même sans réseau.",
+     "description": "Préparez et marchez de grands chemins à pied, étape par étape : le planning, les nuits, les imprévus et les souvenirs, dans une seule app, même sans réseau.\n\nLE SENTIER DES DOUANIERS, OFFERT\n• Le GR® 34 de Portsall au Mont-Saint-Michel : 806 km de côte bretonne en 41 étapes, dans les deux sens.\n• Marées, bacs, falaises, baie du Mont : les alertes du littoral, étape par étape.\n\nDEUX CHEMINS DE COMPOSTELLE, EN ACHAT INTÉGRÉ\n• De Portsall à Compostelle : la Bretagne à pied jusqu'à Nantes, le train jusqu'à Saint-Jean-Pied-de-Port, puis le Camino Francés. 1 315 km à pied en 64 étapes.\n• De Porto à Compostelle par la côte : Senda Litoral, Minho, côte galicienne et Variante spirituelle. 314 km en 16 étapes.\n\nChaque chemin s'achète une seule fois, sans abonnement, et reste à vous sur tous vos appareils.\n\nCHAQUE ÉTAPE\n• Distance, dénivelé, durée, difficulté, profil et tracé hors ligne.\n• Un hébergement principal et une alternative pour chaque nuit, relevés sur des sources officielles.\n• Ravitaillement, points d'eau, transports, météo, lever et coucher du soleil.\n• Export GPX pour votre application de randonnée.\n\nPRÉPARER\n• Planning daté : jours de repos, étapes coupées en deux, variantes, voyage en plusieurs périodes, alertes de saison.\n• Réservations nuit par nuit, avec un message de demande prêt en français, en espagnol ou en portugais.\n• Budget estimé et dépenses réelles.\n• Un chemin à la fois : vous pouvez en changer quand vous voulez, réservations et carnet restent rangés avec chacun.\n\nMARCHER\n• Suivi GPS avec alerte si vous quittez le tracé, et Live Activity sur l'écran verrouillé.\n• Plan B : où dormir d'ici l'arrivée, transports, coucher du soleil, couper l'étape ou la rattraper demain.\n• Explorer : lieux à voir, où manger, où dormir, eau, autour de l'étape ou de vous ; des milliers de lieux disponibles hors ligne.\n• Cartes IGN téléchargeables en France et en Espagne.\n• Widget « Étape du jour » et fiche « Mes infos » pour les secours.\n\nSE SOUVENIR\n• Carnet de notes et de photos, étape par étape.\n• Crédencial photographiée sur les chemins de Compostelle.\n• Livre de voyage en PDF, à imprimer ou partager.\n• Sauvegarde dans le dossier iCloud Drive de votre choix.\n\nVOS PROPRES HÉBERGEMENTS\nVous avez votre sélection d'hébergements sous forme de fichier ? Ouvrez-la dans l'app : elle complète les étapes du chemin concerné.\n\nVOS DONNÉES RESTENT SUR VOTRE IPHONE\nSans compte, sans publicité, aucune donnée collectée.\n\nLes informations ont été relevées avec leur source et leur date ; elles changent : confirmez-les avant de partir, et suivez toujours le balisage sur le terrain.\n\nGR® et GR® 34 sont des marques déposées de la Fédération française de la randonnée pédestre ; Grands Chemins est une application indépendante.\n\nConditions d'utilisation : https://boboul-cloud.github.io/grandschemins/conditions.html",
+     "motsCles": [
+      "GR34",
+      "douaniers",
+      "Compostelle",
+      "Camino",
+      "Santiago",
+      "Bretagne",
+      "Porto",
+      "pèlerinage",
+      "itinérance",
+      "étape",
+      "gîte",
+      "GPS",
+      "trek"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/grandschemins/fr-iphone-1.jpg?v=a93e63fb",
+       "data/apps/grandschemins/fr-iphone-2.jpg?v=a6f136b5",
+       "data/apps/grandschemins/fr-iphone-3.jpg?v=469c724b",
+       "data/apps/grandschemins/fr-iphone-4.jpg?v=ae6dce5a",
+       "data/apps/grandschemins/fr-iphone-5.jpg?v=34cc8e0d",
+       "data/apps/grandschemins/fr-iphone-6.jpg?v=5d0d7e5a"
+      ],
+      "ipad": []
+     }
+    }
+   }
+  },
+  {
    "slug": "groop",
    "bundleId": "bob.oulhen-gmail.com.groop",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/multigroop/id6760623513",
    "lienInternational": "https://apps.apple.com/app/id6760623513",
@@ -598,6 +941,7 @@
   {
    "slug": "mamaison",
    "bundleId": "com.oulhen.MaMaison",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/cmamaison/id6796610063",
    "lienInternational": "https://apps.apple.com/app/id6796610063",
@@ -665,6 +1009,7 @@
   {
    "slug": "materiel",
    "bundleId": "bob.oulhen-gmail.com.Materiel",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/pr%C3%AAt-mat%C3%A9riel/id6757075000",
    "lienInternational": "https://apps.apple.com/app/id6757075000",
@@ -756,6 +1101,7 @@
   {
    "slug": "monpetitreseau",
    "bundleId": "bob.oulhen-gmail.com.MonPetitReseau",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/monpetitreseau/id6764667201",
    "lienInternational": "https://apps.apple.com/app/id6764667201",
@@ -821,6 +1167,7 @@
   {
    "slug": "operations",
    "bundleId": "bob.oulhen-gmail.com.ope-rations",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/operations-plus/id6770241928",
    "lienInternational": "https://apps.apple.com/app/id6770241928",
@@ -887,6 +1234,7 @@
   {
    "slug": "orthoprof",
    "bundleId": "fr.orthoprof.app",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/pleins-et-d%C3%A9li%C3%A9s/id6809700017",
    "lienInternational": "https://apps.apple.com/app/id6809700017",
@@ -904,7 +1252,7 @@
    ],
    "iosMin": "17.0",
    "note": null,
-   "sortie": "2026-09-28T19:20:44Z",
+   "sortie": "2026-09-28T07:00:00Z",
    "version": "1.0",
    "developpeur": "Robert Oulhen",
    "site": "https://boboul-cloud.github.io/orthoproff-site/",
@@ -952,6 +1300,7 @@
   {
    "slug": "pngtojpg",
    "bundleId": "bob.oulhen-gmail.com.pngtojpg",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/pngtojpg/id6758070086",
    "lienInternational": "https://apps.apple.com/app/id6758070086",
@@ -1017,6 +1366,7 @@
   {
    "slug": "pretmat",
    "bundleId": "bob.oulhen-gmail.com.Pre-tMat",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/read-my-book/id6758413324",
    "lienInternational": "https://apps.apple.com/app/id6758413324",
@@ -1082,6 +1432,7 @@
   {
    "slug": "prompteur",
    "bundleId": "com.bobprompt.app",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/bobprompt/id6758165213",
    "lienInternational": "https://apps.apple.com/app/id6758165213",
@@ -1147,6 +1498,7 @@
   {
    "slug": "releve",
    "bundleId": "com.oulhen.releve",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/multireleve/id6803667972",
    "lienInternational": "https://apps.apple.com/app/id6803667972",
@@ -1164,7 +1516,7 @@
    ],
    "iosMin": "17.0",
    "note": null,
-   "sortie": "2026-08-27T07:33:53Z",
+   "sortie": "2026-08-27T07:00:00Z",
    "version": "1.0",
    "developpeur": "Robert Oulhen",
    "site": "https://boboul-cloud.github.io/releve/",
@@ -1213,6 +1565,7 @@
   {
    "slug": "rendumonnaie",
    "bundleId": "com.oulhen.rendumonnaie",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/rendumonnaie/id6794941086",
    "lienInternational": "https://apps.apple.com/app/id6794941086",
@@ -1281,6 +1634,7 @@
   {
    "slug": "riskelo",
    "bundleId": "com.oulhen.riskelo",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/riskelo/id6806804539",
    "lienInternational": "https://apps.apple.com/app/id6806804539",
@@ -1299,12 +1653,12 @@
    "iosMin": "17.0",
    "note": null,
    "sortie": "2026-09-07T07:00:00Z",
-   "version": "1.5",
+   "version": "2.0",
    "developpeur": "Robert Oulhen",
    "site": "https://boboul-cloud.github.io/riskelo/",
    "assistance": "https://boboul-cloud.github.io/riskelo/assistance.html",
    "confidentialite": "https://boboul-cloud.github.io/riskelo/confidentialite.html",
-   "icone": "data/apps/riskelo/icone.png?v=93d15688",
+   "icone": "data/apps/riskelo/icone.png?v=9982ef43",
    "languePrincipale": "fr",
    "langues": {
     "fr": {
@@ -1326,7 +1680,7 @@
       "histoire",
       "questions"
      ],
-     "nouveautes": "LE MONDE RÉEL\n• Un quatrième plateau : le monde tel qu'il est, dessiné d'après les vraies côtes. Les quarante-deux territoires et les six continents du Monde, mais vingt traversées par la mer au lieu de trois — le Kamtchatka retrouve sa distance, et l'on n'y joue plus pareil.\n• Le Monde en hexagones reste : ce sont deux parties différentes, et l'on choisit à la mise en place.\n• La carte se promène et se rapproche sous le doigt. Les noms paraissent à mesure qu'on rapproche, sans jamais se chevaucher ; le nombre d'hommes, lui, se lit toujours.\n\nLES DÉS, COMME DANS LA BOÎTE\n• Pour ceux qui préfèrent le jeu de plateau : un troisième mode, sans question. L'assaillant lance jusqu'à trois dés, le défenseur un ou deux, à son choix ; les plus forts se comparent paire par paire, et l'égalité va au défenseur. Un même lancer peut coûter un homme à chacun.\n• Deux dés font plus mal à l'assaillant, mais peuvent coûter deux hommes d'un coup ; un seul n'en coûte jamais plus d'un. Le choix se fait à chaque assaut, contre un ami comme contre la machine.\n• Il se choisit à la mise en place, à côté du Classique et du Face à face, et se joue aussi à plusieurs appareils : les deux écrans voient tomber les mêmes dés.\n\nLA CONFIDENTIALITÉ, DITE EXACTEMENT\n• Pour qu'une partie au loin se reprenne un autre soir, le relais garde une semaine un numéro tiré au sort à l'installation. Il ne désigne personne, et aucun nom ne lui parvient. La fiche de l'App Store et la politique de confidentialité le disent désormais.\n\niPhone, iPad et Mac, comme toujours.",
+     "nouveautes": "LE PLATEAU EN RELIEF\n• Un bouton « 3D », en haut à droite du plateau, lève la carte en relief : chaque territoire devient une dalle taillée dans son contour, bordée de la couleur de son continent, et un fanion porte le nombre d'hommes.\n• Ce qui est en jeu se soulève, et la flèche d'assaut saute en arc d'une terre à l'autre.\n• Un doigt promène la table, deux la rapprochent ou la font tourner.\n• C'est une option : le bouton « 2D » remet le plateau à plat, et le réglage « Plateau en relief » fait la même chose avant la partie. Le relief demande iOS 18 (macOS 15 sur Mac) ; sur un système plus ancien, rien ne change.\n\nLA CARTE RESTE EN VUE\n• Les panneaux du bas — l'assaut, le déplacement, la feuille du duel — sont translucides : on voit la carte au travers, à plat comme en relief.\n• Quand un panneau monte, le plateau glisse au lieu de reculer, et garde le rapprochement que vous aviez choisi.\n\nET AUSSI\n• Le son ne fige plus l'écran quand l'appareil tarde à le donner, pendant un appel ou avec un casque sans fil.\n• Le mode d'emploi est à jour : il dit exactement ce que garde le relais du jeu au loin, et parle du mode Dés.\n\niPhone, iPad et Mac, comme toujours.",
      "captures": {
       "iphone": [
        "data/apps/riskelo/fr-iphone-1.jpg?v=0a957d28",
@@ -1362,7 +1716,7 @@
       "history",
       "dice"
      ],
-     "nouveautes": "THE REAL WORLD\n• A fourth board: the world as it is, drawn from the real coastlines. The World's forty-two territories and six continents, but twenty sea crossings instead of three — Kamchatka is far away again, and it no longer plays the same.\n• The hexagon World stays: they are two different games, and you choose when you set up.\n• Drag and pinch the map. Names appear as you zoom in and never overlap; the number of men in each territory always shows.\n\nDICE, JUST LIKE THE BOX\n• For those who prefer the board game: a third mode, with no questions. The attacker rolls up to three dice, the defender one or two, as they choose; the highest are compared pair by pair, and ties go to the defender. A single roll can cost each side a man.\n• Two dice hurt the attacker more, but can cost two men at once; one never costs more than one. The choice comes with every assault, against a friend or against the machine.\n• Choose it when you set up, alongside Classic and Showdown. It plays across devices too: both screens see the same dice fall.\n\nPRIVACY, STATED EXACTLY\n• So that a game far away can pick up again another evening, the relay keeps a number drawn at random at installation for a week. It designates nobody, and no name ever reaches it. The App Store page and the privacy policy now say so.\n\niPhone, iPad and Mac, as always.",
+     "nouveautes": "THE BOARD IN RELIEF\n• A \"3D\" button, at the top right of the board, raises the map in relief: each territory becomes a tile cut to its outline, edged in its continent's color, and a flag carries its number of men.\n• Whatever is in play lifts up, and the assault arrow leaps in an arc from one territory to the next.\n• One finger moves the table; two bring it closer or turn it.\n• It is optional: the \"2D\" button lays the board flat again, and the \"3D board\" setting does the same before the game. Relief needs iOS 18 (macOS 15 on Mac); on an older system, nothing changes.\n\nTHE MAP STAYS IN SIGHT\n• The panels at the bottom — the assault, the move, the duel sheet — are now translucent: you see the map through them, flat or in relief.\n• When a panel comes up, the board slides instead of pulling back, and keeps the zoom you had chosen.\n\nALSO\n• Sound no longer freezes the screen when the device is slow to provide it, during a call or with wireless headphones.\n• The user guide is up to date: it says exactly what the relay keeps for games played far away, covers Dice mode, and its links now lead to the English pages of the website.\n\niPhone, iPad and Mac, as always.",
      "captures": {
       "iphone": [
        "data/apps/riskelo/en-iphone-1.jpg?v=e102e1e7",
@@ -1384,6 +1738,7 @@
   {
    "slug": "romancier",
    "bundleId": "bob.oulhen-gmail.com.Romancier-",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/romancier/id6769827003",
    "lienInternational": "https://apps.apple.com/app/id6769827003",
@@ -1451,6 +1806,7 @@
   {
    "slug": "stopphone",
    "bundleId": "com.stopphone.driver",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/stopphone/id6775483855",
    "lienInternational": "https://apps.apple.com/app/id6775483855",
@@ -1517,12 +1873,13 @@
   {
    "slug": "temps-de-jeu",
    "bundleId": "bob.oulhen-gmail.com.Temps-De-Jeu",
+   "plateforme": "appstore",
    "enLigne": true,
    "lien": "https://apps.apple.com/fr/app/temps-de-jeu/id6758916303",
    "lienInternational": "https://apps.apple.com/app/id6758916303",
    "gratuit": true,
    "prix": "",
-   "achats": false,
+   "achats": true,
    "categorie": "SPORTS",
    "genre": {
     "fr": "Sports",
@@ -1535,17 +1892,17 @@
    "iosMin": "17.0",
    "note": null,
    "sortie": "2026-02-19T08:00:00Z",
-   "version": "1.6.1",
+   "version": "1.7",
    "developpeur": "Robert Oulhen",
    "site": "https://boboul-cloud.github.io/Temps-De-Jeu/",
-   "assistance": "",
-   "confidentialite": "",
-   "icone": "data/apps/temps-de-jeu/icone.png?v=ab714b23",
+   "assistance": "https://boboul-cloud.github.io/Temps-De-Jeu/",
+   "confidentialite": "https://boboul-cloud.github.io/Temps-De-Jeu/privacy.html",
+   "icone": "data/apps/temps-de-jeu/icone.png?v=72e69ed6",
    "languePrincipale": "fr",
    "langues": {
     "fr": {
      "nom": "Temps De Jeu",
-     "sousTitre": "",
+     "sousTitre": "Matchs, effectifs, tactique 3D",
      "promo": "Temps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.",
      "description": "TEMPS DE JEU \n\n l'outil indispensable des éducateurs de football amateur.\nGérez vos matchs, vos entraînements et vos effectifs depuis votre iPhone. Conçue par un éducateur, pour les éducateurs.\n\n GESTION DE MATCH EN TEMPS RÉEL\nLancez le chrono, effectuez vos remplacements en un geste, et suivez en direct le temps de jeu de chaque joueur. Le minuteur intelligent calcule automatiquement le temps additionnel selon les arrêts de jeu (touche, corner, faute, penalty, blessure, VAR…). Enregistrez buts, passes décisives, fautes et cartons au fil du match.\n\n ÉQUITÉ DU TEMPS DE JEU\nUn indicateur visuel vous alerte en temps réel si l'écart de temps de jeu entre vos joueurs se creuse. Vert, orange ou rouge : impossible d'oublier quelqu'un sur le banc.\n\nSUIVI DES CARTONS \nJaunes, rouges, doubles jaunes et cartons blancs (exclusion temporaire avec compte à rebours). Tableau de bord dédié, historique par joueur, gestion des suspensions purgées.\n\n STATISTIQUES COMPLÈTES \nPossession, passes, fautes par joueur et par période, temps effectif de jeu, détail des arrêts de jeu. Récapitulatif de match auto-généré et partageable en un tap.\n\n MULTI-CATÉGORIES\nU7 à Seniors : gérez toutes vos équipes depuis une seule app. Base de joueurs partagée entre catégories, badges couleur pour visualiser les prêts.\n\nCASCADE INTER-ÉQUIPES: Partagez votre composition par iMessage : l'équipe suivante voit automatiquement les joueurs déjà retenus comme indisponibles. Plus de doublons le week-end.\n\nGESTION DU STAFF: Entraîneurs adjoints, arbitres, délégués, préparateurs physiques, responsables médicaux… Ajoutez votre encadrement avec rôles personnalisables et coordonnées directes.\n\n ENTRAÎNEMENTS & PRÉSENCES\nPointez la présence, invitez des joueurs d'autres catégories, ajoutez des notes. Exportez les feuilles de présence en PDF.\n\n SONDAGES DE DISPONIBILITÉ\nCréez un sondage et partagez le lien. Vos joueurs répondent Présent, Absent ou Incertain depuis leur navigateur. Les réponses s'intègrent automatiquement.\n\n SAISONS & HISTORIQUE  \nOrganisez matchs et entraînements par saison. Archivez et démarrez une nouvelle saison en un tap, sans perdre vos données.\n\nEXPORT & PARTAGE \nPDF, compositions (.tdj), matchs (.tdjm) : partagez par iMessage, AirDrop ou e-mail avec import automatique sur l'appareil du destinataire.\n\nWIDGET \nAffichez votre prochain match ou entraînement directement sur l'écran d'accueil.\n\nPREMIUM \n5 matchs gratuits pour tester toutes les fonctionnalités. Passez en Premium (achat unique) pour un nombre de matchs illimité et toutes les futures mises à jour incluses.\n\nTEMPS DE JEU, c'est moins de paperasse et plus de terrain.",
      "motsCles": [
@@ -1560,7 +1917,7 @@
       "amateur",
       "jeunes"
      ],
-     "nouveautes": "Nouveautes de la version 1.6.1\n\nGESTION DES CARTONS\nNouveau tableau de bord complet : cartons jaunes, rouges, doubles jaunes et cartons blancs (exclusion temporaire 10 min avec compte a rebours en direct). Suivez l'historique par joueur et marquez les sanctions comme purgees.\n\nTEMPS DE JEU EQUITABLE\nIndicateur en temps reel de l'equite du temps de jeu pendant le match. Code couleur intuitif : vert (ecart inferieur a 5 min), orange (inferieur a 10 min), rouge (superieur a 10 min). Plus aucun joueur oublie sur le banc.\n\nSTATISTIQUES AVANCEES\nPossession, passes, fautes par joueur et par periode, temps effectif, detail des arrets de jeu par type (corner, touche, penalty, VAR, blessure). Tout est analyse automatiquement.\n\nGESTION DU STAFF\nAjoutez entraineurs adjoints, arbitres, delegues, preparateurs physiques et creez vos propres roles. Chaque membre peut etre affecte a plusieurs categories.\n\nSONDAGES DE DISPONIBILITE\nCreez un sondage, partagez-le par iMessage, e-mail ou AirDrop. Vos joueurs repondent Present, Absent ou Incertain et les reponses s'appliquent automatiquement a la feuille de presence.\n\nCASCADE INTER-EQUIPES\nPartagez votre composition : l'equipe suivante voit automatiquement les joueurs deja retenus comme indisponibles. Fini les doublons le week-end.\n\nWIDGET ECRAN D'ACCUEIL\nProchain match ou entrainement visible d'un coup d'oeil depuis l'ecran d'accueil.\n\nMULTI-CATEGORIES\nGerez U13, U15, Seniors depuis une seule app avec une base de joueurs partagee et des badges couleur pour les prets entre categories.\n\nEXPORT ET PARTAGE\nFeuilles de presence et recaps en PDF. Compositions et matchs partageables par iMessage avec import automatique.\n\nPLACEMENT TACTIQUE SUR LE TERRAIN\nVisualisez et organisez votre equipe directement sur un terrain interactif. Glissez-deposez vos titulaires et remplacants pour definir leur position avant le match. Outils de demonstrations tactiques (ballon, adversaires, fleches de mouvements)\n\nSONDAGE DE DISPONIBILITE PAR SMS\nCreez un sondage de disponibilite depuis l'application et envoyez-le par SMS aux joueurs dont le numero est enregistre. Suivez les reponses en temps reel et anticipez votre effectif.\n\nCorrections de bugs et ameliorations de performances.",
+     "nouveautes": "NOUVEAUTÉS DE LA VERSION 1.7\n\nATELIER D'EXERCICES\nOnglet Présences › Atelier : dessinez vos exercices en plein écran. Posez joueurs, gardiens, ballons, plots, coupelles, piquets, mannequins, mini-buts, zones, échelles ou haies, en 8 couleurs, ou partez d'un raccourci (carré, rondo, jeu réduit, slalom). Ajoutez des étapes : les flèches de course, de passe et de conduite se tracent toutes seules. Regardez le résultat en 3D plein écran avec le mode cinéma, la consigne en sous-titre.\n\nFICHES ET SÉANCES\nChaque exercice a sa fiche : objectif, consignes et matériel à prévoir calculé tout seul, en PDF à imprimer. Enchaînez vos exercices en séances minutées : matériel total, équipes faites avec les joueurs présents, fiche de séance en PDF.\n\nPLACEMENT EN 3D\nBasculez la vue Placement en 3D : votre composition sur un terrain en relief, joueurs et ballon déplaçables du bout du doigt, quatre caméras (coach, tribune, dessus, immersion).\n\nSÉQUENCES PAS À PAS\nConstruisez vos situations au doigt : le ballon se colle au joueur, déplacer le porteur fait une conduite, glisser le ballon sur un partenaire une passe, dans le but un tir, et « En l'air » un centre. Les flèches s'affichent avant de valider chaque étape. Ajoutez une consigne par étape, revenez sur une étape pour la corriger, puis lancez la démonstration animée.\n\nBIBLIOTHÈQUE D'EXERCICES 3D\n12 exercices animés avec objectif, consignes et déroulé : rondo, conservation, relance à 3, troisième homme, chevauchement, une-deux, remise du pivot, pressing haut, coulissement, contre-attaque, contre-pressing, corner. « Copier dans mes exercices » pour les adapter dans l'Atelier.\n\nPARTAGE\nPartagez exercices et tactiques en fichier .tdjt par Messages, AirDrop ou e-mail : ils s'ouvrent directement dans l'app.\n\nCorrections et améliorations diverses.",
      "captures": {
       "iphone": [
        "data/apps/temps-de-jeu/fr-iphone-1.jpg?v=62dc23c7",
@@ -1578,6 +1935,1325 @@
      }
     }
    }
+  },
+  {
+   "slug": "vdt",
+   "bundleId": "com.vdt.calculator",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/li%C3%A8vre-demi-fond-et-vma/id6819346455",
+   "lienInternational": "https://apps.apple.com/app/id6819346455",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SPORTS",
+   "genre": {
+    "fr": "Sports",
+    "en": "Sports"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "17.0",
+   "note": null,
+   "sortie": "2026-11-12T08:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/vdt/",
+   "assistance": "https://boboul-cloud.github.io/vdt/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/vdt/confidentialite.html",
+   "icone": "data/apps/vdt/icone.png?v=15e2fa66",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Lièvre – Demi-fond et VMA",
+     "sousTitre": "Tests VMA, plots et séances",
+     "promo": "Chaque élève à son allure : le test VMA joué par l'app, l'objectif de séance au plot près, départs et contrôles au bip. Un seul iPhone, sans compte ni connexion.",
+     "description": "En demi-fond, chacun court à son allure : un pourcentage de sa VMA. Lièvre fait vivre cela à toute une classe ou à tout un groupe d'entraînement, depuis un seul iPhone : il mesure la VMA de chaque coureur, calcule ses objectifs à chaque séance et anime la séance au bip.\n\nMESURER LA VMA\n\n• Test à paliers joué par l'app : un bip quand chacun doit passer un plot, deux bips aigus et la voix à chaque nouveau palier. VAMEVAL (8 km/h, +0,5 km/h par minute, plots tous les 20 m), Léger-Boucher (8 km/h, +1 km/h toutes les 2 minutes, plots tous les 50 m) ou vos réglages.\n• Touchez le nom d'un élève quand il s'arrête : la vitesse de son dernier palier terminé devient sa VMA. Un toucher par erreur s'annule.\n• Demi-Cooper : 6 minutes chronométrées, chaque minute annoncée ; saisissez les distances, la VMA s'en déduit (distance en mètres ÷ 100).\n• Ou tapez les VMA connues, ou collez la liste de la classe.\n\nUNE SÉANCE, UN OBJECTIF PAR ÉLÈVE\n\n• Effort en durée ou en distance, intensité en % de VMA, répétitions, récupération.\n• Écart entre les plots, longueur de la piste, contrôles intermédiaires.\n• Effort en durée : la distance de chacun et le plot à atteindre (« P7 +5 m », « 1 tour + P3 »), et le plot à chaque contrôle.\n• Effort en distance : le temps et l'allure de chacun, et ses temps de passage.\n• Des modèles pour démarrer : 30-30, fractionné, endurance, 3 × 500 m.\n\nAU BIP\n\n• Départ dans 5 secondes, bip long au départ, bip aigu aux contrôles, trois bips à la fin de l'effort.\n• La voix annonce la récupération et la répétition suivante ; trois bips courts avant chaque départ.\n• Effort en distance : touchez chaque coureur à l'arrivée, son temps s'affiche avec l'écart à son objectif.\n• L'écran reste allumé ; les bips sonnent même en mode silencieux.\n\nLA FEUILLE DE LA CLASSE\n\n• Le tableau de la séance, élève par élève, en A4 : à imprimer pour le terrain ou à envoyer.\n\nLE LIÈVRE SONORE\n\n• Un bip chaque fois qu'un coureur à la vitesse choisie passe un plot : pour un groupe de même niveau, ou pour apprendre une allure.\n\nET LES CALCULS\n\n• Vitesse, distance, temps et allure à partir de deux valeurs, en km, miles ou milles marins.\n• Temps de passage, prédictions de course (formule de Riegel), chronomètre à tours.\n• L'historique des 60 derniers calculs.\n\nSANS RIEN DE SUPERFLU\n\n• Pas de compte, pas de publicité, aucun achat intégré.\n• Aucune donnée collectée : groupes, noms et VMA restent sur votre iPhone, hors connexion.\n• Un mode d'emploi complet dans l'app.\n\nUn test VMA est un effort maximal : il s'adresse à des personnes aptes à la pratique sportive, sous la responsabilité de l'enseignant ou de l'entraîneur.",
+     "motsCles": [
+      "eps",
+      "vameval",
+      "léger",
+      "boucher",
+      "cooper",
+      "fractionné",
+      "athlétisme",
+      "piste",
+      "allure",
+      "course",
+      "collège",
+      "club",
+      "bip",
+      "chrono"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/vdt/fr-iphone-1.jpg?v=915e4f1c",
+       "data/apps/vdt/fr-iphone-2.jpg?v=f018547f",
+       "data/apps/vdt/fr-iphone-3.jpg?v=851e5a52",
+       "data/apps/vdt/fr-iphone-4.jpg?v=728558b9",
+       "data/apps/vdt/fr-iphone-5.jpg?v=1b154607",
+       "data/apps/vdt/fr-iphone-6.jpg?v=283946c5"
+      ],
+      "ipad": []
+     }
+    }
+   }
+  },
+  {
+   "slug": "web-aquiloutil",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://aquiloutil.riskelo-salon.workers.dev/",
+   "lienInternational": "https://aquiloutil.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-aquiloutil/icone.png?v=5f8bd7fe",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "À qui l'outil ?",
+     "sousTitre": "Jeu des métiers",
+     "promo": "Le jeu qui rend à chaque métier son outil : truelle, stéthoscope, laryngoscope… dans tous les sens.",
+     "description": "Le jeu qui rend à chaque métier son outil : truelle, stéthoscope, laryngoscope… dans tous les sens.\n\nRetrouver l'outil d'un métier, ou le métier d'un outil. De 3 ans aux adultes, avec des niveaux pour chacun.",
+     "motsCles": [
+      "Jeu des métiers"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-aquiloutil/fr-iphone-1.jpg?v=bf8fbfa8"
+      ],
+      "ipad": [
+       "data/apps/web-aquiloutil/fr-ipad-1.jpg?v=bf8fbfa8"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-bob1n2",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://boboul-cloud.github.io/bob1n2/",
+   "lienInternational": "https://boboul-cloud.github.io/bob1n2/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SPORTS",
+   "genre": {
+    "fr": "Sports",
+    "en": "Sports"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bob1n2/icone.png?v=0d2b7838",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob 1N2",
+     "sousTitre": "Pronostics foot",
+     "promo": "Le concours de pronostics foot du comptoir : 1, N ou 2 sur chaque match, en points virtuels, jamais d'argent.",
+     "description": "Le concours de pronostics foot du comptoir : 1, N ou 2 sur chaque match, en points virtuels, jamais d'argent.\n\nLes matchs de la journée et leurs cotes, les joueurs et leurs points, les systèmes jusqu'au Goliath, le classement et le podium du concours ; les grilles se jouent aussi à distance, par un lien ou un QR code. Installable et hors ligne, sans compte.",
+     "motsCles": [
+      "Pronostics foot"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bob1n2/fr-iphone-1.jpg?v=09c45f33"
+      ],
+      "ipad": [
+       "data/apps/web-bob1n2/fr-ipad-1.jpg?v=09c45f33"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-bobcalc",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://bobcalc.riskelo-salon.workers.dev/",
+   "lienInternational": "https://bobcalc.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bobcalc/icone.png?v=7d71aaf2",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob Calc",
+     "sousTitre": "Calculatrice",
+     "promo": "Calculatrice scientifique, croquis cotés et outils de chantier, avec une École qui rédige les solutions pas à pas.",
+     "description": "Calculatrice scientifique, croquis cotés et outils de chantier, avec une École qui rédige les solutions pas à pas.\n\nCroquis à main levée redressés et cotés, métré et volumes en 3D, convertisseur, TVA, pente, escalier… et l'École : équations, systèmes, identités, Pythagore, Thalès, graphiques. Hors ligne et sans compte.",
+     "motsCles": [
+      "Calculatrice"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bobcalc/fr-iphone-1.jpg?v=30d23e2b"
+      ],
+      "ipad": [
+       "data/apps/web-bobcalc/fr-ipad-1.jpg?v=30d23e2b"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-bobcine",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://bobcine.riskelo-salon.workers.dev/",
+   "lienInternational": "https://bobcine.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bobcine/icone.png?v=dc84fd52",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bobciné",
+     "sousTitre": "Jeu de cartes du cinéma",
+     "promo": "Le jeu de cartes du cinéma, en 3D : citer les acteurs d'un film tiré au sort, le retrouver par son générique.",
+     "description": "Le jeu de cartes du cinéma, en 3D : citer les acteurs d'un film tiré au sort, le retrouver par son générique.\n\nDeviner les réalisateurs, retrouver un film grâce à son générique, défier ses amis. Seul ou à plusieurs, même hors ligne, et en direct chacun sur son téléphone.",
+     "motsCles": [
+      "Jeu de cartes du cinéma"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bobcine/fr-iphone-1.jpg?v=efbc2fe8"
+      ],
+      "ipad": [
+       "data/apps/web-bobcine/fr-ipad-1.jpg?v=efbc2fe8"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-bobdroit",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://bob-droit.riskelo-salon.workers.dev/",
+   "lienInternational": "https://bob-droit.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bobdroit/icone.png?v=7b2deb49",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob Droit",
+     "sousTitre": "Droit français",
+     "promo": "Le droit français en questions : Constitution, institutions, libertés, justice, travail et droit du quotidien.",
+     "description": "Le droit français en questions : Constitution, institutions, libertés, justice, travail et droit du quotidien.\n\nFiches de révision, entraînement corrigé et épreuve chronométrée notée sur 20. Pour le grand public, les lycéens et les candidats aux concours.",
+     "motsCles": [
+      "Droit français"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bobdroit/fr-iphone-1.jpg?v=3d28988d",
+       "data/apps/web-bobdroit/fr-iphone-2.jpg?v=3d28988d"
+      ],
+      "ipad": [
+       "data/apps/web-bobdroit/fr-ipad-1.jpg?v=3d28988d"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-bobechecs",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://bobechecs.riskelo-salon.workers.dev/",
+   "lienInternational": "https://bobechecs.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bobechecs/icone.png?v=1f50d45e",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "BobÉchecs",
+     "sousTitre": "Échecs",
+     "promo": "Les échecs contre l'ordinateur (10 niveaux), à deux, ou à distance avec ses amis.",
+     "description": "Les échecs contre l'ordinateur (10 niveaux), à deux, ou à distance avec ses amis.\n\nUn coach, l'analyse de la partie, un lexique des ouvertures. Hors ligne et sans compte.",
+     "motsCles": [
+      "Échecs"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bobechecs/fr-iphone-1.jpg?v=b502f746"
+      ],
+      "ipad": [
+       "data/apps/web-bobechecs/fr-ipad-1.jpg?v=b502f746"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-bobsurface",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://bobsurface.riskelo-salon.workers.dev/",
+   "lienInternational": "https://bobsurface.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bobsurface/icone.png?v=a5189676",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "BobSurface",
+     "sousTitre": "Surfaces",
+     "promo": "Calcule les surfaces d'une maison sur plusieurs étages : tracé à l'échelle, cotes, angles et maquette 3D.",
+     "description": "Calcule les surfaces d'une maison sur plusieurs étages : tracé à l'échelle, cotes, angles et maquette 3D.\n\nOn trace chaque pièce, on note les cotes et les angles, et la maquette se monte en 3D, étage par étage.",
+     "motsCles": [
+      "Surfaces"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bobsurface/fr-iphone-1.jpg?v=11d5d21b"
+      ],
+      "ipad": [
+       "data/apps/web-bobsurface/fr-ipad-1.jpg?v=11d5d21b"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-briquette",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://briquette.riskelo-salon.workers.dev/",
+   "lienInternational": "https://briquette.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-briquette/icone.png?v=ded283d8",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Briquette",
+     "sousTitre": "Jeu de construction",
+     "promo": "Un plateau, des briques, zéro limite (sauf celles qu'on choisit) : un jeu de construction en 3D.",
+     "description": "Un plateau, des briques, zéro limite (sauf celles qu'on choisit) : un jeu de construction en 3D.\n\nConstruire brique par brique, tourner autour, recommencer. Installable et jouable hors ligne.",
+     "motsCles": [
+      "Jeu de construction"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-briquette/fr-iphone-1.jpg?v=0e51dc74"
+      ],
+      "ipad": [
+       "data/apps/web-briquette/fr-ipad-1.jpg?v=0e51dc74"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-capimath",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://capimath.riskelo-salon.workers.dev/",
+   "lienInternational": "https://capimath.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-capimath/icone.png?v=7cb09c8b",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Capymath",
+     "sousTitre": "Calcul et géographie",
+     "promo": "La calculatrice qui pose l'opération, des exercices tirés au sort, le jeu des capitales et un pendu où chaque calcul révèle une lettre.",
+     "description": "La calculatrice qui pose l'opération, des exercices tirés au sort, le jeu des capitales et un pendu où chaque calcul révèle une lettre.\n\nQuatre niveaux d'exercices corrigés et notés, 49 pays et leurs drapeaux, des indices et la réponse directe pour les plus rapides. Installable et hors ligne, sans compte.",
+     "motsCles": [
+      "Calcul et géographie"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-capimath/fr-iphone-1.jpg?v=885201d9"
+      ],
+      "ipad": [
+       "data/apps/web-capimath/fr-ipad-1.jpg?v=885201d9"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-chantierpro",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://chantierpro.riskelo-salon.workers.dev/",
+   "lienInternational": "https://chantierpro.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-chantierpro/icone.png?v=3fa5b2fb",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Suivi de Chantier Pro",
+     "sousTitre": "Gestion de chantier",
+     "promo": "Le bureau de l'entreprise du bâtiment : devis lot par lot, factures d'acompte et de solde, marge et suivi du chantier pièce par pièce.",
+     "description": "Le bureau de l'entreprise du bâtiment : devis lot par lot, factures d'acompte et de solde, marge et suivi du chantier pièce par pièce.\n\nDevis par corps de métier, métré placo, factures, cotes relevées sur photo et rapport PDF, le même fichier que l'app iPhone. Installable et hors ligne ; les données restent sur l'appareil.",
+     "motsCles": [
+      "Gestion de chantier"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-chantierpro/fr-iphone-1.jpg?v=dd135582"
+      ],
+      "ipad": [
+       "data/apps/web-chantierpro/fr-ipad-1.jpg?v=dd135582"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-circuitip",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://circuitip.riskelo-salon.workers.dev/",
+   "lienInternational": "https://circuitip.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-circuitip/icone.png?v=7a6f46d1",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Circuit IP",
+     "sousTitre": "Électronique",
+     "promo": "L'atelier du circuit imprimé : comprendre, monter, dessouder et fabriquer, du croquis à la soudure.",
+     "description": "L'atelier du circuit imprimé : comprendre, monter, dessouder et fabriquer, du croquis à la soudure.\n\nDictionnaire des abréviations, croquis de 69 composants, techniques de soudure, simulateur et projet complet d'un clignotant à NE555.",
+     "motsCles": [
+      "Électronique"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-circuitip/fr-iphone-1.jpg?v=586ff889",
+       "data/apps/web-circuitip/fr-iphone-2.jpg?v=586ff889"
+      ],
+      "ipad": [
+       "data/apps/web-circuitip/fr-ipad-1.jpg?v=586ff889"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-conduite",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://conduite-a-brest.riskelo-salon.workers.dev/",
+   "lienInternational": "https://conduite-a-brest.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/conduiteabrest/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-conduite/icone.png?v=f3d99fac",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Conduite à Brest",
+     "sousTitre": "Jeu de conduite",
+     "promo": "La version démo du jeu, bientôt sur iPhone : rouler dans le centre de Brest, place de la Liberté, rue de Siam, pont de Recouvrance.",
+     "description": "La version démo du jeu, bientôt sur iPhone : rouler dans le centre de Brest, place de la Liberté, rue de Siam, pont de Recouvrance.\n\nUne ville bâtie d'après les données publiques de l'IGN, d'OpenStreetMap et de Brest métropole. La démo se joue dans le navigateur, dans le centre-ville. L'application complète se télécharge pour Mac, Windows et Linux à l'adresse https://boboulh.itch.io/conduite-a-brest : toute la commune, avec la circulation, le tram et les passants. Bientôt sur iPhone.",
+     "motsCles": [
+      "Jeu de conduite"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-conduite/fr-iphone-1.jpg?v=6a94740e"
+      ],
+      "ipad": [
+       "data/apps/web-conduite/fr-ipad-1.jpg?v=6a94740e"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-contrepied",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://contrepied.riskelo-salon.workers.dev/",
+   "lienInternational": "https://contrepied.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-contrepied/icone.png?v=6bc5424e",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Contrepied",
+     "sousTitre": "Jeu de mots",
+     "promo": "Un jeu de contraires et de contrepèteries dans un vieux cahier d'écolier : retrouver l'expression cachée derrière son envers.",
+     "description": "Un jeu de contraires et de contrepèteries dans un vieux cahier d'écolier : retrouver l'expression cachée derrière son envers.\n\nExpressions, films, chansons et proverbes à remettre à l'endroit. Installable, jouable hors ligne.",
+     "motsCles": [
+      "Jeu de mots"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-contrepied/fr-iphone-1.jpg?v=1ea85ec7"
+      ],
+      "ipad": [
+       "data/apps/web-contrepied/fr-ipad-1.jpg?v=1ea85ec7"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-coquilles",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://coquilles.riskelo-salon.workers.dev/",
+   "lienInternational": "https://coquilles.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-coquilles/icone.png?v=4bdc9f5f",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Coquilles",
+     "sousTitre": "Vente groupée",
+     "promo": "Le carnet d'une vente groupée de coquilles Saint-Jacques : commandes, règlements, livraisons et bilan de la campagne.",
+     "description": "Le carnet d'une vente groupée de coquilles Saint-Jacques : commandes, règlements, livraisons et bilan de la campagne.\n\nUne fiche par client, au kilo ou à l'unité, les chèques et les espèces, les impayés, le récapitulatif PDF et un SMS à tout le groupe. Installable et hors ligne ; les données restent sur l'appareil.",
+     "motsCles": [
+      "Vente groupée"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-coquilles/fr-iphone-1.jpg?v=b9aa3085"
+      ],
+      "ipad": [
+       "data/apps/web-coquilles/fr-ipad-1.jpg?v=b9aa3085"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-crescendo",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://crescendo.riskelo-salon.workers.dev/",
+   "lienInternational": "https://crescendo.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-crescendo/icone.png?v=3e51c0f9",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Crescendo",
+     "sousTitre": "Jeu d'ambiance",
+     "promo": "Le jeu d'ambiance coopératif des nuances : chacun répond au thème avec l'intensité de son nombre secret.",
+     "description": "Le jeu d'ambiance coopératif des nuances : chacun répond au thème avec l'intensité de son nombre secret.\n\nChacun reçoit un nombre secret de 1 à 10 ; le chef d'orchestre doit remettre toutes les réponses dans l'ordre. En 3D, sur un seul écran.",
+     "motsCles": [
+      "Jeu d'ambiance"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-crescendo/fr-iphone-1.jpg?v=f76659a6"
+      ],
+      "ipad": [
+       "data/apps/web-crescendo/fr-ipad-1.jpg?v=f76659a6"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-cubimage",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://cubimage.riskelo-salon.workers.dev/",
+   "lienInternational": "https://cubimage.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-cubimage/icone.png?v=bfbd517a",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Cubimage",
+     "sousTitre": "Jeu de cubes",
+     "promo": "Tourne les cubes et retrouve l'image ! Un jeu de cubes à empiler pour les enfants.",
+     "description": "Tourne les cubes et retrouve l'image ! Un jeu de cubes à empiler pour les enfants.\n\nComme les cubes en bois d'autrefois : six images par cube, à remettre dans le bon sens.",
+     "motsCles": [
+      "Jeu de cubes"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-cubimage/fr-iphone-1.jpg?v=9bc12e1c"
+      ],
+      "ipad": [
+       "data/apps/web-cubimage/fr-ipad-1.jpg?v=9bc12e1c"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-ecoloto",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://ecoloto.pages.dev/",
+   "lienInternational": "https://ecoloto.pages.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "ECOLOTO",
+     "sousTitre": "Épargne",
+     "promo": "L'épargne du non-joueur : ce que l'on économise en ne jouant pas au Loto, à l'EuroMillions ni à EuroDreams.",
+     "description": "L'épargne du non-joueur : ce que l'on économise en ne jouant pas au Loto, à l'EuroMillions ni à EuroDreams.\n\nOn indique ce qu'on aurait joué, et le compteur montre ce qui reste dans la poche, semaine après semaine.",
+     "motsCles": [
+      "Épargne"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-ecoloto/fr-iphone-1.jpg?v=660c55ab"
+      ],
+      "ipad": [
+       "data/apps/web-ecoloto/fr-ipad-1.jpg?v=660c55ab"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-garesdeparis",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://boboul-cloud.github.io/gares-de-paris/",
+   "lienInternational": "https://boboul-cloud.github.io/gares-de-paris/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-garesdeparis/icone.png?v=f1d1f403",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Gares de Paris",
+     "sousTitre": "Histoire du rail",
+     "promo": "L'histoire des gares de Paris : origines, révolutions techniques, circuits de visite et grande vitesse.",
+     "description": "L'histoire des gares de Paris : origines, révolutions techniques, circuits de visite et grande vitesse.\n\nQuatorze fiches, des circuits, une carte, l'évolution de la traction, l'histoire du TGV, un simulateur de croisement et des exercices.",
+     "motsCles": [
+      "Histoire du rail"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-garesdeparis/fr-iphone-1.jpg?v=9ef97130",
+       "data/apps/web-garesdeparis/fr-iphone-2.jpg?v=9ef97130"
+      ],
+      "ipad": [
+       "data/apps/web-garesdeparis/fr-ipad-1.jpg?v=9ef97130"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-gestionfoot",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://gestionfoot.riskelo-salon.workers.dev/",
+   "lienInternational": "https://gestionfoot.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SPORTS",
+   "genre": {
+    "fr": "Sports",
+    "en": "Sports"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-gestionfoot/icone.png?v=57eb7ad7",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "GestionFoot",
+     "sousTitre": "Équipement du club",
+     "promo": "Le registre des commandes d'équipement d'un club de foot : tailles, licences, règlements, non payés et distribution.",
+     "description": "Le registre des commandes d'équipement d'un club de foot : tailles, licences, règlements, non payés et distribution.\n\nUne commande par licencié, les tarifs taille par taille, les règlements en plusieurs fois et les retours, les statistiques, les rapports PDF, la feuille de distribution à pointer et le même fichier que l'app Mac. Installable et hors ligne ; les données restent sur l'appareil.",
+     "motsCles": [
+      "Équipement du club"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-gestionfoot/fr-iphone-1.jpg?v=557dcf72"
+      ],
+      "ipad": [
+       "data/apps/web-gestionfoot/fr-ipad-1.jpg?v=557dcf72"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-inventaire",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://inventaire.riskelo-salon.workers.dev/",
+   "lienInternational": "https://inventaire.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-inventaire/icone.png?v=3b5f5623",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Gestionnaire d'Inventaire",
+     "sousTitre": "Stock et caisse",
+     "promo": "Le stock d'une boutique et sa caisse enregistreuse : articles, codes-barres lus à la caméra, ventes, tickets, inventaire et rapports de fin de journée.",
+     "description": "Le stock d'une boutique et sa caisse enregistreuse : articles, codes-barres lus à la caméra, ventes, tickets, inventaire et rapports de fin de journée.\n\nUn inventaire du rayon à la caméra avec le compte rendu des écarts en PDF ou Excel, une caisse qui lit les codes-barres, les rapports X et Z et un entrepôt en 3D où chaque carton change de couleur avec le stock. Installable et hors ligne, sans compte ; les données restent sur l'appareil.",
+     "motsCles": [
+      "Stock et caisse"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-inventaire/fr-iphone-1.jpg?v=1450319f"
+      ],
+      "ipad": [
+       "data/apps/web-inventaire/fr-ipad-1.jpg?v=1450319f"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-puzzdep",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://puzzdep.riskelo-salon.workers.dev/",
+   "lienInternational": "https://puzzdep.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-puzzdep/icone.png?v=e1a6495e",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "PuzzDép",
+     "sousTitre": "Géographie",
+     "promo": "Le puzzle 3D des départements français : placer les 101 départements par leur nom, leur numéro ou leur chef-lieu.",
+     "description": "Le puzzle 3D des départements français : placer les 101 départements par leur nom, leur numéro ou leur chef-lieu.\n\nLa carte de France en relief, pièce par pièce. De quoi réviser sa géographie en jouant.",
+     "motsCles": [
+      "Géographie"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-puzzdep/fr-iphone-1.jpg?v=14308bd7"
+      ],
+      "ipad": [
+       "data/apps/web-puzzdep/fr-ipad-1.jpg?v=14308bd7"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-retraite",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://retraite.riskelo-salon.workers.dev/",
+   "lienInternational": "https://retraite.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-retraite/icone.png?v=0029e964",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Retraite",
+     "sousTitre": "Capital de retraite",
+     "promo": "Combien de temps le capital de la retraite tient-il ? L'année où il s'épuise, et l'âge qu'on aura alors.",
+     "description": "Combien de temps le capital de la retraite tient-il ? L'année où il s'épuise, et l'âge qu'on aura alors.\n\nLe capital dessiné comme un relief, un curseur pour le retrait annuel, chaque année ajustable une à une, et le budget du mois. Installable et hors ligne ; les données restent sur l'appareil.",
+     "motsCles": [
+      "Capital de retraite"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-retraite/fr-iphone-1.jpg?v=29644a74"
+      ],
+      "ipad": [
+       "data/apps/web-retraite/fr-ipad-1.jpg?v=29644a74"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-roisdefrance",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://roisdefrance.riskelo-salon.workers.dev/",
+   "lienInternational": "https://roisdefrance.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-roisdefrance/icone.png?v=e38515ec",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Rois de France",
+     "sousTitre": "Jeu d'histoire",
+     "promo": "Le jeu de la couronne, en 3D : quiz, énigmes et batailles sur les rois, les empereurs et les présidents, de Clovis à nos jours.",
+     "description": "Le jeu de la couronne, en 3D : quiz, énigmes et batailles sur les rois, les empereurs et les présidents, de Clovis à nos jours.\n\nUne salle du trône, une médaille qui se retourne, plus de 500 questions et trente batailles pour agrandir le royaume sur la carte ; un atlas de 481 à aujourd'hui, des défis entre amis et des parties en direct, chacun sur son téléphone. Installable et hors ligne, sans compte.",
+     "motsCles": [
+      "Jeu d'histoire"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-roisdefrance/fr-iphone-1.jpg?v=868bb4b7"
+      ],
+      "ipad": [
+       "data/apps/web-roisdefrance/fr-ipad-1.jpg?v=868bb4b7"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-soinsmedicaux",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://soinsmedicaux.riskelo-salon.workers.dev/",
+   "lienInternational": "https://soinsmedicaux.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "PRODUCTIVITY",
+   "genre": {
+    "fr": "Productivité",
+    "en": "Productivity"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-soinsmedicaux/icone.png?v=b7aab33a",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Soins Médicaux",
+     "sousTitre": "Cabinet de soins",
+     "promo": "Le registre d'un cabinet de soins : patients, médecins, actes et tarifs, et l'historique de chaque soin prodigué.",
+     "description": "Le registre d'un cabinet de soins : patients, médecins, actes et tarifs, et l'historique de chaque soin prodigué.\n\nLes fiches des patients et des médecins, les soins mois par mois, quatre recherches, les statistiques et le même fichier que l'app iPhone et l'app Mac. Installable et hors ligne ; les données restent sur l'appareil.",
+     "motsCles": [
+      "Cabinet de soins"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-soinsmedicaux/fr-iphone-1.jpg?v=e3824114"
+      ],
+      "ipad": [
+       "data/apps/web-soinsmedicaux/fr-ipad-1.jpg?v=e3824114"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-tclp",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://tclp.riskelo-salon.workers.dev/",
+   "lienInternational": "https://tclp.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-tclp/icone.png?v=d5aeddfd",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "TCLP",
+     "sousTitre": "Jeu musical",
+     "promo": "« Tu connais les paroles ? » : retrouver la chanson grâce à quelques mots, deviner qui chante et en quelle année.",
+     "description": "« Tu connais les paroles ? » : retrouver la chanson grâce à quelques mots, deviner qui chante et en quelle année.\n\nUn studio en 3D avec platine vinyle et écran géant : karaoké du domaine public, blind test joué par le jeu, frise des années, soirée entre amis et mode en direct, chacun sur son téléphone.",
+     "motsCles": [
+      "Jeu musical"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-tclp/fr-iphone-1.jpg?v=bee186e0"
+      ],
+      "ipad": [
+       "data/apps/web-tclp/fr-ipad-1.jpg?v=bee186e0"
+      ]
+     }
+    }
+   },
+   "nouveau": true
   }
  ]
 }

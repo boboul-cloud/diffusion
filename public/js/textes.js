@@ -333,23 +333,27 @@ export function contexte(app, L, fiche = {}, reglages = {}, options = {}) {
     : extrairePoints(pointsSource ?? '', nom);
 
   const motsCles = l.motsCles ?? [];
+  // Une app web s'ouvre dans le navigateur : ni App Store, ni iPhone obligatoire.
+  const web = app.plateforme === 'web';
   const hashtags = fiche.hashtags
     ? fiche.hashtags.split(/[\s,]+/).map(hashtag).filter(Boolean)
     : [
         ...motsCles.slice(0, 2).map(hashtag),
         ...(TAGS_CATEGORIE[app.categorie]?.[i] ?? []).slice(0, 1),
-        '#iPhone',
+        web ? (L === 'fr' ? '#AppWeb' : '#WebApp') : '#iPhone',
         ...(reglages.hashtags ?? '#IndieDev').split(/[\s,]+/).map(hashtag),
         ...motsCles.slice(2).map(hashtag),
         ...(TAGS_CATEGORIE[app.categorie]?.[i] ?? []).slice(1),
-      ].filter(Boolean);
+      ].filter((h) => h && !(web && /iphone|ios/i.test(h)));
 
   const ipad = app.appareils?.includes('ipad');
-  const appareils = ipad ? (L === 'fr' ? 'iPhone et iPad' : 'iPhone and iPad') : 'iPhone';
+  const appareils = web
+    ? L === 'fr' ? 'ordinateur, tablette et téléphone' : 'computer, tablet and phone'
+    : ipad ? (L === 'fr' ? 'iPhone et iPad' : 'iPhone and iPad') : 'iPhone';
   const lien = (fiche.lien || (L === 'fr' ? app.lien : app.lienInternational || app.lien) || app.site || '').trim();
 
   const sortie = app.sortie ? new Date(app.sortie) : null;
-  const recente = !app.enLigne || (sortie && Date.now() - sortie.getTime() < 120 * 864e5);
+  const recente = !app.enLigne || !!app.nouveau || !!(sortie && Date.now() - sortie.getTime() < 120 * 864e5);
 
   const motsMinuscules = new Set(
     ((l.description ?? '') + ' ' + (l.promo ?? '')).match(/(?<![\p{L}])\p{Ll}[\p{L}'’-]*/gu) ?? [],
@@ -369,6 +373,7 @@ export function contexte(app, L, fiche = {}, reglages = {}, options = {}) {
     motsCles,
     hashtags: [...new Map(hashtags.map((h) => [h.toLocaleLowerCase('fr'), h])).values()],
     lien,
+    web,
     enLigne: !!app.enLigne,
     recente,
     gratuit: app.gratuit !== false,
@@ -391,6 +396,7 @@ export function contexte(app, L, fiche = {}, reglages = {}, options = {}) {
     sitePerso: (reglages.site || '').trim(),
     bio: (reglages.bio || '').trim(),
     nbApps: options.nbApps ?? 0,
+    nbWeb: options.nbWeb ?? 0,
     date: DATE(L),
   };
 }
@@ -438,8 +444,28 @@ function prixLong(c) {
   return c.achats ? T(c, 'Gratuit, avec des achats intégrés facultatifs', 'Free, with optional in-app purchases') : T(c, 'Gratuit', 'Free');
 }
 
+/** « sur l’App Store » ; une app web, elle, s'ouvre « dans le navigateur ». */
+const sur = (c) => (c.web ? T(c, 'dans le navigateur', 'in your browser') : T(c, 'sur l’App Store', 'on the App Store'));
+
+/** « Gratuit sur l’App Store », « Gratuit, dans le navigateur » : la pastille des visuels. */
+export function bandeau(c) {
+  if (!c.enLigne) return T(c, 'Bientôt sur l’App Store', 'Coming soon to the App Store');
+  return c.web ? `${c.prix}, ${sur(c)}` : `${c.prix} ${sur(c)}`;
+}
+
 /** Ou la trouver : le lien si l'app est en ligne, sinon « bientot ». */
 function appel(c, v = 0) {
+  if (c.web) {
+    return T(c, [
+      `${c.prix}, dans ton navigateur 👉 ${c.lien}`,
+      `À essayer tout de suite, rien à installer : ${c.lien}`,
+      `En ligne et ${minuscule(c.prix)} : ${c.lien}`,
+    ], [
+      `${c.prix}, right in your browser 👉 ${c.lien}`,
+      `Try it now, nothing to install: ${c.lien}`,
+      `Online and ${minuscule(c.prix)}: ${c.lien}`,
+    ])[v % 3];
+  }
   if (!c.enLigne) {
     const bientot = T(c, 'Bientôt sur l’App Store.', 'Coming soon to the App Store.');
     return c.lien ? `${bientot} ${c.lien}` : bientot;
@@ -459,13 +485,19 @@ function appel(c, v = 0) {
 
 /** Sur Instagram ou TikTok, un lien dans la legende n'est pas cliquable. */
 function appelSansLien(c, v = 0) {
+  if (c.web) {
+    return T(c,
+      [`${c.prix}, dans ton navigateur : lien en bio 👆`, `Rien à installer : le lien est dans ma bio 👆`, `Le lien est dans ma bio 👆`],
+      [`${c.prix}, right in your browser: link in bio 👆`, `Nothing to install: link in bio 👆`, `Link in bio 👆`],
+    )[v % 3];
+  }
   if (!c.enLigne) return T(c, 'Bientôt sur l’App Store.', 'Coming soon to the App Store.');
   const fr = [
     `${c.prix} sur l’App Store : lien en bio 👆`,
-    `Cherche « ${c.nom} » sur l’App Store 🔎`,
+    `Pour la télécharger : lien en bio 👆`,
     `Le lien est dans ma bio 👆`,
   ];
-  const en = [`${c.prix} on the App Store: link in bio 👆`, `Search “${c.nom}” on the App Store 🔎`, `Link in bio 👆`];
+  const en = [`${c.prix} on the App Store: link in bio 👆`, `Download it: link in bio 👆`, `Link in bio 👆`];
   return T(c, fr, en)[v % 3];
 }
 
@@ -486,7 +518,7 @@ function accroche(c, v = 0) {
     c.sousTitre ? `${c.emoji} ${c.nom} : ${min(c, c.sousTitre)}` : `${c.emoji} ${c.nom}`,
     c.enLigne
       ? c.recente
-        ? `Je viens de publier ${c.nom} sur l’App Store ${c.emoji}`
+        ? c.web ? `Je viens de mettre en ligne ${c.nom} ${c.emoji}` : `Je viens de publier ${c.nom} sur l’App Store ${c.emoji}`
         : `Vous connaissez ${c.nom} ? ${c.emoji}`
       : `${c.nom} arrive bientôt sur l’App Store ${c.emoji}`,
     `Pour ${c.public} : ${c.nom} ${c.emoji}`,
@@ -495,7 +527,7 @@ function accroche(c, v = 0) {
     c.sousTitre ? `${c.emoji} ${c.nom}: ${c.sousTitre}` : `${c.emoji} ${c.nom}`,
     c.enLigne
       ? c.recente
-        ? `I just released ${c.nom} on the App Store ${c.emoji}`
+        ? c.web ? `I just launched ${c.nom} ${c.emoji}` : `I just released ${c.nom} on the App Store ${c.emoji}`
         : `Have you tried ${c.nom}? ${c.emoji}`
       : `${c.nom} is coming soon to the App Store ${c.emoji}`,
     `For ${c.public}: ${c.nom} ${c.emoji}`,
@@ -504,7 +536,9 @@ function accroche(c, v = 0) {
 }
 
 const avis = (c) =>
-  c.enLigne
+  c.web
+    ? T(c, 'Si elle te plaît, fais-la suivre à quelqu’un à qui elle peut servir 🙏', 'If you like it, share it with someone who could use it 🙏')
+    : c.enLigne
     ? T(c, 'Si elle te plaît, une note sur l’App Store m’aiderait beaucoup 🙏', 'If you like it, a rating on the App Store would help a lot 🙏')
     : '';
 
@@ -567,11 +601,11 @@ function pro(c, v, canal) {
     ? T(c, `Nouvelle version de ${c.nom}${c.version ? ` (${c.version})` : ''}, mon app pour ${c.public}.`, `A new version of ${c.nom}${c.version ? ` (${c.version})` : ''}, my app for ${c.public}.`)
     : T(c, [
         c.enLigne ? (c.recente ? `J’ai publié une nouvelle app : ${c.nom}.` : `Je vous présente une de mes apps : ${c.nom}.`) : `Je prépare la sortie de ma prochaine app : ${c.nom}.`,
-        `Je développe des applications iPhone en indépendant. ${c.recente ? 'La dernière' : 'L’une d’elles'} s’appelle ${c.nom}.`,
+        `Je développe des applications${c.web ? '' : ' iPhone'} en indépendant. ${c.recente ? 'La dernière' : 'L’une d’elles'} s’appelle ${c.nom}.`,
         `${c.nom}, c’est ${min(c, c.sousTitre || c.accroche)}.`,
       ], [
         c.enLigne ? (c.recente ? `I’ve released a new app: ${c.nom}.` : `Let me introduce one of my apps: ${c.nom}.`) : `I’m getting ready to release my next app: ${c.nom}.`,
-        `I build iPhone apps as an independent developer. ${c.recente ? 'The latest one' : 'One of them'} is called ${c.nom}.`,
+        `I build ${c.web ? 'apps' : 'iPhone apps'} as an independent developer. ${c.recente ? 'The latest one' : 'One of them'} is called ${c.nom}.`,
         `${c.nom} is ${min(c, c.sousTitre || c.accroche)}.`,
       ])[v % 3];
   const texte = [
@@ -580,7 +614,7 @@ function pro(c, v, canal) {
     T(c, 'Ce qu’elle fait :', 'What it does:'),
     points(c, 5, '→'),
     T(c, `Pensée pour ${c.public}, elle fonctionne sur ${c.appareils}.`, `Built for ${c.public}, it runs on ${c.appareils}.`),
-    c.enLigne ? `${prixLong(c)}${c.achats ? ',' : ''}${T(c, ' sur l’App Store : ', ' on the App Store: ')}${c.lien}` : appel(c, v),
+    c.enLigne ? `${prixLong(c)}${c.achats || c.web ? ',' : ''} ${sur(c)}${T(c, ' : ', ': ')}${c.lien}` : appel(c, v),
     T(c, 'Vos retours m’intéressent : dites-moi ce que vous en pensez en commentaire.', 'I’d love your feedback: tell me what you think in the comments.'),
     hashtags(c, canal.hashtags ?? 3),
   ].join('\n\n');
@@ -618,14 +652,14 @@ function reddit(c, v, canal) {
   )[v % 2];
   const texte = T(c,
     [
-      `Bonjour ! Je développe des apps iPhone en indépendant. ${c.recente ? `Je viens de terminer ${c.nom}.` : `Voici ${c.nom}, l’une de mes apps.`}`,
+      `Bonjour ! Je développe des apps${c.web ? '' : ' iPhone'} en indépendant. ${c.recente ? `Je viens de terminer ${c.nom}.` : `Voici ${c.nom}, l’une de mes apps.`}`,
       c.accroche,
       `Ce qu’elle fait :\n\n${points(c, 5, '-')}`,
       c.enLigne ? `${prixLong(c)} : ${c.lien}` : appel(c, v),
       `Tous vos retours m’intéressent, bons ou mauvais.`,
     ],
     [
-      `Hi! I’m an independent iOS developer. ${c.recente ? `I just finished ${c.nom}.` : `This is ${c.nom}, one of my apps.`}`,
+      `Hi! I’m an independent ${c.web ? '' : 'iOS '}developer. ${c.recente ? `I just finished ${c.nom}.` : `This is ${c.nom}, one of my apps.`}`,
       c.accroche,
       `What it does:\n\n${points(c, 5, '-')}`,
       c.enLigne ? `${prixLong(c)}: ${c.lien}` : appel(c, v),
@@ -649,7 +683,7 @@ function producthunt(c) {
       'First comment (maker)',
       [
         `Hi Product Hunt 👋`,
-        `I’m ${c.auteur}, an independent iOS developer. I built ${c.nom} for ${c.public}.`,
+        `I’m ${c.auteur}, an independent ${c.web ? '' : 'iOS '}developer. I built ${c.nom} for ${c.public}.`,
         c.accroche,
         `What you can do with it:\n${points(c, 5, '•')}`,
         `${prixLong(c)} on ${c.appareils}. I’d love your feedback and I’ll be here all day to answer questions!`,
@@ -671,7 +705,7 @@ function hackernews(c) {
         `Hi HN, I’m ${c.auteur}, an independent developer. ${c.nom} is ${min(c, c.sousTitre || c.accroche)}.`,
         c.accroche,
         points(c, 5, '-'),
-        `It runs on ${c.appareils}${c.iosMin ? ` (iOS ${c.iosMin}+)` : ''}. Happy to answer questions about how it’s built.`,
+        `It runs ${c.web ? 'in the browser, ' : ''}on ${c.appareils}${c.iosMin ? ` (iOS ${c.iosMin}+)` : ''}. Happy to answer questions about how it’s built.`,
       ].join('\n\n'),
     ),
   ];
@@ -695,7 +729,7 @@ function indiehackers(c) {
       'texte',
       'Post',
       [
-        `Hi IH! I’m ${c.auteur} and I build iOS apps on my own.`,
+        `Hi IH! I’m ${c.auteur} and I build ${c.web ? 'web' : 'iOS'} apps on my own.`,
         `${c.nom} is ${min(c, c.sousTitre || c.accroche)}. ${c.accroche}`,
         `Main features:\n${points(c, 5, '-')}`,
         `Pricing: ${minuscule(prixLong(c))}.`,
@@ -712,17 +746,17 @@ function script(c, v, canal) {
   const plans = T(c,
     [
       `🎬 Script vertical (20 à 30 s)`,
-      `0–3 s · Texte à l’écran : « ${c.sousTitre || c.accroche} »\nFilme l’iPhone en main, ou montre directement l’écran de l’app.`,
+      `0–3 s · Texte à l’écran : « ${c.sousTitre || c.accroche} »\nFilme ${c.web ? 'le téléphone' : 'l’iPhone'} en main, ou montre directement l’écran de l’app.`,
       `3–8 s · Voix : « ${c.nom}, ${min(c, c.sousTitre || 'une app pour ' + c.public)}. »\nÉcran : l’accueil de l’app.`,
       ...pf.slice(0, 3).map((p, i) => `${8 + i * 5}–${13 + i * 5} s · ${p}\nÉcran : la capture qui le montre, avec ces mots incrustés.`),
-      `Fin · Icône de l’app + « ${c.enLigne ? `${c.prix} sur l’App Store` : 'Bientôt sur l’App Store'} »\nVoix : « ${c.enLigne ? `Cherchez ${c.nom} sur l’App Store.` : 'Abonnez-vous pour la sortie.'} »`,
+      `Fin · Icône de l’app + « ${bandeau(c)} »\nVoix : « ${c.web ? 'Le lien est dans la bio.' : c.enLigne ? `Cherchez ${c.nom} sur l’App Store.` : 'Abonnez-vous pour la sortie.'} »`,
     ],
     [
       `🎬 Vertical script (20 to 30 s)`,
-      `0–3 s · On-screen text: “${c.sousTitre || c.accroche}”\nFilm the iPhone in hand, or show the app screen directly.`,
+      `0–3 s · On-screen text: “${c.sousTitre || c.accroche}”\nFilm the ${c.web ? 'phone' : 'iPhone'} in hand, or show the app screen directly.`,
       `3–8 s · Voice: “${c.nom}, ${min(c, c.sousTitre || 'an app for ' + c.public)}.”\nScreen: the app’s home screen.`,
       ...pf.slice(0, 3).map((p, i) => `${8 + i * 5}–${13 + i * 5} s · ${p}\nScreen: the screenshot that shows it, with these words on top.`),
-      `End · App icon + “${c.enLigne ? `${c.prix} on the App Store` : 'Coming soon to the App Store'}”\nVoice: “${c.enLigne ? `Search ${c.nom} on the App Store.` : 'Follow for the launch.'}”`,
+      `End · App icon + “${bandeau(c)}”\nVoice: “${c.web ? 'Link in bio.' : c.enLigne ? `Search ${c.nom} on the App Store.` : 'Follow for the launch.'}”`,
     ],
   ).join('\n\n');
   const legendeTexte = [accroche(c, v), c.accroche, appelSansLien(c, v), hashtags(c, canal.hashtags ?? 5)].join('\n\n');
@@ -739,7 +773,7 @@ function youtube(c, v, canal) {
   const description = [
     c.accroche,
     points(c, 5, '✅'),
-    c.enLigne ? `📲 ${prixLong(c)} ${T(c, 'sur l’App Store', 'on the App Store')} : ${c.lien}` : appel(c, v),
+    c.enLigne ? `📲 ${prixLong(c)}${c.web ? ',' : ''} ${sur(c)}${T(c, ' : ', ': ')}${c.lien}` : appel(c, v),
     court ? '' : T(c, 'Chapitres :\n0:00 Présentation\n0:20 [première fonction]\n1:00 [deuxième fonction]', 'Chapters:\n0:00 Intro\n0:20 [first feature]\n1:00 [second feature]'),
     hashtags(c, 3),
   ].join('\n\n');
@@ -806,7 +840,9 @@ function emailProches(c, v) {
           c.accroche,
           points(c, 3, '•'),
           c.enLigne ? `Elle est ${minuscule(prixLong(c))}, sur ${c.appareils} : ${c.lien}` : appel(c, v),
-          c.enLigne ? `Deux choses m’aideraient énormément : l’essayer et laisser une note sur l’App Store, et la faire suivre à quelqu’un à qui elle peut servir.` : `Je vous préviendrai dès sa sortie.`,
+          c.web
+            ? `Deux choses m’aideraient énormément : l’essayer, et la faire suivre à quelqu’un à qui elle peut servir.`
+            : c.enLigne ? `Deux choses m’aideraient énormément : l’essayer et laisser une note sur l’App Store, et la faire suivre à quelqu’un à qui elle peut servir.` : `Je vous préviendrai dès sa sortie.`,
           `Merci !\n${c.auteur}`,
         ],
         [
@@ -815,7 +851,9 @@ function emailProches(c, v) {
           c.accroche,
           points(c, 3, '•'),
           c.enLigne ? `It’s ${minuscule(prixLong(c))} on ${c.appareils}: ${c.lien}` : appel(c, v),
-          c.enLigne ? `Two things would help enormously: trying it and leaving a rating on the App Store, and forwarding it to someone who could use it.` : `I’ll let you know as soon as it’s out.`,
+          c.web
+            ? `Two things would help enormously: trying it, and forwarding it to someone who could use it.`
+            : c.enLigne ? `Two things would help enormously: trying it and leaving a rating on the App Store, and forwarding it to someone who could use it.` : `I’ll let you know as soon as it’s out.`,
           `Thanks!\n${c.auteur}`,
         ],
       ).join('\n\n'),
@@ -838,7 +876,7 @@ function newsletter(c, v) {
         c.accroche,
         points(c, 5, '•'),
         T(c, `Pour qui ? Pour ${c.public}.`, `Who is it for? ${c.public.charAt(0).toUpperCase() + c.public.slice(1)}.`),
-        c.enLigne ? `👉 ${prixLong(c)} ${T(c, 'sur l’App Store', 'on the App Store')} : ${c.lien}` : appel(c, v),
+        c.enLigne ? `👉 ${prixLong(c)}${c.web ? ',' : ''} ${sur(c)}${T(c, ' : ', ': ')}${c.lien}` : appel(c, v),
         T(c, `À bientôt,\n${c.auteur}`, `See you soon,\n${c.auteur}`),
       ].join('\n\n'),
     ),
@@ -862,8 +900,8 @@ function contactPresse(c) {
 function aPropos(c) {
   if (c.bio) return c.bio;
   return T(c,
-    `${c.auteur} crée des applications pour iPhone et iPad en indépendant${c.ville ? `, depuis ${c.ville}` : ''}.${c.nbApps > 1 ? ` ${c.nbApps} de ses applications sont disponibles sur l’App Store.` : ''}`,
-    `${c.auteur} is an independent developer of iPhone and iPad apps${c.ville ? ` based in ${c.ville}` : ''}.${c.nbApps > 1 ? ` ${c.nbApps} of their apps are available on the App Store.` : ''}`,
+    `${c.auteur} crée des applications pour iPhone et iPad${c.nbWeb ? ' et pour le web' : ''} en indépendant${c.ville ? `, depuis ${c.ville}` : ''}.${c.nbApps > 1 ? ` ${c.nbApps} de ses applications sont disponibles sur l’App Store${c.nbWeb ? `, et ${c.nbWeb} en ligne, dans le navigateur` : ''}.` : ''}`,
+    `${c.auteur} is an independent developer of iPhone and iPad apps${c.nbWeb ? ' and web apps' : ''}${c.ville ? ` based in ${c.ville}` : ''}.${c.nbApps > 1 ? ` ${c.nbApps} of their apps are available on the App Store${c.nbWeb ? `, and ${c.nbWeb} online, in the browser` : ''}.` : ''}`,
   );
 }
 
@@ -883,7 +921,12 @@ function communique(c) {
     T(c, 'Les points forts', 'Key features'),
     points(c, 6, '•'),
     T(c, 'Disponibilité et prix', 'Pricing and availability'),
-    c.enLigne
+    c.web
+      ? T(c,
+          `${c.nom} est disponible dès maintenant en ligne : elle s’ouvre dans le navigateur, sur ${c.appareils}, sans rien installer. ${prixLong(c)}.\n${c.lien}`,
+          `${c.nom} is available now online: it runs in the browser on ${c.appareils}, nothing to install. ${prixLong(c)}.\n${c.lien}`,
+        )
+      : c.enLigne
       ? T(c,
           `${c.nom} est disponible dès maintenant sur l’App Store, pour ${c.appareils}${c.iosMin ? ` (iOS ${c.iosMin} ou ultérieur)` : ''}. ${prixLong(c)}.\n${c.lien}`,
           `${c.nom} is available now on the App Store for ${c.appareils}${c.iosMin ? ` (iOS ${c.iosMin} or later)` : ''}. ${prixLong(c)}.\n${c.lien}`,
@@ -905,14 +948,16 @@ function communique(c) {
 /** L'e-mail a un journaliste : court, et on propose le dossier. */
 function pitch(c) {
   return [
-    champ('objet', T(c, 'Objet', 'Subject'), T(c, `${c.nom} : ${min(c, c.sousTitre || c.accroche)} (app iPhone)`, `${c.nom}: ${c.sousTitre || c.accroche} (iPhone app)`), { ligne: true }),
+    champ('objet', T(c, 'Objet', 'Subject'), T(c, `${c.nom} : ${min(c, c.sousTitre || c.accroche)} (app ${c.web ? 'web' : 'iPhone'})`, `${c.nom}: ${c.sousTitre || c.accroche} (${c.web ? 'web' : 'iPhone'} app)`), { ligne: true }),
     champ(
       'corps',
       T(c, 'Message', 'Body'),
       T(c,
         [
           `Bonjour,`,
-          `J’ai le plaisir de vous présenter ${c.nom}, une application ${c.enLigne ? (c.recente ? 'que je viens de publier' : 'que j’ai publiée') : 'qui sort bientôt'} sur l’App Store, pour ${c.appareils}.`,
+          c.web
+            ? `J’ai le plaisir de vous présenter ${c.nom}, une application web ${c.recente ? 'que je viens de mettre en ligne' : 'que j’ai mise en ligne'} : elle s’ouvre dans le navigateur, sur ${c.appareils}, sans rien installer.`
+            : `J’ai le plaisir de vous présenter ${c.nom}, une application ${c.enLigne ? (c.recente ? 'que je viens de publier' : 'que j’ai publiée') : 'qui sort bientôt'} sur l’App Store, pour ${c.appareils}.`,
           `En une phrase : ${min(c, c.accroche)}`,
           `Ce qui la distingue :\n${points(c, 3, '•')}`,
           c.enLigne ? `${prixLong(c)}. Lien : ${c.lien}` : '',
@@ -921,7 +966,9 @@ function pitch(c) {
         ],
         [
           `Hello,`,
-          `I’d like to introduce ${c.nom}, an app I ${c.enLigne ? (c.recente ? 'just released' : 'released') : 'will soon release'} on the App Store for ${c.appareils}.`,
+          c.web
+            ? `I’d like to introduce ${c.nom}, a web app I ${c.recente ? 'just launched' : 'built'}: it runs in the browser on ${c.appareils}, nothing to install.`
+            : `I’d like to introduce ${c.nom}, an app I ${c.enLigne ? (c.recente ? 'just released' : 'released') : 'will soon release'} on the App Store for ${c.appareils}.`,
           `In one sentence: ${c.accroche}`,
           `What makes it different:\n${points(c, 3, '•')}`,
           c.enLigne ? `${prixLong(c)}. Link: ${c.lien}` : '',
@@ -944,7 +991,7 @@ function presseLocale(c) {
       T(c,
         [
           `Bonjour,`,
-          `J’habite ${ville} et je crée des applications pour iPhone en indépendant.${c.nbApps > 1 ? ` ${c.nbApps} d’entre elles sont sur l’App Store.` : ''}`,
+          `J’habite ${ville} et je crée des applications${c.web ? '' : ' pour iPhone'} en indépendant.${c.nbApps > 1 ? ` ${c.nbApps} d’entre elles sont sur l’App Store.` : ''}`,
           `${c.recente ? 'La dernière' : 'L’une d’elles'} s’appelle ${c.nom} : ${min(c, c.sousTitre || c.accroche)}. ${c.accroche}`,
           `Elle s’adresse ${a(c.public)}${c.enLigne ? ` et elle est ${minuscule(prixLong(c))} : ${c.lien}` : ''}.`,
           `Ce serait un plaisir de vous en parler, de vous la montrer ou de répondre à vos questions. Je peux aussi vous envoyer des visuels.`,
@@ -952,7 +999,7 @@ function presseLocale(c) {
         ],
         [
           `Hello,`,
-          `I live in ${ville} and I build iPhone apps as an independent developer.`,
+          `I live in ${ville} and I build ${c.web ? '' : 'iPhone '}apps as an independent developer.`,
           `${c.recente ? 'My latest' : 'One of them'} is called ${c.nom}: ${c.sousTitre || c.accroche}. ${c.accroche}`,
           `It’s for ${c.public}${c.enLigne ? ` and it’s ${minuscule(prixLong(c))}: ${c.lien}` : ''}.`,
           `I’d be glad to tell you more, show it to you, or send artwork.`,
@@ -1037,7 +1084,7 @@ function affiche(c) {
     champ('titre', T(c, 'Titre', 'Title'), c.nom, { ligne: true }),
     champ('sousTitre', T(c, 'Sous-titre', 'Subtitle'), c.sousTitre || c.accroche, { ligne: true }),
     champ('points', T(c, 'Trois points forts', 'Three highlights'), c.pointsForts.slice(0, 3).join('\n')),
-    champ('appel', T(c, 'Appel', 'Call to action'), c.enLigne ? T(c, `${c.prix} sur l’App Store — scannez le code`, `${c.prix} on the App Store — scan the code`) : T(c, 'Bientôt sur l’App Store', 'Coming soon to the App Store'), { ligne: true }),
+    champ('appel', T(c, 'Appel', 'Call to action'), c.enLigne ? `${bandeau(c)} — ${T(c, 'scannez le code', 'scan the code')}` : bandeau(c), { ligne: true }),
   ];
 }
 

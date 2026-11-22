@@ -8,6 +8,8 @@
  *   apps/<slug>/   icone et captures des apps choisies
  *   posts/         les images publiees (Instagram les telecharge ici)
  *
+ * Et docs/ : la page « lien en bio » d'Instagram (outils/bio.ts), servie par GitHub Pages.
+ *
  * Tout ce dossier est public sur GitHub : rien que l'App Store ou Instagram
  * ne montre deja. Aucune cle ni mot de passe : la cle Buffer est un secret de GitHub.
  */
@@ -109,9 +111,9 @@ export const depotPret = () => {
   }
 };
 
-/** Envoie publication/ sur GitHub ; reprend les nouveautes du robot avant. */
+/** Envoie publication/ et docs/ sur GitHub ; reprend les nouveautes du robot avant. */
 export function envoyer(message: string): boolean {
-  git('add', 'publication');
+  git('add', ...['publication', 'docs'].filter((d) => fs.existsSync(path.join(RACINE, d))));
   const rien = (() => {
     try {
       git('diff', '--cached', '--quiet');
@@ -121,7 +123,9 @@ export function envoyer(message: string): boolean {
     }
   })();
   if (!rien) git('commit', '-m', message);
-  git('pull', '--rebase', '--autostash', 'origin', 'main');
+  // docs/ est refait par le Mac et par le robot : en cas de conflit, la version
+  // qu'on vient de refaire gagne (le passage suivant la refait de toute facon).
+  git('pull', '--rebase', '--autostash', '-X', 'theirs', 'origin', 'main');
   git('push', 'origin', 'HEAD:main');
   return !rien;
 }
