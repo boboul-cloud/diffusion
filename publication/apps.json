@@ -1,5 +1,5 @@
 {
- "genere": "2026-11-22T19:56:34.180Z",
+ "genere": "2026-11-22T19:58:53.358Z",
  "apps": [
   {
    "slug": "blocgenda",
@@ -2798,6 +2798,54 @@
       ],
       "ipad": [
        "data/apps/web-cubimage/fr-ipad-1.jpg?v=9bc12e1c"
+      ]
+     }
+    }
+   },
+   "nouveau": false
+  },
+  {
+   "slug": "web-dico",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://dico.riskelo-salon.workers.dev/",
+   "lienInternational": "https://dico.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "UTILITIES",
+   "genre": {
+    "fr": "Utilitaires",
+    "en": "Utilities"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-dico/icone.png?v=596fb948",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Le Dico de nos créations",
+     "sousTitre": "",
+     "promo": "Toutes nos applications publiées, de A à Z, dans un cahier d’écolier en 3D (ou dans le ciel). Un toucher, et l’appli s’ouvre.",
+     "description": "Toutes nos applications publiées, de A à Z, dans un cahier d’écolier en 3D (ou dans le ciel). Un toucher, et l’appli s’ouvre.",
+     "motsCles": [],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-dico/fr-iphone-1.jpg?v=a61170a0"
+      ],
+      "ipad": [
+       "data/apps/web-dico/fr-ipad-1.jpg?v=a61170a0"
       ]
      }
     }
