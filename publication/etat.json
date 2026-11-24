@@ -1,6 +1,10 @@
 {
  "buffer": {
   "canal": "wilfrid.lalouse",
-  "verifie": "2026-11-23T17:13:29.231Z"
+  "verifie": "2026-11-24T17:13:40.874Z"
+ },
+ "derniereErreur": {
+  "date": "2026-11-24T17:13:56.410Z",
+  "message": "Chrome n’a pas démarré."
  }
 }
