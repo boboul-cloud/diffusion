@@ -1,5 +1,5 @@
 {
- "genere": "2026-11-22T20:03:26.462Z",
+ "genere": "2026-11-25T22:44:08.358Z",
  "apps": [
   {
    "slug": "blocgenda",
@@ -66,6 +66,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Blocgenda",
+    "trouvee": true
    }
   },
   {
@@ -132,6 +136,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Bob Conjugaison",
+    "trouvee": true
    }
   },
   {
@@ -201,6 +209,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Bobcrapette",
+    "trouvee": true
    }
   },
   {
@@ -269,6 +281,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Bob Mécano",
+    "trouvee": true
    }
   },
   {
@@ -335,6 +351,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Bobmockup",
+    "trouvee": true
    }
   },
   {
@@ -403,6 +423,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Bob Planning",
+    "trouvee": true
    }
   },
   {
@@ -470,6 +494,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "BobPortrait",
+    "trouvee": true
    }
   },
   {
@@ -538,6 +566,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Bons Comptes +",
+    "trouvee": true
    }
   },
   {
@@ -604,6 +636,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "calcul de l'impot",
+    "trouvee": true
    }
   },
   {
@@ -671,6 +707,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "BobCanonBall",
+    "trouvee": true
    }
   },
   {
@@ -740,6 +780,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "CourrierCode",
+    "trouvee": true
    }
   },
   {
@@ -805,6 +849,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "FOOT2026",
+    "trouvee": false
    }
   },
   {
@@ -870,6 +918,10 @@
       "ipad": []
      }
     }
+   },
+   "recherche": {
+    "nom": "Grands Chemins",
+    "trouvee": true
    }
   },
   {
@@ -936,6 +988,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "MultiGroop",
+    "trouvee": true
    }
   },
   {
@@ -1004,6 +1060,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "C'MaMaison",
+    "trouvee": true
    }
   },
   {
@@ -1096,6 +1156,10 @@
       "ipad": []
      }
     }
+   },
+   "recherche": {
+    "nom": "Prêt Matériel",
+    "trouvee": true
    }
   },
   {
@@ -1162,6 +1226,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "MonPetitReseau",
+    "trouvee": true
    }
   },
   {
@@ -1229,6 +1297,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "operations plus",
+    "trouvee": true
    }
   },
   {
@@ -1295,6 +1367,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Pleins et déliés",
+    "trouvee": true
    }
   },
   {
@@ -1361,6 +1437,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "pngtojpg",
+    "trouvee": true
    }
   },
   {
@@ -1427,6 +1507,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Read my Book",
+    "trouvee": true
    }
   },
   {
@@ -1493,6 +1577,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "bobprompt",
+    "trouvee": true
    }
   },
   {
@@ -1560,6 +1648,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "MultiReleve",
+    "trouvee": true
    }
   },
   {
@@ -1629,6 +1721,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "RenduMonnaie",
+    "trouvee": true
    }
   },
   {
@@ -1733,6 +1829,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Riskelo",
+    "trouvee": true
    }
   },
   {
@@ -1801,6 +1901,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Romancier+",
+    "trouvee": true
    }
   },
   {
@@ -1868,6 +1972,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "StopPhone",
+    "trouvee": true
    }
   },
   {
@@ -1934,6 +2042,10 @@
       ]
      }
     }
+   },
+   "recherche": {
+    "nom": "Temps De Jeu",
+    "trouvee": true
    }
   },
   {
@@ -2000,6 +2112,10 @@
       "ipad": []
      }
     }
+   },
+   "recherche": {
+    "nom": "Lièvre – Demi-fond et VMA",
+    "trouvee": true
    }
   },
   {
