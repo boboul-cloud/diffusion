@@ -66,7 +66,7 @@ Liens de partage et limites vérifiés en septembre 2026 (voir `public/js/canaux
 Bouton **Ajouter ou enlever des apps** en haut de la page Apps, sur le Mac.
 
 - Arrivent d'elles-mêmes, à chaque « Mettre à jour » : tes apps de l'App Store
-  (même si leur projet n'est plus sur le Bureau : la page développeur les donne
+  (même si leur projet n'est plus sur le Mac : la page développeur les donne
   toutes), les **apps web du Dico** (`/Volumes/Travail/Dico/js/data.js`), et
   les apps pas encore publiées dont la feuille `SOUMISSION.md` est prête.
 - **Ajouter** : pour une app que Diffusion ne trouve pas, colle le lien de sa
@@ -136,8 +136,11 @@ GitHub ; il ne contient ni clé ni mot de passe, ni les apps pas encore sorties.
 Bouton **Mettre à jour depuis mes projets** en bas de la liste (sur le Mac),
 ou `npm run importer`. L'import :
 
-- trouve tes projets Xcode du Bureau (le code d'AgentDouble), et tes autres
-  apps publiées par ta page développeur de l'App Store ;
+- trouve tes projets Xcode dans `/Volumes/Travail/Projets` et sur le Bureau
+  (avec le code d'AgentDouble, pris dans `~/Desktop/AgentDouble`), et tes
+  autres apps publiées par ta page développeur de l'App Store ; pour d'autres
+  dossiers : `DIFFUSION_PROJETS=/dossier1:/dossier2 npm run importer`, et
+  `AGENT_DOUBLE=/chemin` si AgentDouble est ailleurs ;
 - lit la fiche publique de l'App Store des apps en ligne : nom, description,
   icône, captures, lien, en français et en anglais ;
 - lit dans **App Store Connect, en lecture seule**, avec la clé d'AgentDouble,

@@ -6,8 +6,10 @@
  * - Toutes : la feuille SOUMISSION.md du projet, lue par AgentDouble, pour ce
  *   que l'App Store ne publie pas (sous-titre, texte promotionnel, mots-cles),
  *   et pour tout le reste quand l'app n'est pas encore publiee.
- * - Tes apps de l'App Store dont le projet n'est pas sur le Bureau : leur
- *   fiche publique seule (la page developpeur les donne toutes).
+ * - Les projets Xcode : dans /Volumes/Travail/Projets et sur le Bureau
+ *   (DIFFUSION_PROJETS pour d'autres dossiers, separes par « : »).
+ * - Tes apps de l'App Store dont le projet n'y est pas : leur fiche publique
+ *   seule (la page developpeur les donne toutes).
  * - Les apps web du Dico de nos creations (/Volumes/Travail/Dico) : nom,
  *   definition, icone, et des captures prises en ligne par Chrome sans ecran.
  * - Ce que tu as ajoute ou enleve dans « Ajouter ou enlever » (liste-apps.json) :
@@ -26,14 +28,6 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
-import { discover, type Discovered } from '../../AgentDouble/src/commands/scan.ts';
-import {
-  lireDocument,
-  trouverCaptures,
-  trouverDocument,
-  trouverFeuilleAchats,
-  type Lecture,
-} from '../../AgentDouble/src/app/document.ts';
 import { adresseWeb, cleApp, ecrireJson, lireChoix, repartir, type Choix } from './liste.ts';
 import { Capteur } from './capturer.ts';
 import { verifierRecherche } from './recherche.ts';
@@ -41,13 +35,54 @@ import { verifierRecherche } from './recherche.ts';
 const RACINE = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(RACINE, 'public', 'data');
 const BUREAU = path.join(os.homedir(), 'Desktop');
+/** Les dossiers ou sont rangés les projets Xcode. */
+const PROJETS = process.env.DIFFUSION_PROJETS?.split(':').filter(Boolean) ?? ['/Volumes/Travail/Projets', BUREAU];
 
 const options = new Set(process.argv.slice(2));
 const SEULEMENT_EN_LIGNE = options.has('--en-ligne');
 const FORCER = options.has('--forcer');
 const SANS_ASC = options.has('--sans-asc');
-const AGENT_DOUBLE = path.resolve(RACINE, '..', 'AgentDouble');
 const DICO = process.env.DICO ?? '/Volumes/Travail/Dico';
+
+// AgentDouble lit les projets et leurs feuilles : sur le Bureau, ou a cote de Diffusion.
+const AGENT_DOUBLE = [process.env.AGENT_DOUBLE, path.join(BUREAU, 'AgentDouble'), path.resolve(RACINE, '..', 'AgentDouble')]
+  .filter((d): d is string => !!d)
+  .find((d) => fs.existsSync(path.join(d, 'src', 'commands', 'scan.ts')));
+if (!AGENT_DOUBLE) {
+  console.error(`AgentDouble introuvable (ni dans ${path.join(BUREAU, 'AgentDouble')}, ni à côté de Diffusion). Indique son dossier : AGENT_DOUBLE=/chemin npm run importer`);
+  process.exit(1);
+}
+const deAgentDouble = (fichier: string) => import(pathToFileURL(path.join(AGENT_DOUBLE, 'src', fichier)).href);
+const { discover } = await deAgentDouble('commands/scan.ts');
+const { lireDocument, trouverCaptures, trouverDocument: documentPres, trouverFeuilleAchats } = await deAgentDouble('app/document.ts');
+
+/** Repris d'AgentDouble (src/commands/scan.ts et src/app/document.ts). */
+type Discovered = {
+  slug: string;
+  projectName: string;
+  projectPath: string;
+  bundleId: string;
+  version: string;
+  build: string;
+  platform: string;
+  displayName?: string;
+};
+type Lecture = { champs: Record<string, string> };
+
+/**
+ * La feuille SOUMISSION.md d'un projet. AgentDouble cherche dans le dossier
+ * du projet, et dans le dossier au-dessus seulement sur le Bureau. Ailleurs
+ * (/Volumes/Travail/Projets/GR ST_MICHEL/app/GR34.xcodeproj), la feuille est
+ * souvent un cran plus haut (GR ST_MICHEL/soumission) : meme regle, pour
+ * tous les dossiers de projets.
+ */
+function trouverDocument(projetXcode: string): string | null {
+  const dossier = path.dirname(projetXcode);
+  const parent = path.dirname(dossier);
+  const dansUnProjet = !PROJETS.some((r) => path.resolve(r) === parent) && PROJETS.some((r) => parent.startsWith(path.resolve(r) + path.sep));
+  // Chercher depuis le dossier au-dessus couvre aussi celui du projet.
+  return (dansUnProjet ? documentPres(path.join(parent, path.basename(projetXcode))) : null) ?? documentPres(projetXcode);
+}
 
 const MAX_IPHONE = 6;
 const MAX_IPAD = 3;
@@ -233,8 +268,8 @@ async function lireAppStoreConnect(bundleIds: string[]): Promise<Map<string, Fic
   const cle = process.env.ASC_PRIVATE_KEY_PATH;
   if (cle && !path.isAbsolute(cle)) process.env.ASC_PRIVATE_KEY_PATH = path.resolve(AGENT_DOUBLE, cle);
 
-  const { loadCredentials } = await import('../../AgentDouble/src/config.ts');
-  const { AscClient } = await import('../../AgentDouble/src/asc/client.ts');
+  const { loadCredentials } = await deAgentDouble('config.ts');
+  const { AscClient } = await deAgentDouble('asc/client.ts');
   const client = new AscClient(loadCredentials());
 
   const apps = await client.list('/v1/apps', { 'filter[bundleId]': bundleIds.join(','), 'fields[apps]': 'bundleId' });
@@ -982,8 +1017,8 @@ async function main() {
   const choix = lireChoix();
   const ancien = lireAncien();
 
-  console.log('Recherche des projets Xcode du Bureau…');
-  const projets = discover([BUREAU]);
+  console.log(`Recherche des projets Xcode (${PROJETS.join(', ')})…`);
+  const projets: Discovered[] = discover(PROJETS);
   const ids = projets.map((p) => p.bundleId);
 
   console.log(`${projets.length} projets. Lecture de leurs fiches sur l'App Store…`);
