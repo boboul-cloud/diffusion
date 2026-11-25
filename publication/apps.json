@@ -1,5 +1,5 @@
 {
- "genere": "2026-11-25T22:44:08.358Z",
+ "genere": "2026-11-25T22:51:08.591Z",
  "apps": [
   {
    "slug": "blocgenda",
@@ -995,6 +995,79 @@
    }
   },
   {
+   "slug": "grueflottante",
+   "bundleId": "com.boboul.GrueFlottante",
+   "plateforme": "appstore",
+   "enLigne": true,
+   "lien": "https://apps.apple.com/fr/app/grue-flottante/id6837895024",
+   "lienInternational": "https://apps.apple.com/app/id6837895024",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "iphone",
+    "ipad"
+   ],
+   "iosMin": "18.0",
+   "note": null,
+   "sortie": "2026-11-22T08:00:00Z",
+   "version": "1.0",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/grueflottante/",
+   "assistance": "https://boboul-cloud.github.io/grueflottante/assistance.html",
+   "confidentialite": "https://boboul-cloud.github.io/grueflottante/confidentialite.html",
+   "icone": "data/apps/grueflottante/icone.png?v=a2ae7a43",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Grue Flottante",
+     "sousTitre": "Simulateur de ponton-grue",
+     "promo": "Ponton-grue, Alpaga, GFA, remorqueur, pneumatique, hélicoptère : tout le port de Brest, de la Penfeld à la base sous-marine. 39 missions, et vos propres chantiers.",
+     "description": "Vous êtes aux commandes d'une grue flottante. Approchez le quai, tenez votre poste, levez les colis et posez-les sur votre pont ; puis naviguez jusqu'au navire et descendez chaque charge dans sa zone, entre les mâts, les haubans et les antennes. La charge se balance au bout du câble, le vent fait dériver l'engin, la houle le fait rouler : c'est le métier de grutier, sans casse réelle. Et à Brest, tout le port est à vous, du remorqueur à l'hélicoptère de sauvetage.\n\n39 MISSIONS, QUATRE PORTS\n\n• Port de commerce : un cargo à trois cales ouvertes, des conteneurs, une pelle de chantier de 44 tonnes au bord du limiteur de charge.\n• Base navale : une frégate hérissée d'antennes, des caisses de munitions qui n'aiment pas les chocs, des conteneurs de missiles sous le mistral.\n• Port de pêche breton : un chalutier, ses funes et ses tangons ; de la glace et des filets avant le coup de vent.\n• Brest, le port militaire : un décor tracé d'après la vraie géographie et le vrai relief. De la rade à la base sous-marine, des bassins de Pontaniou jusqu'au fond de la Penfeld, sous le pont levant de Recouvrance et le téléphérique, avec ses quais animés et ses remorqueurs à appeler à la VHF.\n\nChaque mission a son heure, son vent, sa mer, parfois un courant ou une limite de temps. Une à trois étoiles selon la précision des poses, le temps et les incidents.\n\nTROIS GRUES\n\n• Le ponton-grue : 1 530 tonnes, flèche treillis de 42 mètres, deux pieux d'ancrage qui le clouent sur place.\n• La grue « Alpaga », façon grue portuaire de Brest : elle s'amarre au quai ou à couple, déplie une fléchette de 15 mètres pour un second crochet, et couche sa flèche sur un chevalet pour passer sous les ponts.\n• La GFA « Girafe », la grue du port des années 1990 : une tour en treillis, deux hélices et une manette par moteur, sa barge à couple.\n\nPlus la charge est lourde, moins la grue porte loin : le limiteur veille. La charge part en ballant à chaque à-coup ; assistance anti-ballant réglable, ou coupée.\n\nLES AUTRES MÉTIERS DU PORT\n\n• Pilote : un navire sans machine et ses remorqueurs, ordre après ordre, jusqu'à la cale sèche.\n• Remorqueur : aux commandes du RPC12, à couple, en flèche ou en pousseur, un engin jusqu'à son poste.\n• Pneumatique : à 28 nœuds, la reconnaissance du port repère par repère, et la relève des équipes jusqu'à la grue.\n• Hélitreuillage : à bord d'un hélicoptère de la Marine, treuilliste, pilote ou équipe de pont. Une civière à hisser, une pompe pour une frégate, un homme à la mer.\n\nLE SIGNALEUR\n\nSur le quai, un élingueur guide la prise ; sur le navire, un signaleur guide la pose avec les gestes de commandement de grue : crochet, flèche, orientation, stop, arrêt d'urgence.\n\nCOMPOSEZ VOS CHANTIERS\n\nLe créateur de niveaux reprend la vraie vie du port : l'engin, jusqu'à vingt colis, une barge à couple, une passe étroite ou un pont basculant, le contre-la-montre, l'heure, le vent, la mer, le courant. Il compose aussi des mises au bassin, des missions de remorqueur et d'hélitreuillage, et la navigation libre, sur l'eau comme en vol. Partagez vos niveaux par un simple lien.\n\nDE NUIT, SOUS LA PLUIE, ET POUR APPRENDRE\n\nToute mission se joue aussi de nuit, avec projecteurs de travail et bâtons lumineux des signaleurs, ou sous la pluie. Deux formations font découvrir chaque commande, étape par étape, avant un premier chantier complet. Au pupitre tactile ou à la manette : SteelSeries, Xbox, PlayStation, MFi.\n\nSANS RIEN DE SUPERFLU\n\nPas de compte, pas de publicité, aucun achat intégré, aucune donnée collectée. Tout se joue sur l'iPhone ou l'iPad, en plein écran, hors connexion : ciel, mer, navires, décors et sons sont fabriqués par le jeu lui-même. À Brest, une option fait jouer à l'heure, à la marée et à la météo du moment (météo : MET Norway).\n\nUn jeu, pas une formation : Grue Flottante ne remplace ni une formation ni une habilitation de grutier. Données cartographiques de Brest : © les contributeurs d'OpenStreetMap ; relief : © IGN.",
+     "motsCles": [
+      "port",
+      "levage",
+      "grutier",
+      "remorqueur",
+      "hélicoptère",
+      "frégate",
+      "navire",
+      "cargo",
+      "conteneur",
+      "barge",
+      "quai",
+      "brest",
+      "penfeld"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/grueflottante/fr-iphone-1.jpg?v=1df47c71",
+       "data/apps/grueflottante/fr-iphone-2.jpg?v=e9ee3f7e",
+       "data/apps/grueflottante/fr-iphone-3.jpg?v=7c305835",
+       "data/apps/grueflottante/fr-iphone-4.jpg?v=de58fd7b",
+       "data/apps/grueflottante/fr-iphone-5.jpg?v=9f566b0d",
+       "data/apps/grueflottante/fr-iphone-6.jpg?v=ef91cbc8"
+      ],
+      "ipad": [
+       "data/apps/grueflottante/fr-ipad-1.jpg?v=7d6cd744",
+       "data/apps/grueflottante/fr-ipad-2.jpg?v=15c14a4c",
+       "data/apps/grueflottante/fr-ipad-3.jpg?v=a3f9a393"
+      ]
+     }
+    }
+   },
+   "recherche": {
+    "nom": "Grue Flottante",
+    "trouvee": true
+   }
+  },
+  {
    "slug": "mamaison",
    "bundleId": "com.oulhen.MaMaison",
    "plateforme": "appstore",
@@ -1532,48 +1605,51 @@
     "iphone",
     "ipad"
    ],
-   "iosMin": "15.0",
+   "iosMin": "17.0",
    "note": null,
    "sortie": "2026-01-24T08:00:00Z",
-   "version": "1.3",
+   "version": "2.0",
    "developpeur": "Robert Oulhen",
    "site": "https://boboul-cloud.github.io/bobprompt/",
    "assistance": "",
    "confidentialite": "",
-   "icone": "data/apps/prompteur/icone.png?v=c13cf12b",
+   "icone": "data/apps/prompteur/icone.png?v=bc323965",
    "languePrincipale": "fr",
    "langues": {
     "fr": {
      "nom": "bobprompt",
      "sousTitre": "Téléprompteur simple et fun",
-     "promo": "Nouveau ! Surlignage de la ligne lue, voix synchronisée au défilement et mode un mot par ligne. bobprompt n'a jamais été aussi fluide et précis.",
-     "description": "bobprompt transforme votre iPhone ou iPad en un téléprompteur professionnel, simple et intuitif.\n\nQue vous soyez créateur de contenu, enseignant, conférencier ou parent souhaitant aider votre enfant à lire, bobprompt est l'outil parfait pour vous accompagner.\n\n FONCTIONNALITÉS PRINCIPALES\n\n Défilement automatique\nRéglez la vitesse de défilement selon votre rythme de lecture. Pause et reprise en un tap.\n\n Syllabes colorées\nUne fonctionnalité unique qui alterne les couleurs des syllabes pour faciliter la lecture — particulièrement efficace pour les enfants et les personnes ayant des difficultés de lecture.\n\n Mode miroir\nInversez le texte horizontalement pour une utilisation avec un vrai téléprompteur ou un miroir.\n\n Synthèse vocale\nÉcoutez votre texte lu à haute voix pour vous entraîner ou vérifier la prononciation.\n\n Bibliothèque de textes\nSauvegardez et organisez tous vos scripts, discours et présentations.\n\n Génération IA (Premium)\nCréez du contenu original grâce à l'intelligence artificielle. Idéal pour les scripts, histoires et textes éducatifs.\n\n Thèmes personnalisables\nChoisissez parmi plusieurs thèmes (clair, sombre, coloré) et personnalisez les couleurs du texte.\n\n Compte à rebours 3-2-1\nPréparez-vous avant que le défilement ne commence.\n\n PARFAIT POUR LES ENFANTS\n\nbobprompt a été conçu avec une attention particulière pour l'apprentissage de la lecture :\n• Syllabes colorées pour faciliter le décodage\n• Interface simple et ludique\n• Textes exemples adaptés\n• Vitesse ajustable pour tous les niveaux\n\n IDÉAL POUR LES CRÉATEURS\n\n• Vidéos YouTube et TikTok\n• Podcasts et voix off\n• Présentations professionnelles\n• Discours et conférences\n\n VERSION PREMIUM\n\nDébloquez tout le potentiel de bobprompt avec un achat unique :\n• Sauvegarde illimitée de textes\n• Génération IA illimitée\n• Toutes les futures fonctionnalités incluses\n\n RESPECT DE VOTRE VIE PRIVÉE\n\n• Aucun compte requis\n• Données stockées localement sur votre appareil\n• Aucune collecte de données personnelles\n\nTéléchargez bobprompt maintenant et transformez votre façon de lire et présenter !",
+     "promo": "Nouveau : le Coin lecture ! Les mots tombent du ciel sur un nuage, on gagne étoiles et badges. Et pour les grands : styles vieille école et prompteur 3D.",
+     "description": "bobprompt est un prompteur pour toute la famille : les enfants y apprennent à lire en s'amusant, les grands y préparent leurs discours, leurs vidéos et leurs présentations.\n\nLE COIN LECTURE\n• Pluie de mots : chaque mot tombe du ciel au moment où il faut le lire, rebondit et se pose sur un gros nuage où la phrase se construit\n• Syllabes en couleurs, découpées comme à l'école : a-mi, ta-bleau, pa-pi-llon\n• Le mot en cours est surligné ; touchez un mot pour l'entendre\n• Quatre allures pour apprendre à lire : escargot, tortue, lapin, fusée\n• Le bouton « mot suivant » pour avancer à son rythme\n• « Écouter la phrase » : la voix lit doucement, avec des pauses\n• Une étoile par phrase lue, des niveaux, des badges et une série de jours pour donner envie de revenir\n• Bob, le petit nuage, encourage et fait la fête à la fin de chaque histoire\n\nLE STUDIO PROMPTEUR\n• Défilement fluide et régulier, de 10 à 260 mots par minute\n• Ligne de lecture repérée, ligne lue éclairée, fond Nuit, Papier ou Contraste\n• La voix peut faire défiler le texte mot à mot\n• Miroir pour prompteur à vitre, compte à rebours 3-2-1\n• Clavier et télécommande Bluetooth : espace, flèches, page suivante\n• Écran maintenu allumé pendant la lecture\n\nDES STYLES POUR TOUS LES GOÛTS\n• Classique : net et lisible\n• Vieille école : écran cathodique vert ou ambre, ou machine à écrire qui tape votre texte lettre après lettre, avec le ding de fin de ligne\n• 3D : un tambour qu'on fait tourner du doigt et qui suit l'inclinaison de l'appareil, ou des cartes qui se tournent comme des pages\n• Dessin animé : la pluie de mots\n\nVOS TEXTES\n• Écrivez ou collez votre texte : tout s'enregistre tout seul\n• Reprise là où vous vous étiez arrêté\n• Six textes d'exemple, dont deux fables de La Fontaine\n• Création de textes avec Apple Intelligence, sur l'appareil, sur les appareils compatibles (ou avec votre propre clé OpenAI)\n\nPREMIUM\nUn achat unique, sans abonnement : 50 textes au lieu de 2, gardés même après réinstallation.\n\nVIE PRIVÉE\nAucun compte. Vos textes, vos réglages et les récompenses restent sur votre appareil. Aucune donnée n'est collectée.",
      "motsCles": [
       "téléprompteur",
-      "prompteur",
-      "lecture",
-      "enfant",
       "syllabes",
+      "apprendre",
+      "lire",
+      "CP",
+      "histoire",
       "discours",
-      "présentation",
       "vidéo",
       "script",
-      "karaoké"
+      "karaoké",
+      "orateur",
+      "miroir",
+      "fable"
      ],
-     "nouveautes": "• Surlignage visuel de la ligne en cours de lecture\n• Voix synchronisée au défilement : la synthèse vocale suit précisément le texte affiché\n• Mode « un mot par ligne » pour une lecture ultra-guidée\n• Défilement à 120 fps, encore plus fluide et réactif\n• Pause/reprise fiables : la voix redémarre à chaque fois\n• Compte à rebours annulable (appui pendant le décompte pour arrêter)\n• Le texte démarre et termine au centre de l'écran pour un confort optimal",
+     "nouveautes": "BOBPROMPT FAIT PEAU NEUVE\n\nToute l'application a été réécrite : plus belle, plus fluide, plus simple.\n\nNOUVEAU : LE COIN LECTURE\n• Pluie de mots : chaque mot tombe du ciel au moment de le lire et se pose sur un nuage, syllabes en couleurs\n• Touchez un mot pour l'entendre\n• Des allures pour apprendre à lire : escargot, tortue, lapin, fusée\n• Le bouton « mot suivant » pour lire à son rythme\n• Étoiles, niveaux, badges et série de jours pour donner envie de lire chaque jour\n• Bob, le petit nuage, accompagne les jeunes lecteurs\n\nPOUR LES GRANDS : LE STUDIO\n• Vieille école : écran cathodique vert ou ambre, machine à écrire qui tape votre texte\n• 3D : un tambour à faire tourner du doigt, des cartes qui se tournent comme des pages\n• La voix fait défiler le texte mot à mot, le mot en cours est surligné\n• Clavier et télécommande Bluetooth, miroir, compte à rebours\n\nET AUSSI\n• Syllabes découpées comme à l'école : a-mi, ta-bleau, pa-pi-llon\n• Vitesse réglable de 10 à 260 mots par minute\n• Textes enregistrés automatiquement : fini les doublons\n• Création de textes avec Apple Intelligence sur les appareils compatibles\n• De nouveaux textes d'exemple, dont deux fables de La Fontaine\n• De nombreuses corrections\n\nVos textes déjà enregistrés sont conservés.",
      "captures": {
       "iphone": [
-       "data/apps/prompteur/fr-iphone-1.jpg?v=ea3c65f2",
-       "data/apps/prompteur/fr-iphone-2.jpg?v=82ee48c4",
-       "data/apps/prompteur/fr-iphone-3.jpg?v=2d6910a1",
-       "data/apps/prompteur/fr-iphone-4.jpg?v=32447ddd",
-       "data/apps/prompteur/fr-iphone-5.jpg?v=a2ed9df7",
-       "data/apps/prompteur/fr-iphone-6.jpg?v=4d13da23"
+       "data/apps/prompteur/fr-iphone-1.jpg?v=cd92690e",
+       "data/apps/prompteur/fr-iphone-2.jpg?v=7876e5d7",
+       "data/apps/prompteur/fr-iphone-3.jpg?v=83a8383e",
+       "data/apps/prompteur/fr-iphone-4.jpg?v=cbc99c90",
+       "data/apps/prompteur/fr-iphone-5.jpg?v=eb417d48",
+       "data/apps/prompteur/fr-iphone-6.jpg?v=490d220a"
       ],
       "ipad": [
-       "data/apps/prompteur/fr-ipad-1.jpg?v=638a1c07",
-       "data/apps/prompteur/fr-ipad-2.jpg?v=1a6d59e1",
-       "data/apps/prompteur/fr-ipad-3.jpg?v=f4158352"
+       "data/apps/prompteur/fr-ipad-1.jpg?v=d20a2c88",
+       "data/apps/prompteur/fr-ipad-2.jpg?v=4f9a97bf",
+       "data/apps/prompteur/fr-ipad-3.jpg?v=59a2a768"
       ]
      }
     }
@@ -2319,6 +2395,57 @@
    "nouveau": false
   },
   {
+   "slug": "web-bobconjugaison-web",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://bobconjugaison.riskelo-salon.workers.dev/",
+   "lienInternational": "https://bobconjugaison.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "EDUCATION",
+   "genre": {
+    "fr": "Éducation",
+    "en": "Education"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/bobconjugaison/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-bobconjugaison-web/icone.png?v=58278388",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Bob Conjugaison Web",
+     "sousTitre": "Conjugaison",
+     "promo": "La conjugaison française en couleurs dans le navigateur, au fond d'une salle de classe d'autrefois en 3D.",
+     "description": "La conjugaison française en couleurs dans le navigateur, au fond d'une salle de classe d'autrefois en 3D.\n\nLes trois quiz, le conjugueur de 5 269 verbes, les emplois des 22 temps et les progrès, avec tableau noir, encrier et porte-plume. Hors ligne, sans compte, et même fichier de sauvegarde que l'app iPhone.",
+     "motsCles": [
+      "Conjugaison"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-bobconjugaison-web/fr-iphone-1.jpg?v=43985ed2",
+       "data/apps/web-bobconjugaison-web/fr-iphone-2.jpg?v=43985ed2"
+      ],
+      "ipad": [
+       "data/apps/web-bobconjugaison-web/fr-ipad-1.jpg?v=43985ed2"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
    "slug": "web-bobdroit",
    "bundleId": "",
    "plateforme": "web",
@@ -3019,6 +3146,56 @@
    "nouveau": false
   },
   {
+   "slug": "web-fantome",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://fantome.riskelo-salon.workers.dev/",
+   "lienInternational": "https://fantome.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-fantome/icone.png?v=c22f0931",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Fantôme",
+     "sousTitre": "Animal virtuel et tables de multiplication",
+     "promo": "L'animal virtuel des enfants, sur une île en 3D : on le soigne, on explore, et chaque table de multiplication apprise allume une étoile.",
+     "description": "L'animal virtuel des enfants, sur une île en 3D : on le soigne, on explore, et chaque table de multiplication apprise allume une étoile.\n\nTrésors à flairer, lieux secrets et lanternes du Fantôme, quatre mondes à rejoindre (désert, récif en plongée, volcan, royaume des nuages), quinze épreuves et défis à médailles, mini-jeux, jardin, et des amis à retrouver sur l'île, chacun sur son appareil. Hors ligne et sans compte, sauf pour jouer à plusieurs.",
+     "motsCles": [
+      "Animal virtuel et tables de multiplication"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-fantome/fr-iphone-1.jpg?v=09326a76"
+      ],
+      "ipad": [
+       "data/apps/web-fantome/fr-ipad-1.jpg?v=09326a76"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
    "slug": "web-garesdeparis",
    "bundleId": "",
    "plateforme": "web",
@@ -3050,8 +3227,8 @@
     "fr": {
      "nom": "Gares de Paris",
      "sousTitre": "Histoire du rail",
-     "promo": "L'histoire des gares de Paris : origines, révolutions techniques, circuits de visite et grande vitesse.",
-     "description": "L'histoire des gares de Paris : origines, révolutions techniques, circuits de visite et grande vitesse.\n\nQuatorze fiches, des circuits, une carte, l'évolution de la traction, l'histoire du TGV, un simulateur de croisement et des exercices.",
+     "promo": "L'histoire des gares de Paris, de 1837 au TGV : en fiches, en maquette 3D, et sur un plan vivant qui remonte le temps.",
+     "description": "L'histoire des gares de Paris, de 1837 au TGV : en fiches, en maquette 3D, et sur un plan vivant qui remonte le temps.\n\nQuatorze gares, Street View tourné vers chaque façade, Paris en maquette 3D de jour comme de nuit, les sept directions des terminus, des circuits animés, un tableau des départs à palettes, et un simulateur de croisement où la réponse donnée devient un train fantôme. Hors ligne et sans compte, sauf pour Street View.",
      "motsCles": [
       "Histoire du rail"
      ],
@@ -3067,7 +3244,7 @@
      }
     }
    },
-   "nouveau": false
+   "nouveau": true
   },
   {
    "slug": "web-gestionfoot",
@@ -3120,6 +3297,56 @@
    "nouveau": true
   },
   {
+   "slug": "web-grueflottante-web",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://grueflottante.riskelo-salon.workers.dev/",
+   "lienInternational": "https://grueflottante.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/grueflottante/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-grueflottante-web/icone.png?v=08aa59b1",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Grue Flottante Web",
+     "sousTitre": "Simulateur de grue",
+     "promo": "La grue flottante de l'App Store dans le navigateur : lever la charge au quai, naviguer, la poser sur le navire sans rien accrocher.",
+     "description": "La grue flottante de l'App Store dans le navigateur : lever la charge au quai, naviguer, la poser sur le navire sans rien accrocher.\n\nLes trois grues, les 39 missions de la Penfeld à la base sous-marine, le remorqueur, le pneumatique et l'hélitreuillage, de nuit ou sous la pluie, avec le créateur de chantiers et les mêmes liens de partage que l'app. Hors ligne, sans compte, à la manette ou au clavier.",
+     "motsCles": [
+      "Simulateur de grue"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-grueflottante-web/fr-iphone-1.jpg?v=1e8158e5"
+      ],
+      "ipad": [
+       "data/apps/web-grueflottante-web/fr-ipad-1.jpg?v=1e8158e5"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
    "slug": "web-inventaire",
    "bundleId": "",
    "plateforme": "web",
@@ -3163,6 +3390,56 @@
       ],
       "ipad": [
        "data/apps/web-inventaire/fr-ipad-1.jpg?v=1450319f"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-metro-rigolo",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://metro-rigolo.riskelo-salon.workers.dev/",
+   "lienInternational": "https://metro-rigolo.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "GAMES",
+   "genre": {
+    "fr": "Jeux",
+    "en": "Games"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-metro-rigolo/icone.png?v=5d4b4c4b",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Métro Rigolo",
+     "sousTitre": "Jeu des transports de Paris",
+     "promo": "Le jeu des transports de Paris, en 3D : aller d'un monument, d'un parc ou d'une gare à l'autre en métro, RER, bus, tram ou bateau.",
+     "description": "Le jeu des transports de Paris, en 3D : aller d'un monument, d'un parc ou d'une gare à l'autre en métro, RER, bus, tram ou bateau.\n\nUne maquette de Paris en 3D avec ses monuments, ses gares disparues et ses stations fantômes, où l'on contourne grèves, pannes et travaux, seul, entre amis ou en direct chacun sur son téléphone. Hors ligne et sans compte, sauf pour jouer en direct.",
+     "motsCles": [
+      "Jeu des transports de Paris"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-metro-rigolo/fr-iphone-1.jpg?v=13de2ace"
+      ],
+      "ipad": [
+       "data/apps/web-metro-rigolo/fr-ipad-1.jpg?v=13de2ace"
       ]
      }
     }
@@ -3413,6 +3690,56 @@
       ],
       "ipad": [
        "data/apps/web-tclp/fr-ipad-1.jpg?v=bee186e0"
+      ]
+     }
+    }
+   },
+   "nouveau": true
+  },
+  {
+   "slug": "web-tempsdejeu-web",
+   "bundleId": "",
+   "plateforme": "web",
+   "enLigne": true,
+   "lien": "https://tempsdejeu.riskelo-salon.workers.dev/",
+   "lienInternational": "https://tempsdejeu.riskelo-salon.workers.dev/",
+   "gratuit": true,
+   "prix": "",
+   "achats": false,
+   "categorie": "SPORTS",
+   "genre": {
+    "fr": "Sports",
+    "en": "Sports"
+   },
+   "appareils": [
+    "web"
+   ],
+   "iosMin": "",
+   "note": null,
+   "sortie": "",
+   "version": "",
+   "developpeur": "Robert Oulhen",
+   "site": "https://boboul-cloud.github.io/Temps-De-Jeu/",
+   "assistance": "",
+   "confidentialite": "",
+   "icone": "data/apps/web-tempsdejeu-web/icone.png?v=41172d2a",
+   "languePrincipale": "fr",
+   "langues": {
+    "fr": {
+     "nom": "Temps De Jeu Web",
+     "sousTitre": "Football",
+     "promo": "L'outil des éducateurs de foot amateur dans le navigateur, entièrement gratuit : temps de jeu équitable, présences, séances.",
+     "description": "L'outil des éducateurs de foot amateur dans le navigateur, entièrement gratuit : temps de jeu équitable, présences, séances.\n\nChrono du match, remplacements, cartons, temps de jeu de chaque joueur, présences et sondage de disponibilité, exercices animés en 3D et Atelier. Hors ligne, sans compte, et même fichier de sauvegarde que l'app iPhone.",
+     "motsCles": [
+      "Football"
+     ],
+     "nouveautes": "",
+     "captures": {
+      "iphone": [
+       "data/apps/web-tempsdejeu-web/fr-iphone-1.jpg?v=dab6e8bc"
+      ],
+      "ipad": [
+       "data/apps/web-tempsdejeu-web/fr-ipad-1.jpg?v=dab6e8bc"
       ]
      }
     }
