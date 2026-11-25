@@ -9,6 +9,7 @@
   },
   "scripts": {
     "app": "zsh outils/lancer.sh",
+    "service": "zsh outils/installer-service.sh",
     "importer": "node outils/importer.ts",
     "serveur": "node outils/serveur.ts",
     "test": "node --test outils/*.test.ts",

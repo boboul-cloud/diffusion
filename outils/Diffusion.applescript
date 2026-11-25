@@ -1,28 +1,14 @@
--- Diffusion : ouvre l'app de promotion dans le navigateur.
+-- Diffusion : ouvre l'app de promotion (la fenetre de l'app Diffusion de
+-- Chrome, sinon le navigateur), en demarrant le serveur s'il le faut.
 -- Compile en Diffusion.app par `npm run construire-app`.
--- L'app reste dans le Dock tant que le serveur tourne ; la quitter l'eteint.
-
-on lanceur()
-	set dossier to do shell script "dirname " & quoted form of POSIX path of (path to me)
-	return quoted form of (dossier & "/outils/lancer.sh")
-end lanceur
+-- Le serveur reste allume ensuite (et toujours, avec `npm run service`) :
+-- l'icone ouvre la fenetre, puis se ferme.
 
 on run
 	try
-		do shell script "/bin/zsh " & lanceur()
+		set dossier to do shell script "dirname " & quoted form of POSIX path of (path to me)
+		do shell script "/bin/zsh " & quoted form of (dossier & "/outils/lancer.sh")
 	on error texte
 		display alert "Diffusion n'a pas pu démarrer" message texte as critical
-		quit
 	end try
 end run
-
-on reopen
-	do shell script "/bin/zsh " & lanceur()
-end reopen
-
-on quit
-	try
-		do shell script "/bin/zsh " & lanceur() & " arreter"
-	end try
-	continue quit
-end quit

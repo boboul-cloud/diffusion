@@ -3,7 +3,7 @@
 cd "$(dirname "$0")/.." || exit 1
 set -e
 rm -rf Diffusion.app
-osacompile -s -o Diffusion.app outils/Diffusion.applescript
+osacompile -o Diffusion.app outils/Diffusion.applescript
 [[ -f outils/icone-mac-1024.png ]] || python3 outils/icones.py
 SET=$(mktemp -d)/Diffusion.iconset
 mkdir -p "$SET"

@@ -16,6 +16,24 @@ const $ = (sel, racine = document) => racine.querySelector(sel);
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
+/** La page est-elle ouverte sur le Mac lui-meme (et pas sur l'iPhone par le Wi-Fi) ? */
+const SUR_LE_MAC = ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname);
+
+/**
+ * Un appel au serveur du Mac. S'il ne repond pas, une phrase claire plutot
+ * que « Failed to fetch » : la page, gardee en memoire, s'affiche meme
+ * serveur eteint.
+ */
+async function serveur(url, options) {
+  try {
+    return await fetch(url, options);
+  } catch {
+    throw new Error(SUR_LE_MAC
+      ? 'Le serveur de Diffusion ne répond pas. Il redémarre tout seul : réessaie dans quelques secondes. Si ça dure, vérifie que le disque Travail est branché.'
+      : 'Le Mac ne répond pas : est-il allumé, et sur le même Wi-Fi ?');
+  }
+}
+
 const etat = {
   donnees: null,
   apps: [],
@@ -321,7 +339,7 @@ function piedDonnees() {
 
 async function chargerListe() {
   try {
-    const r = await fetch('api/liste', { cache: 'no-store' });
+    const r = await serveur('api/liste', { cache: 'no-store' });
     if (r.ok) Object.assign(etat.liste, await r.json());
   } catch {
     // Hors du Mac : la page se lit, sans les marques Instagram.
@@ -409,7 +427,7 @@ async function modifierListe(corps, occupe) {
   etat.liste.occupe = occupe;
   rendre();
   try {
-    const r = await fetch('api/liste', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corps) });
+    const r = await serveur('api/liste', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corps) });
     const j = await r.json();
     if (!r.ok) throw new Error(j.erreur || 'échec');
     await chargerDonnees();
@@ -804,9 +822,11 @@ etat.auto = { charge: false, plan: null, journal: [], etat: {}, depot: {}, modif
 
 async function chargerAutomatique() {
   try {
-    const r = await fetch('api/automatique', { cache: 'no-store' });
-    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).erreur || 'Seulement depuis le Mac.');
+    const r = await serveur('api/automatique', { cache: 'no-store' });
+    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).erreur || 'Le planning se règle depuis l’app Diffusion du Mac.');
     Object.assign(etat.auto, await r.json(), { charge: true, modifie: false, erreur: '' });
+    // Le serveur repond depuis le Mac : les boutons du Mac reviennent s'il etait eteint au chargement.
+    etat.local = true;
   } catch (e) {
     Object.assign(etat.auto, { charge: true, erreur: e.message });
   }
@@ -835,7 +855,7 @@ function pageAutomatique() {
   const a = etat.auto;
   const titre = `<section class="bandeau-accueil"><h1>Publication automatique</h1><p>Diffusion publie seul sur Instagram les apps que tu choisis, aux jours et à l’heure choisis, depuis GitHub : ton Mac peut rester éteint.</p></section>`;
   if (!a.charge) return `${titre}<p class="vide">Chargement…</p>`;
-  if (a.erreur) return `${titre}<p class="alerte">${esc(a.erreur)} Le planning se règle depuis l’app Diffusion du Mac.</p>`;
+  if (a.erreur) return `${titre}<p class="alerte">${esc(a.erreur)}</p><p><button class="btn" data-action="recharger-auto">Réessayer</button></p>`;
 
   const plan = a.plan;
   const choisies = new Set(plan.apps.map((x) => x.slug));
@@ -981,7 +1001,7 @@ async function envoyerPlan() {
   a.envoi = true;
   rendre();
   try {
-    const r = await fetch('api/automatique', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(plan) });
+    const r = await serveur('api/automatique', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(plan) });
     const j = await r.json();
     if (!r.ok) throw new Error(j.erreur || 'échec');
     a.modifie = false;
@@ -1216,7 +1236,7 @@ async function importerApps() {
     bouton.textContent = 'Import en cours… (une à deux minutes)';
   }
   try {
-    const r = await fetch('api/importer', { method: 'POST' });
+    const r = await serveur('api/importer', { method: 'POST' });
     const j = await r.json();
     if (!r.ok) throw new Error(j.erreur || 'échec');
     await chargerDonnees();
@@ -1405,7 +1425,7 @@ document.addEventListener('click', async (e) => {
       etat.auto.essai = true;
       rendre();
       try {
-        const r = await fetch('api/automatique/essai', { method: 'POST' });
+        const r = await serveur('api/automatique/essai', { method: 'POST' });
         const j = await r.json();
         if (!r.ok) throw new Error(j.erreur || 'échec');
         toast(j.message);
@@ -1424,6 +1444,10 @@ document.addEventListener('click', async (e) => {
     case 'installer':
       etat.installation?.prompt();
       etat.installation = null;
+      break;
+    case 'recharger-auto':
+      Object.assign(etat.auto, { charge: false, erreur: '' });
+      rendre();
       break;
   }
 });
@@ -1556,6 +1580,8 @@ window.addEventListener('hashchange', () => {
   const avant = etat.route;
   etat.route = route();
   if (avant.slug !== etat.route.slug) etat.ouvert = null;
+  // Revenir sur Auto apres une erreur (serveur eteint…) : on reessaie.
+  if (etat.route.page === 'automatique' && etat.auto.erreur) Object.assign(etat.auto, { charge: false, erreur: '' });
   if (etat.route.canal && trouverCanal(etat.route.canal)) etat.ouvert = etat.route.canal;
   rendre();
   if (avant.page !== etat.route.page || avant.slug !== etat.route.slug) window.scrollTo(0, 0);

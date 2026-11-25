@@ -1,12 +1,17 @@
 #!/bin/zsh
-# Demarre le serveur de Diffusion (s'il ne tourne pas deja) et ouvre la
-# page dans le navigateur. `lancer.sh arreter` l'eteint.
+# Ouvre Diffusion : demarre le serveur s'il ne tourne pas, puis ouvre la
+# fenetre de l'app Diffusion installee par Chrome (sinon la page dans le
+# navigateur). `lancer.sh arreter` eteint un serveur lance par ce script.
 # Appele par Diffusion.app ; utilisable aussi a la main (npm run app).
+#
+# Avec `npm run service`, l'app « Diffusion serveur » appelle ce script
+# toutes les 30 s (SANS_NAVIGATEUR=1) : le serveur est relance s'il s'arrete.
 
 cd "$(dirname "$0")/.." || exit 1
 PORT=${DIFFUSION_PORT:-4848}
 URL="http://127.0.0.1:$PORT"
 PID_FILE=.diffusion.pid
+APP_CHROME="$HOME/Applications/Chrome Apps.localized/Diffusion.app"
 
 en_route() { curl -fs "$URL/api/ping" >/dev/null 2>&1; }
 
@@ -17,17 +22,13 @@ if [[ "$1" == "arreter" ]]; then
 fi
 
 if ! en_route; then
-  # Lance depuis le Finder, le PATH ne contient pas node : on le cherche.
-  NODE=$(command -v node)
-  [[ -x "$NODE" ]] || NODE=$(ls -d "$HOME"/.nvm/versions/node/*/bin/node(N) 2>/dev/null | sort -V | tail -1)
-  for c in /opt/homebrew/bin/node /usr/local/bin/node; do
-    [[ -x "$NODE" ]] || { [[ -x $c ]] && NODE=$c; }
-  done
+  source outils/node.sh
   if [[ ! -x "$NODE" ]]; then
     echo "Node.js est introuvable sur ce Mac." >&2
     exit 1
   fi
-
+  # Lance depuis une app, le PATH est minimal : le serveur a besoin de gh (Homebrew).
+  export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
   nohup "$NODE" outils/serveur.ts > .diffusion.log 2>&1 &
   echo $! > $PID_FILE
   for i in {1..50}; do en_route && break; sleep 0.1; done
@@ -37,5 +38,7 @@ if ! en_route; then
   fi
 fi
 
-[[ -z "$SANS_NAVIGATEUR" ]] && open "$URL"
+if [[ -z "$SANS_NAVIGATEUR" ]]; then
+  if [[ -d "$APP_CHROME" ]]; then open "$APP_CHROME"; else open "$URL"; fi
+fi
 exit 0

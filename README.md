@@ -7,10 +7,20 @@ messages, Apple, web et affiches. Pour chaque app et chaque canal, Diffusion
 
 ## Ouvrir
 
-- **Sur le Mac** : l'icône **Diffusion** du Dock (ou double-clic sur
-  `Diffusion.app` dans ce dossier ; glisse-la dans le Dock la première fois).
-  La page s'ouvre dans le navigateur. Quitter l'app (clic droit sur l'icône du
-  Dock ▸ Quitter) l'éteint. Sans le Dock : `npm run app`.
+- **Sur le Mac** : l'app **Diffusion** installée par Chrome (sa propre
+  fenêtre, dans le Dock, le Launchpad ou Spotlight). Elle a besoin du serveur
+  de Diffusion, que la petite app **Diffusion serveur** (dans
+  `~/Applications`, sans icône dans le Dock) garde allumé : elle s'ouvre à
+  chaque ouverture de session, vérifie le serveur toutes les 30 secondes et le
+  relance s'il s'arrête ; le disque Travail débranché, elle attend qu'il
+  revienne. Elle s'installe une fois avec `npm run service`
+  (`npm run service -- enlever` pour l'enlever). Pourquoi une app et pas un
+  service macOS : macOS ne laisse pas un service d'arrière-plan lire un
+  disque externe.
+- **L'icône `Diffusion.app` de ce dossier** fait la même chose à la demande :
+  démarre le serveur s'il le faut, ouvre la fenêtre de l'app Chrome (sinon
+  la page dans le navigateur), puis se ferme. En ligne de commande :
+  `npm run app`.
 - **Sur l'iPhone ou l'iPad, même Wi-Fi** : l'adresse « sur le Wi-Fi » écrite
   dans `.diffusion.log` (du genre `http://192.168.1.187:4848`). Tout marche
   sauf le partage d'images par la feuille de partage d'iOS et l'installation
@@ -182,5 +192,10 @@ avec GitHub Pages sur ce dossier, et Diffusion s'installe sur l'iPhone
 - `npm test` : les textes de toutes tes apps sur tous les canaux, les limites
   des réseaux, les liens de partage, le .zip.
 - `.diffusion.log` : le journal du serveur.
-- Icône du Dock cassée après un déplacement du dossier : `npm run construire-app`.
+- Dossier de Diffusion déplacé : `npm run construire-app` (l'icône) et
+  `npm run service` (Diffusion serveur garde l'ancien chemin sinon).
+- « Le serveur de Diffusion ne répond pas » : il revient seul en moins de
+  30 secondes ; sinon, le disque Travail est-il branché ? `Diffusion serveur`
+  doit tourner (Moniteur d'activité), et `.diffusion.log` dit pourquoi le
+  serveur s'est arrêté.
 - Nouvelle icône : `npm run icones`, puis `npm run construire-app`.
