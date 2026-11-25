@@ -91,7 +91,10 @@ d'avant.
 ## La page « lien en bio »
 
 Instagram ne rend pas cliquables les liens des légendes : elles disent « lien
-en bio ». L'adresse à mettre dans la bio Instagram, une fois pour toutes :
+en bio », puis « ou cherchez « Nom de l'app » sur l'App Store » pour les apps
+que la recherche de l'App Store trouve par leur nom (dans les 3 premiers
+résultats : vérifié à l'import, ou seul avec `node outils/recherche.ts`).
+L'adresse à mettre dans la bio Instagram, une fois pour toutes :
 **https://boboul-cloud.github.io/diffusion/** (GitHub Pages, dossier `docs/`).
 
 En haut, l'app du dernier post, avec son bouton (App Store, ou l'app web
