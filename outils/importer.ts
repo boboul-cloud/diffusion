@@ -36,6 +36,7 @@ import {
 } from '../../AgentDouble/src/app/document.ts';
 import { adresseWeb, cleApp, ecrireJson, lireChoix, repartir, type Choix } from './liste.ts';
 import { Capteur } from './capturer.ts';
+import { verifierRecherche } from './recherche.ts';
 
 const RACINE = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(RACINE, 'public', 'data');
@@ -206,48 +207,6 @@ async function ficheApple(cles: (string | number)[], langue: 'fr' | 'en', par: '
     for (const r of json.results) if (r.bundleId && r.wrapperType !== 'artist') fiches.set(r.bundleId, r);
   }
   return fiches;
-}
-
-/**
- * Chaque app publiee est-elle dans les 3 premiers resultats quand on tape
- * son nom dans l'App Store ? Une fois par nom : le resultat est garde d'un
- * import a l'autre (--forcer refait tout). Apple refuse au-dela d'une
- * vingtaine de recherches par minute : on va doucement, et une recherche
- * refusee reste « on ne sait pas » (pas de « cherchez … » dans les textes).
- */
-async function verifierRecherche(apps: AppDiffusion[], ancien: Ancien): Promise<void> {
-  const avant = new Map([...(ancien.apps ?? []), ...(ancien.enlevees ?? [])].map((a) => [a.slug, a.recherche]));
-  let faites = 0;
-  for (const app of apps) {
-    if (app.plateforme !== 'appstore' || !app.enLigne) continue;
-    const nom = app.langues[app.languePrincipale]?.nom?.trim();
-    const id = Number(/id(\d+)/.exec(app.lienInternational || app.lien)?.[1]);
-    if (!nom || !id) continue;
-    const garde = avant.get(app.slug);
-    if (!FORCER && garde?.nom === nom) {
-      app.recherche = garde;
-      continue;
-    }
-    const url = `https://itunes.apple.com/search?${new URLSearchParams({ term: nom, country: 'fr', entity: 'software', limit: '3' })}`;
-    for (const attente of [0, 30_000]) {
-      await new Promise((ok) => setTimeout(ok, attente || (faites ? 3_000 : 0)));
-      faites++;
-      try {
-        const reponse = await fetch(url, { signal: delai() });
-        if (!reponse.ok) continue;
-        const json = (await reponse.json()) as { results: { trackId: number }[] };
-        app.recherche = { nom, trouvee: json.results.some((r) => r.trackId === id) };
-        break;
-      } catch {
-        // Hors ligne ou trop lent : on reessaie une fois.
-      }
-    }
-    if (!app.recherche && garde?.nom === nom) app.recherche = garde;
-  }
-  const introuvables = apps.filter((a) => a.recherche && !a.recherche.trouvee);
-  if (introuvables.length) {
-    console.log(`Pas dans les 3 premiers résultats de la recherche de l'App Store (les textes ne disent pas « cherchez… ») : ${introuvables.map((a) => a.recherche!.nom).join(', ')}.`);
-  }
 }
 
 // ---------------------------------------------------------------
@@ -1083,7 +1042,7 @@ async function main() {
   const { apps, enlevees } = repartir(assemblees, choix);
 
   console.log('La recherche de l’App Store trouve-t-elle chaque app par son nom ?');
-  await verifierRecherche(apps, ancien);
+  await verifierRecherche(apps, ancien, FORCER);
 
   // Les dossiers d'images d'apps disparues de la liste s'en vont aussi.
   const gardes = new Set(assemblees.map((a) => a.slug));
