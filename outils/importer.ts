@@ -7,7 +7,7 @@
  *   que l'App Store ne publie pas (sous-titre, texte promotionnel, mots-cles),
  *   et pour tout le reste quand l'app n'est pas encore publiee.
  * - Les projets Xcode : dans /Volumes/Travail/Projets et sur le Bureau
- *   (DIFFUSION_PROJETS pour d'autres dossiers, separes par « : »).
+ *   (les dossiers d'AgentDouble ; AGENTDOUBLE_PROJETS pour d'autres).
  * - Tes apps de l'App Store dont le projet n'y est pas : leur fiche publique
  *   seule (la page developpeur les donne toutes).
  * - Les apps web du Dico de nos creations (/Volumes/Travail/Dico) : nom,
@@ -35,8 +35,6 @@ import { verifierRecherche } from './recherche.ts';
 const RACINE = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(RACINE, 'public', 'data');
 const BUREAU = path.join(os.homedir(), 'Desktop');
-/** Les dossiers ou sont rangés les projets Xcode. */
-const PROJETS = process.env.DIFFUSION_PROJETS?.split(':').filter(Boolean) ?? ['/Volumes/Travail/Projets', BUREAU];
 
 const options = new Set(process.argv.slice(2));
 const SEULEMENT_EN_LIGNE = options.has('--en-ligne');
@@ -54,7 +52,9 @@ if (!AGENT_DOUBLE) {
 }
 const deAgentDouble = (fichier: string) => import(pathToFileURL(path.join(AGENT_DOUBLE, 'src', fichier)).href);
 const { discover } = await deAgentDouble('commands/scan.ts');
-const { lireDocument, trouverCaptures, trouverDocument: documentPres, trouverFeuilleAchats } = await deAgentDouble('app/document.ts');
+const { lireDocument, trouverCaptures, trouverDocument, trouverFeuilleAchats } = await deAgentDouble('app/document.ts');
+// Les dossiers ou sont ranges les projets Xcode (AGENTDOUBLE_PROJETS pour d'autres).
+const { DOSSIERS_PROJETS: PROJETS } = (await deAgentDouble('util/dossiers.ts')) as { DOSSIERS_PROJETS: string[] };
 
 /** Repris d'AgentDouble (src/commands/scan.ts et src/app/document.ts). */
 type Discovered = {
@@ -68,21 +68,6 @@ type Discovered = {
   displayName?: string;
 };
 type Lecture = { champs: Record<string, string> };
-
-/**
- * La feuille SOUMISSION.md d'un projet. AgentDouble cherche dans le dossier
- * du projet, et dans le dossier au-dessus seulement sur le Bureau. Ailleurs
- * (/Volumes/Travail/Projets/GR ST_MICHEL/app/GR34.xcodeproj), la feuille est
- * souvent un cran plus haut (GR ST_MICHEL/soumission) : meme regle, pour
- * tous les dossiers de projets.
- */
-function trouverDocument(projetXcode: string): string | null {
-  const dossier = path.dirname(projetXcode);
-  const parent = path.dirname(dossier);
-  const dansUnProjet = !PROJETS.some((r) => path.resolve(r) === parent) && PROJETS.some((r) => parent.startsWith(path.resolve(r) + path.sep));
-  // Chercher depuis le dossier au-dessus couvre aussi celui du projet.
-  return (dansUnProjet ? documentPres(path.join(parent, path.basename(projetXcode))) : null) ?? documentPres(projetXcode);
-}
 
 const MAX_IPHONE = 6;
 const MAX_IPAD = 3;

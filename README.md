@@ -139,7 +139,7 @@ ou `npm run importer`. L'import :
 - trouve tes projets Xcode dans `/Volumes/Travail/Projets` et sur le Bureau
   (avec le code d'AgentDouble, pris dans `~/Desktop/AgentDouble`), et tes
   autres apps publiées par ta page développeur de l'App Store ; pour d'autres
-  dossiers : `DIFFUSION_PROJETS=/dossier1:/dossier2 npm run importer`, et
+  dossiers : `AGENTDOUBLE_PROJETS=/dossier1:/dossier2 npm run importer`, et
   `AGENT_DOUBLE=/chemin` si AgentDouble est ailleurs ;
 - lit la fiche publique de l'App Store des apps en ligne : nom, description,
   icône, captures, lien, en français et en anglais ;
