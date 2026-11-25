@@ -717,10 +717,23 @@
   "date": "2026-11-24T18:16:14.969Z",
   "slug": "materiel",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "Vous connaissez Prêt Matériel ? 🛠️\n\nGérez prêts, emprunts et locations de matériel. Rappels SMS, alertes de retard, photos, coffre-fort numérique, catalogue PDF et statistiques. Tout dans votre poche !\n\n✅ Gestion du matériel\n✅ Gestion des personnes\n✅ Prêts\n✅ Emprunts\n\nPour la télécharger : lien en bio 👆\n\n#Prêt #Emprunt #Astuce #iPhone #Matériel",
   "image": "posts/2026-11-25-materiel-mwv0n4my.jpg",
   "bufferId": "6b05d47320f9e770f0839b8c",
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DgLBjQOFluJ/",
+  "publieLe": "2026-11-25T17:12:41.567Z"
+ },
+ {
+  "creneau": "2026-11-26T17:00:00.000Z",
+  "date": "2026-11-25T17:12:22.363Z",
+  "slug": "temps-de-jeu",
+  "reseau": "instagram",
+  "statut": "programme",
+  "legende": "Vous connaissez Temps De Jeu ? ⚽\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nPour la télécharger : lien en bio 👆\n\n#Football #Coach #Sport #iPhone #Entraîneur",
+  "image": "posts/2026-11-26-temps-de-jeu-mwwdsu9l.jpg",
+  "bufferId": "6b07170941a05339f0f37c76",
   "mode": "automatic"
  }
 ]
