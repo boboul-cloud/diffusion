@@ -375,6 +375,8 @@ export function contexte(app, L, fiche = {}, reglages = {}, options = {}) {
     lien,
     web,
     enLigne: !!app.enLigne,
+    // Le nom a taper dans l'App Store, seulement si sa recherche trouve l'app (verifie a l'import).
+    cherche: !web && app.enLigne && app.recherche?.trouvee ? app.recherche.nom : '',
     recente,
     gratuit: app.gratuit !== false,
     prix: app.gratuit !== false ? (L === 'fr' ? 'Gratuit' : 'Free') : app.prix,
@@ -492,6 +494,18 @@ function appelSansLien(c, v = 0) {
     )[v % 3];
   }
   if (!c.enLigne) return T(c, 'Bientôt sur l’App Store.', 'Coming soon to the App Store.');
+  // Pour qui ne va pas jusqu'a la bio : son nom, s'il suffit a la trouver dans l'App Store.
+  if (c.cherche) {
+    return T(c, [
+      `${c.prix} sur l’App Store : lien en bio 👆\nou cherchez « ${c.cherche} » dans l’App Store 🔎`,
+      `Pour la télécharger : lien en bio 👆\nou cherchez « ${c.cherche} » sur l’App Store 🔎`,
+      `Le lien est dans ma bio 👆\nSur l’App Store, cherchez « ${c.cherche} » 🔎`,
+    ], [
+      `${c.prix} on the App Store: link in bio 👆\nor search “${c.cherche}” in the App Store 🔎`,
+      `Download it: link in bio 👆\nor search “${c.cherche}” on the App Store 🔎`,
+      `Link in bio 👆\nOr search “${c.cherche}” on the App Store 🔎`,
+    ])[v % 3];
+  }
   const fr = [
     `${c.prix} sur l’App Store : lien en bio 👆`,
     `Pour la télécharger : lien en bio 👆`,
@@ -749,14 +763,14 @@ function script(c, v, canal) {
       `0–3 s · Texte à l’écran : « ${c.sousTitre || c.accroche} »\nFilme ${c.web ? 'le téléphone' : 'l’iPhone'} en main, ou montre directement l’écran de l’app.`,
       `3–8 s · Voix : « ${c.nom}, ${min(c, c.sousTitre || 'une app pour ' + c.public)}. »\nÉcran : l’accueil de l’app.`,
       ...pf.slice(0, 3).map((p, i) => `${8 + i * 5}–${13 + i * 5} s · ${p}\nÉcran : la capture qui le montre, avec ces mots incrustés.`),
-      `Fin · Icône de l’app + « ${bandeau(c)} »\nVoix : « ${c.web ? 'Le lien est dans la bio.' : c.enLigne ? `Cherchez ${c.nom} sur l’App Store.` : 'Abonnez-vous pour la sortie.'} »`,
+      `Fin · Icône de l’app + « ${bandeau(c)} »\nVoix : « ${c.cherche ? `Cherchez ${c.cherche} sur l’App Store.` : c.enLigne ? 'Le lien est dans la bio.' : 'Abonnez-vous pour la sortie.'} »`,
     ],
     [
       `🎬 Vertical script (20 to 30 s)`,
       `0–3 s · On-screen text: “${c.sousTitre || c.accroche}”\nFilm the ${c.web ? 'phone' : 'iPhone'} in hand, or show the app screen directly.`,
       `3–8 s · Voice: “${c.nom}, ${min(c, c.sousTitre || 'an app for ' + c.public)}.”\nScreen: the app’s home screen.`,
       ...pf.slice(0, 3).map((p, i) => `${8 + i * 5}–${13 + i * 5} s · ${p}\nScreen: the screenshot that shows it, with these words on top.`),
-      `End · App icon + “${bandeau(c)}”\nVoice: “${c.web ? 'Link in bio.' : c.enLigne ? `Search ${c.nom} on the App Store.` : 'Follow for the launch.'}”`,
+      `End · App icon + “${bandeau(c)}”\nVoice: “${c.cherche ? `Search ${c.cherche} on the App Store.` : c.enLigne ? 'Link in bio.' : 'Follow for the launch.'}”`,
     ],
   ).join('\n\n');
   const legendeTexte = [accroche(c, v), c.accroche, appelSansLien(c, v), hashtags(c, canal.hashtags ?? 5)].join('\n\n');

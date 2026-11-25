@@ -257,3 +257,23 @@ test('les légendes Instagram renvoient toutes vers la bio', () => {
   for (const v of [0, 1, 2]) assert.match(generer(canal('instagram-post'), c, v)[0].valeur, /bio 👆/);
   assert.equal(bandeau(c), 'Gratuit sur l’App Store');
 });
+
+test('« cherchez … sur l’App Store » seulement si la recherche trouve l’app', () => {
+  const trouvee = { ...APP, recherche: { nom: 'Sentier', trouvee: true } };
+  for (const L of ['fr', 'en'] as const) {
+    const c = contexte(trouvee, L, {}, REGLAGES);
+    for (const v of [0, 1, 2]) {
+      const legende = generer(canal('instagram-post'), c, v)[0].valeur;
+      assert.match(legende, /bio 👆/);
+      assert.match(legende, L === 'fr' ? /cherchez «\sSentier\s»/i : /search “Sentier”/i);
+      assert.match(generer(canal('tiktok'), c, v)[1].valeur, /Sentier/);
+    }
+    assert.match(generer(canal('tiktok'), c, 0)[0].valeur, /(Cherchez|Search) Sentier/);
+  }
+  // Introuvable par son nom, ou pas encore verifiee : la bio seulement.
+  for (const app of [{ ...APP, recherche: { nom: 'Sentier', trouvee: false } }, APP]) {
+    const c = contexte(app, 'fr', {}, REGLAGES);
+    for (const v of [0, 1, 2]) assert.doesNotMatch(generer(canal('instagram-post'), c, v)[0].valeur, /cherchez/i);
+    assert.doesNotMatch(generer(canal('tiktok'), c, 0)[0].valeur, /Cherchez/);
+  }
+});
