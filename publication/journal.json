@@ -730,10 +730,23 @@
   "date": "2026-11-25T17:12:22.363Z",
   "slug": "temps-de-jeu",
   "reseau": "instagram",
-  "statut": "programme",
+  "statut": "publie",
   "legende": "Vous connaissez Temps De Jeu ? ⚽\n\nTemps De Jeu, l'assistant qui fait gagner du temps à ceux qui font jouer.\n\n✅ Gestion de match en temps réel\n✅ Équité du temps de jeu\n✅ Suivi des cartons\n✅ Statistiques complètes\n\nPour la télécharger : lien en bio 👆\n\n#Football #Coach #Sport #iPhone #Entraîneur",
   "image": "posts/2026-11-26-temps-de-jeu-mwwdsu9l.jpg",
   "bufferId": "6b07170941a05339f0f37c76",
+  "mode": "automatic",
+  "lien": "https://www.instagram.com/p/DgNmT9niR6G/",
+  "publieLe": "2026-11-26T17:13:33.585Z"
+ },
+ {
+  "creneau": "2026-11-27T17:00:00.000Z",
+  "date": "2026-11-26T17:13:15.497Z",
+  "slug": "web-bob1n2",
+  "reseau": "instagram",
+  "statut": "programme",
+  "legende": "⚽ Bob 1N2 : pronostics foot\n\nLe concours de pronostics foot du comptoir : 1, N ou 2 sur chaque match, en points virtuels, jamais d'argent.\n\n✅ Les matchs de la journée et leurs cotes\n✅ Installable et hors ligne, sans compte\n\nGratuit, dans ton navigateur : lien en bio 👆\n\n#PronosticsFoot #Sport #AppWeb #Football",
+  "image": "posts/2026-11-27-web-bob1n2-mwxt9tjs.jpg",
+  "bufferId": "6b0868bdc81617797dc961e2",
   "mode": "automatic"
  }
 ]
